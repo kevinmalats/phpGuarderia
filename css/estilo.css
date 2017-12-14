@@ -1,0 +1,21 @@
+.navbar-collapse .nav .titulo {
+	font-size: 25px;
+	color: green;
+	font-family: "Daycare";
+	text-decoration: none;
+}
+/* Post */
+
+.thumb img {
+	height: 20%;
+	width: 50%;
+	
+}
+.post-title a {
+	text-decoration: none;
+}
+.main {
+	margin-bottom: 20px;
+	margin-top: 20px;
+
+}
