@@ -47,47 +47,49 @@
 	
 	<!-- end spacer section -->
 	<!-- section: team -->
-	<section id="services" class="section orange">
+	<section id="contact" class="section green">
 		<div class="container">
-			<h4>Servicios</h4>
-			<!-- Four columns -->
+			<h4>Mantente en Contacto</h4>
+			<p>
+				Envíanos tus comentarios y/o sugerencias a nuestro portal, nosotros nos comunicaremos contigo de manera inmediata, no olvides dejarnos tus datos para hacerlo.
+                Si tienes alguna pregunta en cuestión, puedes contactar con nosotros también por este medio.
+                Estamos para atender tus dudas!!!.
+			</p>
+			<div class="blankdivider30">
+			</div>
 			<div class="row">
-				<div class="span3 animated-fast flyIn">
-					<div class="service-box">
-						<img src="../img/icons/monitoreo.png" alt="" />
-						<h2>Monitoreo</h2>
-						<p>
-							A través de nuestros servicio de streaming, pueden monitorear las actividades de sus pequeños en las guarderías registradas.
-						</p>
+				<div class="span12">
+					<div class="cform" id="contact-form">
+						<div id="sendmessage">Tu mensaje ha sido enviado. Gracias!</div>
+						<div id="errormessage"></div>
+						<form action="" method="post" role="form" class="contactForm">
+							<div class="row">
+								<div class="span6">
+									<div class="field your-name form-group">
+										<input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="ingresar información" />
+										<div class="validation"></div>
+									</div>
+									<div class="field your-email form-group">
+										<input type="text" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="ingresar información" />
+										<div class="validation"></div>
+									</div>
+									<div class="field subject form-group">
+										<input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="ingresar información" />
+										<div class="validation"></div>
+									</div>
+								</div>
+								<div class="span6">
+									<div class="field message form-group">
+										<textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="ingresar información" placeholder="Mensaje"></textarea>
+										<div class="validation"></div>
+									</div>
+									<input type="submit" value="Enviar Mensaje" class="btn btn-theme pull-left">
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
-				<div class="span3 animated flyIn">
-					<div class="service-box">
-						<img src="../img/icons/localizacion.png" alt="" />
-						<h2>Localización de Guardería</h2>
-						<p>
-							Puedes localizar a las guarderías o Instituciones educativas registradas en el sitio que estén cercanas a tu vivienda, trabajo o área de interés.
-						</p>
-					</div>
-				</div>
-				<div class="span3 animated-fast flyIn">
-					<div class="service-box">
-						<img src="../img/icons/registro.png" alt="" />
-						<h2>Registro de Guarderías</h2>
-						<p>
-							Para las Instituciones que acceden a utilizar nuestra tecnología, les garantizamos un servicio de calidad el cual tiene como objetivo también mejorar el brindado por las Instituciones.
-						</p>
-					</div>
-				</div>
-				<div class="span3 animated-slow flyIn">
-					<div class="service-box">
-						<img src="../img/icons/seguridad.png" alt="" />
-						<h2>Seguridad</h2>
-						<p>
-							Las guarderías e Instituciones registradas en nuestra base, se encuentran en total orden de cumplimiento con todas las normas y reglas para su funcionamiento y prestación de servicios..
-						</p>
-					</div>
-				</div>
+				<!-- ./span12 -->
 			</div>
 		</div>
 	</section>
