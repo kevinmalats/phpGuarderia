@@ -16,13 +16,35 @@
 	
 </head>
 <body>
+	<div class="navbar-wrapper">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<!-- Responsive navbar -->
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</a>
+					<h1 class="brand"><a href="../index.html">Safe DayCare</a></h1>
+					<!-- navigation -->
+					<nav class="pull-right nav-collapse collapse">
+						<ul id="menu-main" class="nav">
+							<li><a title="team" href="../pages/quienes_somos.html">Acerca de</a></li>
+							<li><a title="services" href="../pages/Servicios.html">Servicios</a></li>
+							<li><a title="works" href="../pages/guarderias.html">Guarderías</a></li>
+							<li><a title="blog" href="../pages/blog.html">Blog</a></li>
+							<li><a title="contact" href="../pages/contactenos.html">Contáctenos</a></li>
+							<li><a href="registro.html">Regístrate con nosotros</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- multistep form -->
 <form id="msform">
   <!-- progressbar -->
   <ul id="progressbar">
     <li class="active">Account Setup</li>
-    <li>Social Profiles</li>
-    <li>Personal Details</li>
+    <li>Información Personal</li>
   </ul>
   <!-- fieldsets -->
   <fieldset>
@@ -32,21 +54,14 @@
     <input type="password" name="cpass" placeholder="Confirm Password" />
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
+  
   <fieldset>
     <h2 class="fs-title">Información Personal</h2>
     
-    <input type="text" name="twitter" placeholder="Twitter" />
-    <input type="text" name="facebook" placeholder="Facebook" />
-    <input type="text" name="gplus" placeholder="Google Plus" />
-    <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="button" name="next" class="next action-button" value="Next" />
-  </fieldset>
-  <fieldset>
-    <h2 class="fs-title">Información Personal</h2>
-    <input type="text" name="fname" placeholder="First Name" />
-    <input type="text" name="lname" placeholder="Last Name" />
-    <input type="text" name="phone" placeholder="Phone" />
-    <textarea name="address" placeholder="Address"></textarea>
+    <input type="text" name="twitter" placeholder="Nombres" />
+    <input type="text" name="facebook" placeholder="Apellidos" />
+    <input type="text" name="gplus" placeholder="Telefono" />
+    <textarea name="address" placeholder="Dirección"></textarea>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <input type="submit" name="submit" class="submit action-button" value="Submit" />
   </fieldset>
