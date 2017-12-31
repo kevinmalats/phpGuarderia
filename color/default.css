@@ -5,11 +5,16 @@ background:#e06d5e;
 background:#e06d5e;
 }
 
-.navbar .brand a:hover {
-	color:#1BAC91;
+.navbar .brand .nav ,a:hover {
+	color:#42FF33;
 }
 
-
+.navegacion {
+	background: green;
+}
+nav {
+	background: green;
+}
 
 ul#menu-main > li > a:hover {
 	color: #1BAC91;
@@ -24,7 +29,7 @@ ul#menu-main > li > a:focus,ul#menu-main > li > a:active, ul#menu-main > li > a.
 }
 
 #header-wrapper input[type=submit] {
-	background: #1BAC91 !important;
+	background: #42FF33 !important;
 }
 
 #theme-form input[type=submit] {

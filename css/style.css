@@ -304,8 +304,19 @@ h2.pagetitle {
 	min-height: 4.75em;
 }
 .navbar-inverse .navbar-inner {
-	background-repeat: repeat;
-	background-color: #0b333f;
+	background: green;
+	background-color: green;
+}
+ .navbar-inverse .navbar-inner {
+  background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+  background-image: -webkit-linear-gradient(top, #222222, #111111);
+  background-image: -o-linear-gradient(top, #222222, #111111);
+  background-image: linear-gradient(to bottom, green, #62c462);
+  background-repeat: repeat-x;
+  border-color: #252525;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
 }
 .navbar-wrapper {
 	overflow:hidden;
@@ -487,7 +498,7 @@ section.spacer {
 	background:#ffe873;
 }
 .spacer.orange,.section.orange {
-	background:#f36f36;
+	background:white;
 }
 
 section.spacer.bg2 {
@@ -755,7 +766,7 @@ section#services .service-box h2 {
 }
 
 section#services.section.orange .service-box:hover {
-	background:#f36518;
+	background:#62c462;
 }
 
 
@@ -1705,4 +1716,8 @@ i.icon-white {
 	#contact-form input[type=submit] {
 		width: 100%;
 	}
+}
+
+.navegacion {
+	background: green;
 }
