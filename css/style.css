@@ -475,7 +475,7 @@ section.inner {
 	color: #fcfcfc;
 }
 .section.orange p,.section.green p {
-	color: #f7f7f7;
+	color: #333;
 }
 
 
@@ -487,11 +487,11 @@ section.spacer {
 }
 
 .spacer.green,.section.green {
-	background:#1bac91;
+	background:#eeeeee;
 }
 
 .spacer.green,.section.green h4 {
-	color:#fff;
+	color:#333;
 }
 
 .spacer.yellow,.section.yellow  {
