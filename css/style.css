@@ -285,7 +285,7 @@ h2.pagetitle {
 }
 .navbar .brand a {
 	padding: 0;
-	color: #fff;
+	color: #62c462;
 	font-size: 1.75em;
 	margin-left: 0;
 	font-weight: 400;
@@ -302,6 +302,7 @@ h2.pagetitle {
 }
 .navbar-inner {
 	min-height: 4.75em;
+	height: 150px;
 }
 .navbar-inverse .navbar-inner {
 	background: green;
@@ -313,7 +314,7 @@ h2.pagetitle {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
   background-image: -webkit-linear-gradient(top, #222222, #111111);
   background-image: -o-linear-gradient(top, #222222, #111111);
-  background-image: linear-gradient(to bottom, green, #62c462);
+  background-image: url(../img/security-guar.jpg);
   background-repeat: repeat-x;
   border-color: #252525;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
