@@ -13,16 +13,16 @@ background:#e06d5e;
 	 background-image:green ;
 }
 nav {
-	background: green;
+	
 }
 
 ul#menu-main > li > a:hover {
-	color: #1BAC91;
+	color: #333333;
 }
 
 
 ul#menu-main > li > a:focus,ul#menu-main > li > a:active, ul#menu-main > li > a.selected, ul#menu-main li a.selected:active    {
-	color: #1BAC91;
+	color: #333;
 }
 #header-wrapper h1 span {
 	color:#1BAC91;
