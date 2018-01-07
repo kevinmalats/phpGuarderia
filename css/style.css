@@ -1725,3 +1725,8 @@ i.icon-white {
 .personality {
 	margin-left: 2em;
 }
+.logotipo {
+		width: 120px;
+		height: 110px;
+		position: left;
+	}
