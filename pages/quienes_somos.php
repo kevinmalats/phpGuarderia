@@ -28,7 +28,7 @@ session_start();
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
-					<h1 class="brand"><a href="../index.html">Safe DayCare</a></h1>
+					<h1 class="brand"><a href="../index.php">Safe DayCare</a></h1>
 					<!-- navigation -->
 				 <nav class="pull-right nav-collapse collapse personality">
 						<ul id="menu-main" class="nav">
