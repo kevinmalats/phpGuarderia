@@ -1,4 +1,5 @@
 <?php
+	session_start();
   //require_once("usuario.php");
   require_once("collectorUsuario.php");
 //phpinfo();
@@ -9,7 +10,10 @@
 
    $usuario=$objColector->consUsuario("$nombre","$password");
    if($usuario->getNombre() and $usuario->getPassword()){
-   	echo "aceptado";
-   }
+    $_SESSION["perfil"]=$usuario->getPerfil();
+   	header("location:../index.php");
+
+   }else
+      echo "login incorrecto";
   
   ?>

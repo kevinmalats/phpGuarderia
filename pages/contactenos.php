@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -26,21 +29,38 @@
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
 					<h1 class="brand"><a href="../index.html">Safe DayCare</a></h1>
-					 <nav class="pull-right nav-collapse collapse personality">
+				 <nav class="pull-right nav-collapse collapse personality">
 						<ul id="menu-main" class="nav">
+						<?php
+						if ($_SESSION){
+						?>
+						<li><a title ="Logout" href="logout.php">Logout</a>
+						<?php
+						}else{
+						?>
 						<li><a title ="Login" href="login.php">Login</a>
+						<?
+					}
+					?>
 						</li>
 						</ul>
 						</nav>
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="acerca de " href="../pages/quienes_somos.html">Acerca de</a></li>
-							<li><a title="servicios" href="../pages/Servicios.html">Servicios</a></li>
-							<li><a title="guarderias" href="../pages/guarderias.html">Guarderías</a></li>
-							<li><a title="blog" href="../pages/blog.html">Blog</a></li>
-							<li><a title="contactenos" href="../pages/contactenos.html">Contáctenos</a></li>
-							<li><a title="registro" href="registro.html">Regístrate con nosotros</a></li>
+							<li><a title="acerca de " href="../pages/quienes_somos.php">Acerca de</a></li>
+							<li><a title="servicios" href="../pages/Servicios.php">Servicios</a></li>
+							<li><a title="guarderias" href="../pages/guarderias.php">Guarderías</a></li>
+							<li><a title="blog" href="../pages/blog.php">Blog</a></li>
+							<li><a title="contactenos" href="../pages/contactenos.php">Contáctenos</a></li>
+							<?php
+						if ($_SESSION["perfil"]=="admin"){
+						?>
+						<li><a title ="Login" href="../admin/index.php">Administrar</a>
+						<?php
+						}
+						?>
+							<li><a title="registro" href="registro.php">Regístrate con nosotros</a></li>
 	</ul>
 					</nav>
 				</div>
