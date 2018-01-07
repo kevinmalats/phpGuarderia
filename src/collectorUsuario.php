@@ -26,13 +26,18 @@ $ObjUsuario= new Usuario($rows[0]{'idusuario'},$rows[0]{'usuario'},$rows[0]{'con
 
 function consUsuario($usuario, $contrasenia) {
     $rows = self::$db->getRows("SELECT * 
-  FROM usuario WHERE usuario=? AND password=?  ", array ("{$usuario}","{$contrasenia}"));        
-$ObjUsuario= new Usuario($rows[0]{'idusuario'},$rows[0]{'usuario'},$rows[0]{'contrasenia'},$rows[0]{'tipousuario'});
+  FROM usuario WHERE nombre=? AND password=?  ", array ("{$usuario}","{$contrasenia}"));        
+$ObjUsuario= new Usuario();
+$ObjUsuario->setId($rows[0]{'id_usuario'});
+$ObjUsuario->setNombre($rows[0]{'nombre'});
+$ObjUsuario->setPassword($rows[0]{'password'});
+$ObjUsuario->setPerfil($rows[0]{'perfil'});
+
     
     return $ObjUsuario;        
   }
 
-function updateUsuario($id,$usuario, $contrasenia, $tipousuario) {
+function updateUsuario($id_usuario,$nombre, $password, $perfil) {
     $insertrow = self::$db->updateRow("UPDATE public.usuario SET usuario = ?, contrasenia = ?, tipousuario = ? where idusuario= ? ", array ("{$usuario}","{$contrasenia}","{$tipousuario}",$id));
 
 }
