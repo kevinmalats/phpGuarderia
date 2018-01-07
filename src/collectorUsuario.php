@@ -1,7 +1,7 @@
 <?php
 
-include_once('Usuario.php');
-include_once('../Collector.php');
+include_once('usuario.php');
+include_once('database/collector.php');
 
 class UsuarioCollector extends Collector
 {
@@ -26,7 +26,7 @@ $ObjUsuario= new Usuario($rows[0]{'idusuario'},$rows[0]{'usuario'},$rows[0]{'con
 
 function consUsuario($usuario, $contrasenia) {
     $rows = self::$db->getRows("SELECT * 
-  FROM usuario WHERE usuario=? AND contrasenia=? AND tipousuario=2; ", array ("{$usuario}","{$contrasenia}"));        
+  FROM usuario WHERE usuario=? AND password=?  ", array ("{$usuario}","{$contrasenia}"));        
 $ObjUsuario= new Usuario($rows[0]{'idusuario'},$rows[0]{'usuario'},$rows[0]{'contrasenia'},$rows[0]{'tipousuario'});
     
     return $ObjUsuario;        

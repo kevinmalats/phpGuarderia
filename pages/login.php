@@ -54,9 +54,9 @@
       <button>create</button>
       <p class="messages">Already registered? <a href="#">Sign In</a></p>
     </form>
-    <form class="login-forms">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+    <form class="login-forms" action="../src/validarusuario.php" method="post">
+      <input type="text" placeholder="username" name="nombre"/>
+      <input type="password" placeholder="password" name="password"/>
       <button>login</button>
       <p class="messages">Not registered? <a href="registro.html">Create an account</a></p>
     </form>
