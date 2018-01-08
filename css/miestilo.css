@@ -16,6 +16,7 @@ html {
 body {
 	font-family: montserrat, arial, verdana;
 }
+
 /*form styles*/
 #msform {
 	width: 400px;
@@ -23,6 +24,7 @@ body {
 	text-align: center;
 	position: relative;
 }
+
 #msform fieldset {
 	background: white;
 	border: 0 none;
