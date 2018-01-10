@@ -23,7 +23,7 @@
           <!-- Responsive navbar -->
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
         </a>
-          <h1 class="brand"><a href="../index.html"><img src="../img/logo.jpg" class="logotipo"></a></h1>
+          <h1 class="brand"><a href="../index.html"><img src="../img/logo.gif" class="logotipo"></a></h1>
            
           <!-- navigation -->
           <nav class="pull-right nav-collapse collapse">
@@ -32,36 +32,74 @@
               <li><a title="servicios" href="../pages/Servicios.html">Servicios</a></li>
               <li><a title="guarderias" href="../pages/guarderias.html">Guarderías</a></li>
               <li><a title="blog" href="../pages/blog.html">Blog</a></li>
-              <li><a title="contactenos" href="../pages/contactenos.html">Contáctenos</a></li>
-              <li><a title="registro" href="registro.html">Regístrate con nosotros</a></li>
-                <li><a title ="Login" href="login.php">Login</a>
+              <li><a title="contactenos" href="../pages/contactenos.html">Contáctenos</a></li>-
+              <li><a title ="Login" href="login.php">Login</a>
             </ul>
           </nav>
         </div>
       </div>
     </div>
   </div>
+    
 <div class="login-pages">
   <div class="forms">
     <form class="register-forms">
       <input type="text" placeholder="name"/>
       <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
+      
       <button>create</button>
-      <p class="messages">Already registered? <a href="#">Sign In</a></p>
+      <p class="messages">ya estás registrado? <a href="#">Inicia Sesión</a></p>
     </form>
     <form class="login-forms">
       <input type="text" placeholder="username"/>
       <input type="password" placeholder="password"/>
       <button>login</button>
-      <p class="messages">Not registered? <a href="registro.html">Create an account</a></p>
+      <p class="messages">No estás registrado? <a href="registro.html">Crea una cuenta</a></p>
     </form>
   </div>
 </div>
-<script type="text/javascript">
-  $('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-});
-</script>
-</body>
+
+    <!-- 
+    <script type="text/javascript">
+        $('.message a').click(function(){
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+    </script>
+    -->
+    
+    </body>
+    
+    <footer>
+		<div class="container">
+			<div class="row">
+				<div class="span6 offset3">
+					<ul class="social-networks">
+						<li><a href="http://www.instagram.com"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
+						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
+					</ul>
+					<p class="copyright">
+						&copy; Safe DayCare. Todos los Derechos Reservados.
+						<div class="credits">
+							<p>Monitoreo y Seguridad  </p> 
+						</div>
+					</p>
+				</div>
+			</div>
+        </div>
+		
+	</footer>
+	<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.scrollTo.js"></script>
+	<script src="../js/jquery.nav.js"></script>
+	<script src="../js/jquery.localScroll.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/jquery.prettyPhoto.js"></script>
+	<script src="../js/isotope.js"></script>
+	<script src="../js/jquery.flexslider.js"></script>
+	<script src="../js/inview.js"></script>
+	<script src="../js/animate.js"></script>
+	<script src="../js/custom.js"></script>
+	<script src="../contactform/contactform.js"></script>
+
 </html>
