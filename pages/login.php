@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
  <title>Inicie Sesión</title>
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="php" content="proyecto_pws">
  
   <link href="../css/bootstrap-responsive.css" rel="stylesheet">  
   <!---estilo de colores -->
@@ -23,7 +25,7 @@
           <!-- Responsive navbar -->
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
         </a>
-          <h1 class="brand"><a href="../index.html"><img src="../img/logo.gif" class="logotipo"></a></h1>
+          <a href="../index.html"><img src="../img/logo.gif" class="logotipo" alt=""></a>
            
           <!-- navigation -->
           <nav class="pull-right nav-collapse collapse">
@@ -32,7 +34,7 @@
               <li><a title="servicios" href="../pages/Servicios.html">Servicios</a></li>
               <li><a title="guarderias" href="../pages/guarderias.html">Guarderías</a></li>
               <li><a title="blog" href="../pages/blog.html">Blog</a></li>
-              <li><a title="contactenos" href="../pages/contactenos.html">Contáctenos</a></li>-
+              <li><a title="contactenos" href="../pages/contactenos.html">Contáctenos</a></li>
               <li><a title ="Login" href="login.php">Login</a>
             </ul>
           </nav>
@@ -67,7 +69,7 @@
     </script>
     -->
     
-    </body>
+   
     
     <footer>
 		<div class="container">
@@ -77,12 +79,12 @@
 						<li><a href="http://www.instagram.com"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
 						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
 					</ul>
-					<p class="copyright">
+					<p class="copyright"></p>
 						&copy; Safe DayCare. Todos los Derechos Reservados.
-						<div class="credits">
+					<p></p>	
+                    <div class="credits">
 							<p>Monitoreo y Seguridad  </p> 
-						</div>
-					</p>
+				    </div>
 				</div>
 			</div>
         </div>
@@ -101,5 +103,5 @@
 	<script src="../js/animate.js"></script>
 	<script src="../js/custom.js"></script>
 	<script src="../contactform/contactform.js"></script>
-
+ </body>
 </html>
