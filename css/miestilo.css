@@ -6,7 +6,9 @@ nt*/
 
 html {
 	height: 100%;
+	/*Image only BG fallback*/
 	
+	/*background = gradient + image pattern combo*/
 	background: 
 		linear-gradient(#f5f5f5, #f5f5f5);
 }
@@ -14,7 +16,6 @@ html {
 body {
 	font-family: montserrat, arial, verdana;
 }
-
 /*form styles*/
 #msform {
 	width: 400px;
@@ -22,7 +23,6 @@ body {
 	text-align: center;
 	position: relative;
 }
-
 #msform fieldset {
 	background: white;
 	border: 0 none;

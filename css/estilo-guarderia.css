@@ -1,14 +1,33 @@
+*{  
+  margin:0;
+  padding:0;
+}
+
+body{
+  
+  background-color:#f0f0f0;
+  font-family:helvetica;
+}
+
+a{
+  display:block;
+  color:#ad5482;  
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:40px;
+  text-align:center;
+}
+
 #bg{
   position:relative;
   top:20px;
-  bottom: 20px;
-  height:auto;
-  width:auto;
-  background-color: 
+  height:600px;
+  width:800px;
+  background:url('https://i.imgur.com/3eP9Z4O.png') center no-repeat;
   background-size:cover;
   margin-left:auto;
   margin-right:auto; 
-  border:#fff 30px solid;
+  border:#fff 15px solid;
 }
 
 .module{
@@ -28,43 +47,14 @@
 
 .module ul{
   list-style-type:none;
-  margin:auto;
+  margin:0;
 }
-
-
-.button-guarderia:hover{
-  background:#80b438;
-  
-}
-
-h2 {
-  font-family: sans-serif;
-  color: green;
-}
-
-.button-guarderia{
-  height:50px;
-  width:100%;
-  border-radius:3px;
-  border:rgba(0,0,0,.3) 0px solid;
-  box-sizing:border-box;
-  padding:15px;
-  margin-bottom:20px;
-  background:#90c843;
-  color:#FFF;
-  font-weight:bold;
-  font-size: 12pt;
-  transition:background .4s;
-  cursor:pointer;
-  
-}
-
 
 .tab{
   float:left;
-  height:auto;
-  width:auto;
-  padding-top:auto;
+  height:60px;
+  width:25%;
+  padding-top:20px;
   box-sizing:border-box;
   background:#eeeeee;  
   text-align:center;
@@ -100,4 +90,52 @@ h2 {
   opacity:.2;
 }
 
+.form{
+  float:left;
+  height:86%;
+  width:100%;
+  box-sizing:border-box;
+  padding:40px;
+}
 
+.textbox{
+  height:50px;
+  width:100%;
+  border-radius:3px;
+  border:rgba(0,0,0,.3) 2px solid;
+  box-sizing:border-box;
+  padding:10px;
+  margin-bottom:30px;
+}
+
+.textbox:focus{
+  outline:none;
+   border:rgba(24,149,215,1) 2px solid;
+   color:rgba(24,149,215,1);
+}
+
+.button-guarderia{
+  height:50px;
+  width:100%;
+  border-radius:3px;
+  border:rgba(0,0,0,.3) 0px solid;
+  box-sizing:border-box;
+  padding:10px;
+  margin-bottom:30px;
+  background:#90c843;
+  color:#FFF;
+  font-weight:bold;
+  font-size: 12pt;
+  transition:background .4s;
+  cursor:pointer;
+}
+
+.button-guarderia:hover{
+  background:#80b438;
+  
+}
+h2 {
+  font-family:helvetica;
+  color: green;
+  
+}
