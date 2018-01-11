@@ -49,7 +49,7 @@
 	<!-- section: team -->
 	<section id="about" class="section">
 		<div class="container">
-			<h4 id="titulo3">Quienes Somos</h4>
+			<h4 id="titulo3">Quiènes Somos</h4>
 			<div class="row">
 				<div class="span4 offset1">
 					<div>
