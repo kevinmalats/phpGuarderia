@@ -1,11 +1,9 @@
-<?php
-session_start();
-?>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<title>Safe DayCare</title>
+	<title>Registrate</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="php" content="proyecto_pws">
@@ -26,40 +24,18 @@ session_start();
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
-					<h1 class="brand"><a href="../index.php">Safe DayCare</a></h1>
-					 <nav class="pull-right nav-collapse collapse personality">
-						<ul id="menu-main" class="nav">
-						<?php
-						if ($_SESSION){
-						?>
-						<li><a title ="Logout" href="logout.php">Logout</a>
-						<?php
-						}else{
-						?>
-						<li><a title ="Login" href="login.php">Login</a>
-						<?
-					}
-					?>
-						</li>
-						</ul>
-						</nav>
+					<a href="../index.html"><img src="../img/logo.gif" class="logotipo" alt=""></a>
+                    
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="acerca de " href="../pages/quienes_somos.php">Acerca de</a></li>
-							<li><a title="servicios" href="../pages/Servicios.php">Servicios</a></li>
-							<li><a title="guarderias" href="../pages/guarderias.php">Guarderías</a></li>
-							<li><a title="blog" href="../pages/blog.php">Blog</a></li>
-							<li><a title="contactenos" href="../pages/contactenos.php">Contáctenos</a></li>
-							<?php
-						if ($_SESSION["perfil"]=="admin"){
-						?>
-						<li><a title ="Login" href="../admin/index.php">Administrar</a>
-						<?php
-						}
-						?>
-							<li><a title="registro" href="registro.php">Regístrate con nosotros</a></li>
-	</ul>
+							<li><a title="acerca de " href="../pages/quienes_somos.html">Acerca de</a></li>
+							<li><a title="servicios" href="../pages/Servicios.html">Servicios</a></li>
+							<li><a title="guarderias" href="../pages/guarderias.html">Guarderías</a></li>
+							<li><a title="blog" href="../pages/blog.html">Blog</a></li>
+							<li><a title="contactenos" href="../pages/contactenos.html">Contáctenos</a></li>
+                            <li><a title ="Login" href="login.php">Login</a>
+	                   </ul>
 					</nav>
 				</div>
 			</div>
@@ -68,34 +44,68 @@ session_start();
 	<!-- multistep form -->
 <form id="msform">
   <!-- progressbar -->
+    
   <ul id="progressbar">
-    <li class="active">Account Setup</li>
+    <li class="active">Creación de Cuenta</li>
     <li>Información Personal</li>
   </ul>
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">Crea tu cuenta</h2>
-      <input type="text" name="email" placeholder="Email" />
+    <input type="text" name="email" placeholder="Email" />
     <input type="password" name="pass" placeholder="Password" />
-    <input type="password" name="cpass" placeholder="Confirm Password" />
-    <input type="button" name="next" class="next action-button" value="Next" />
+    <input type="password" name="cpass" placeholder="Confirmar Password" />
+    <input type="button" name="next" class="next action-button" value="Siguiente" />
   </fieldset>
   
   <fieldset>
-    <h2 class="fs-title">Información Personal</h2>
-    
+    <h2 id="infopersonal" class="fs-title">Información Personal</h2>
     <input type="text" name="twitter" placeholder="Nombres" />
     <input type="text" name="facebook" placeholder="Apellidos" />
     <input type="text" name="gplus" placeholder="Telefono" />
     <textarea name="address" placeholder="Dirección"></textarea>
-    <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+    <input type="button" name="previous" class="previous action-button" value="Previo" />
+    <input type="submit" name="submit" class="submit action-button" value="Enviar" />
   </fieldset>
 </form>
+    
 <script  src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script  src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="../js/registro.js"></script>
+<script  src="../js/registro.js"></script>
 	
-</body>
 
+
+    <footer>
+		<div class="container">
+			<div class="row">
+				<div class="span6 offset3">
+					<ul class="social-networks">
+						<li><a href="http://www.instagram.com"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
+						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
+					</ul>
+                   <p class="copyright"></p>
+						&copy; Safe DayCare. Todos los Derechos Reservados.
+					<p></p>	
+                    <div class="credits">
+							<p>Monitoreo y Seguridad  </p> 
+				    </div>
+				</div>
+			</div>
+        </div>
+		
+	</footer>
+	<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.scrollTo.js"></script>
+	<script src="../js/jquery.nav.js"></script>
+	<script src="../js/jquery.localScroll.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/jquery.prettyPhoto.js"></script>
+	<script src="../js/isotope.js"></script>
+	<script src="../js/jquery.flexslider.js"></script>
+	<script src="../js/inview.js"></script>
+	<script src="../js/animate.js"></script>
+	<script src="../js/custom.js"></script>
+	<script src="../contactform/contactform.js"></script>
+    </body>
 </html>

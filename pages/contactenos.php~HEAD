@@ -1,9 +1,12 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<title>Contactenos</title>
+	<title>Safe DayCare</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="php" content="proyecto_pws">
@@ -25,17 +28,40 @@
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
-					<a href="../index.html"><img src="../img/logo.gif" class="logotipo" alt=""></a>
+					<h1 class="brand"><a href="../index.php">Safe DayCare</a></h1>
+				 <nav class="pull-right nav-collapse collapse personality">
+						<ul id="menu-main" class="nav">
+						<?php
+						if ($_SESSION){
+						?>
+						<li><a title ="Logout" href="logout.php">Logout</a>
+						<?php
+						}else{
+						?>
+						<li><a title ="Login" href="login.php">Login</a>
+						<?
+					}
+					?>
+						</li>
+						</ul>
+						</nav>
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="team" href="../pages/quienes_somos.html">Acerca de</a></li>
-							<li><a title="services" href="../pages/Servicios.html">Servicios</a></li>
-							<li><a title="works" href="../pages/guarderias.html">Guarderías</a></li>
-							<li><a title="blog" href="../pages/blog.html">Blog</a></li>
-							<li><a title="contact" href="../pages/contactenos.html">Contáctenos</a></li>
-							<li><a title="login" href="../pages/login.php">Login</a></li>
-						</ul>
+							<li><a title="acerca de " href="../pages/quienes_somos.php">Acerca de</a></li>
+							<li><a title="servicios" href="../pages/Servicios.php">Servicios</a></li>
+							<li><a title="guarderias" href="../pages/guarderias.php">Guarderías</a></li>
+							<li><a title="blog" href="../pages/blog.php">Blog</a></li>
+							<li><a title="contactenos" href="../pages/contactenos.php">Contáctenos</a></li>
+							<?php
+						if ($_SESSION["perfil"]=="admin"){
+						?>
+						<li><a title ="Login" href="../admin/index.php">Administrar</a>
+						<?php
+						}
+						?>
+							<li><a title="registro" href="registro.php">Regístrate con nosotros</a></li>
+	</ul>
 					</nav>
 				</div>
 			</div>
@@ -49,7 +75,7 @@
 	<!-- section: team -->
 	<section id="contact" class="section green">
 		<div class="container">
-			<h4 id="titulo">Mantente en Contacto</h4>
+			<h4>Mantente en Contacto</h4>
 			<p>
 				Envíanos tus comentarios y/o sugerencias a nuestro portal, nosotros nos comunicaremos contigo de manera inmediata, no olvides dejarnos tus datos para hacerlo.
                 Si tienes alguna pregunta en cuestión, puedes contactar con nosotros también por este medio.
@@ -62,7 +88,7 @@
 					<div class="cform" id="contact-form">
 						<div id="sendmessage">Tu mensaje ha sido enviado. Gracias!</div>
 						<div id="errormessage"></div>
-						<form action="non-empty" method="post" class="contactForm">
+						<form action="" method="post" role="form" class="contactForm">
 							<div class="row">
 								<div class="span6">
 									<div class="field your-name form-group">
@@ -109,12 +135,12 @@
 						<li><a href="http://www.instagram.com"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
 						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
 					</ul>
-					<p class="copyright"></p>
+					<p class="copyright">
 						&copy; Safe DayCare. Todos los Derechos Reservados.
-					<p></p>	
-                    <div class="credits">
-							<p>Monitoreo y Seguridad  </p> 
-				    </div>
+						<div class="credits">
+							<a href="https://bootstrapmade.com/">Monitoreo y Seguridad  </a> 
+						</div>
+					</p>
 				</div>
 			</div>
         </div>

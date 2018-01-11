@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 ?>
@@ -5,6 +6,9 @@ session_start();
 
 <!DOCTYPE HTML>
 
+=======
+<!DOCTYPE HTML>
+>>>>>>> master
 <html lang="en">
 
 <head>
@@ -27,11 +31,16 @@ session_start();
 	<div class="navbar-wrapper">
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			
+<<<<<<< HEAD
+=======
+            <div class="navbar-inner">
+>>>>>>> master
 				<div class="container">
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
 					<h1 class="brand"><a href="index.html">Safe DayCare</a></h1>
+<<<<<<< HEAD
                       <nav class="pull-right nav-collapse collapse personality">
 						<ul id="menu-main" class="nav">
 						<?php
@@ -70,6 +79,20 @@ session_start();
 						</ul>
 					</nav>
 				
+=======
+					<!-- navigation -->
+					<nav class="pull-right nav-collapse collapse">
+						<ul id="menu-main" class="nav">
+							<li><a title="team" href="pages/quienes_somos.html">Acerca de</a></li>
+							<li><a title="services" href="pages/Servicios.html">Servicios</a></li>
+							<li><a title="works" href="pages/guarderias.html">Guarderías</a></li>
+							<li><a title="blog" href="pages/blog.html">Blog</a></li>
+							<li><a title="contact" href="pages/contactenos.html">Contáctenos</a></li>
+                            <li><a title="login" href="pages/login.php">Login</a></li>
+						</ul>
+					</nav>
+				</div>
+>>>>>>> master
 			</div>
 		</div>
 	</div>
@@ -77,7 +100,11 @@ session_start();
 	<div id="header-wrapper" class="header-slider">
 		<header class="clearfix">
 			<div class="logo">
+<<<<<<< HEAD
 				<img src="img/logo_babycare.gif" alt="" />
+=======
+				<img src="img/logo_babycare.gif" alt="logotipo" />
+>>>>>>> master
 			</div>
 			<div class="container">
 				<div class="row">
@@ -107,6 +134,7 @@ session_start();
 			</div>
 		</header>
 	</div>
+<<<<<<< HEAD
 	<!-- spacer section 
 	<section class="spacer green">
 		<div class="container">
@@ -130,6 +158,11 @@ session_start();
 	<!-- section: works -->
 	
 	<section class="spacer bg3">
+=======
+	
+	<section class="spacer bg3">
+	<h2>In</h2>
+>>>>>>> master
 		<div class="container">
 			<div class="row">
 				<div class="span12 aligncenter flyLeft">
@@ -155,12 +188,21 @@ session_start();
 						<li><a href="http://www.instagram.com"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
 						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
 					</ul>
+<<<<<<< HEAD
 					<p class="copyright">
 						&copy; Safe DayCare. Todos los Derechos Reservados.
 						<div class="credits">
 							<a href="https://bootstrapmade.com/">Monitoreo y Seguridad  </a> 
 						</div>
 					</p>
+=======
+                    <p class="copyright"></p>
+						&copy; Safe DayCare. Todos los Derechos Reservados.
+					<p></p>	
+                    <div class="credits">
+							<p>Monitoreo y Seguridad  </p> 
+				    </div>
+>>>>>>> master
 				</div>
 			</div>
         </div>

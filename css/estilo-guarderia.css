@@ -21,9 +21,15 @@ a{
 #bg{
   position:relative;
   top:20px;
+<<<<<<< HEAD
   height:600px;
   width:800px;
   background:url('https://i.imgur.com/3eP9Z4O.png') center no-repeat;
+=======
+  bottom: 20px;
+  height:auto;
+  width:auto; 
+>>>>>>> master
   background-size:cover;
   margin-left:auto;
   margin-right:auto; 
@@ -52,9 +58,15 @@ a{
 
 .tab{
   float:left;
+<<<<<<< HEAD
   height:60px;
   width:25%;
   padding-top:20px;
+=======
+  height:auto;
+  width:auto;
+  padding-top:100%;
+>>>>>>> master
   box-sizing:border-box;
   background:#eeeeee;  
   text-align:center;

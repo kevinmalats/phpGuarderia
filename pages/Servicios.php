@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -10,12 +7,10 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="php" content="proyecto_pws">
-	  
-<link href="../css/bootstrap-responsive.css" rel="stylesheet">
-	<!---estilo de colores 
-
-    <!--- efectos -->
+	<link href="../css/bootstrap-responsive.css" rel="stylesheet">  
+	<!---estilo de colores -->
     <link href="../css/style.css" rel="stylesheet">
+    <!-- efectos -->
 	<link href="../color/default.css" rel="stylesheet">
 	<link rel="shortcut icon" href="../img/icono.gif">
 	
@@ -30,41 +25,17 @@ session_start();
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
-					<h1 class="brand"><a href="../index.php">Safe DayCare</a></h1>
-					 
-				 <nav class="pull-right nav-collapse collapse personality">
-						<ul id="menu-main" class="nav">
-						<?php
-						if ($_SESSION){
-						?>
-						<li><a title ="Logout" href="logout.php">Logout</a>
-						<?php
-						}else{
-						?>
-						<li><a title ="Login" href="login.php">Login</a>
-						<?
-					}
-					?>
-						</li>
-						</ul>
-						</nav>
+					<a href="../index.html"><img src="../img/logo.gif" class="logotipo" alt=""></a>
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="acerca de " href="../pages/quienes_somos.php">Acerca de</a></li>
-							<li><a title="servicios" href="../pages/Servicios.php">Servicios</a></li>
-							<li><a title="guarderias" href="../pages/guarderias.php">Guarderías</a></li>
-							<li><a title="blog" href="../pages/blog.php">Blog</a></li>
-							<li><a title="contactenos" href="../pages/contactenos.php">Contáctenos</a></li>
-							<?php
-						if ($_SESSION["perfil"]=="admin"){
-						?>
-						<li><a title ="Login" href="../admin/index.php">Administrar</a>
-						<?php
-						}
-						?>
-							<li><a title="registro" href="registro.php">Regístrate con nosotros</a></li>
-	</ul>
+							<li><a title="team" href="../pages/quienes_somos.html">Acerca de</a></li>
+							<li><a title="services" href="../pages/Servicios.html">Servicios</a></li>
+							<li><a title="works" href="../pages/guarderias.html">Guarderías</a></li>
+							<li><a title="blog" href="../pages/blog.html">Blog</a></li>
+							<li><a title="contact" href="../pages/contactenos.html">Contáctenos</a></li>
+							<li><a title="login" href="../pages/login.php">Login</a></li>
+						</ul>
 					</nav>
 				</div>
 			</div>
@@ -78,13 +49,13 @@ session_start();
 	<!-- section: team -->
 	<section id="services" class="section orange">
 		<div class="container">
-			<h4>Servicios</h4>
+			<h4 id="titulo">Servicios</h4>
 			<!-- Four columns -->
 			<div class="row">
 				<div class="span3 animated-fast flyIn">
 					<div class="service-box">
 						<img src="../img/icons/monitoreo.png" alt="" />
-						<h2><strong>Monitoreo</strong></h2>
+						<h2>Monitoreo</h2>
 						<p>
 							A través de nuestros servicio de streaming, pueden monitorear las actividades de sus pequeños en las guarderías registradas.
 						</p>
@@ -100,13 +71,13 @@ session_start();
 					</div>
 				</div>
 				<div class="span3 animated-fast flyIn">
-					<a href="registro-guarderia.html"><div class="service-box">
-						<img src="../img/icons/registro.png" alt="" />
+					<div class="service-box">
+                        <a href="registro-guarderia.html"><img src="../img/icons/registro.png" alt=""/></a>
 						<h2>Registro de Guarderías</h2>
 						<p>
 							Para las Instituciones que acceden a utilizar nuestra tecnología, les garantizamos un servicio de calidad el cual tiene como objetivo también mejorar el brindado por las Instituciones.
 						</p>
-					</div></a>
+					</div>
 				</div>
 				<div class="span3 animated-slow flyIn">
 					<div class="service-box">
@@ -136,20 +107,31 @@ session_start();
 						<li><a href="http://www.instagram.com"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
 						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
 					</ul>
-					<p class="copyright">
+					<p class="copyright"></p>
 						&copy; Safe DayCare. Todos los Derechos Reservados.
-						<div class="credits">
-							<a href="https://bootstrapmade.com/"><strong>Monitoreo y Seguridad</strong>  </a> 
-						</div>
-					</p>
+					<p></p>	
+                    <div class="credits">
+							<p>Monitoreo y Seguridad  </p> 
+				    </div>
 				</div>
 			</div>
         </div>
 		
 	</footer>
-	
+	<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.scrollTo.js"></script>
+	<script src="../js/jquery.nav.js"></script>
+	<script src="../js/jquery.localScroll.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/jquery.prettyPhoto.js"></script>
+	<script src="../js/isotope.js"></script>
+	<script src="../js/jquery.flexslider.js"></script>
+	<script src="../js/inview.js"></script>
+	<script src="../js/animate.js"></script>
+	<script src="../js/custom.js"></script>
+	<script src="../contactform/contactform.js"></script>
 
-	
 </body>
 
 </html>

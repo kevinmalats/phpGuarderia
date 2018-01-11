@@ -1,12 +1,9 @@
-<?php
-session_start();
-?>
 <!DOCTYPE HTML>
 <html lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<title>Safe DayCare</title>
+	<title>Blog</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="php" content="proyecto_pws">
@@ -28,41 +25,19 @@ session_start();
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
-					<h1 class="brand"><a href="../index.php">Safe DayCare</a></h1>
- <nav class="pull-right nav-collapse collapse personality">
-						<ul id="menu-main" class="nav">
-						<?php
-						if ($_SESSION){
-						?>
-						<li><a title ="Logout" href="logout.php">Logout</a>
-						<?php
-						}else{
-						?>
-						<li><a title ="Login" href="login.php">Login</a>
-						<?
-					}
-					?>
-						</li>
-						</ul>
-						</nav>
+					<a href="../index.html"><img src="../img/logo.gif" class="logotipo" alt=""></a>
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="acerca de " href="../pages/quienes_somos.php">Acerca de</a></li>
-							<li><a title="servicios" href="../pages/Servicios.php">Servicios</a></li>
-							<li><a title="guarderias" href="../pages/guarderias.php">Guarderías</a></li>
-							<li><a title="blog" href="../pages/blog.php">Blog</a></li>
-							<li><a title="contactenos" href="../pages/contactenos.php">Contáctenos</a></li>
-							<?php
-						if ($_SESSION["perfil"]=="admin"){
-						?>
-						<li><a title ="Login" href="../admin/index.php">Administrar</a>
-						<?php
-						}
-						?>
-							<li><a title="registro" href="registro.php">Regístrate con nosotros</a></li>
-	</ul>
-					</nav>				</div>
+							<li><a title="team" href="../pages/quienes_somos.html">Acerca de</a></li>
+							<li><a title="services" href="../pages/Servicios.html">Servicios</a></li>
+							<li><a title="works" href="../pages/guarderias.html">Guarderías</a></li>
+							<li><a title="blog" href="../pages/blog.html">Blog</a></li>
+							<li><a title="contact" href="../pages/contactenos.html">Contáctenos</a></li>
+							<li><a title="login" href="../pages/login.php">Login</a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -71,90 +46,93 @@ session_start();
 	<!-- section: blog -->
 	<section id="blog" class="section">
 		<div class="container">
-			<h4>Nuestro Blog</h4>
+			<h4 id="titulo">Nuestro Blog</h4>
 			<!-- Three columns -->
 			<div class="row">
 				<div class="span3">
 					<div class="home-post">
 						<div class="post-image">
-							<img class="max-img" src="../img/blog/img1.jpg" alt="" />
+							<img class="max-img" src="../img/blog/seguridad.jpg" alt="" />
 						</div>
 						<div class="post-meta">
 							<i class="icon-file icon-2x"></i>
-							<span class="date">Junio 19, 2013</span>
-							<span class="tags"><a href="#">Design</a>, <a href="#">Blog</a></span>
+							<span class="date">Mayo 6, 2017</span>
 						</div>
 						<div class="entry-content">
-							<h5><strong><a href="#">New design trends</a></strong></h5>
+							<h5><strong><a>Seguridad en las guarderías</a></strong></h5>
 							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
+								¿Sabemos con seguridad quienes se quedan con nuestros hijos?. &hellip;
 							</p>
-							<a href="#" class="more">Read more</a>
+							<a href="#" class="more">Leer mas</a>
 						</div>
 					</div>
 				</div>
 				<div class="span3">
 					<div class="home-post">
 						<div class="post-image">
-							<img class="max-img" src="../img/blog/img2.jpg" alt="" />
+							<img class="max-img" src="../img/blog/ni%C3%B1era.jpg" alt="" />
 						</div>
 						<div class="post-meta">
 							<i class="icon-file icon-2x"></i>
-							<span class="date">June 19, 2013</span>
-							<span class="tags"><a href="#">Design</a>, <a href="#">News</a></span>
+							<span class="date">Junio 19, 2017</span>
+							
 						</div>
 						<div class="entry-content">
-							<h5><strong><a href="#">Retro is great</a></strong></h5>
+							<h5><strong><a href="#">¿Guardería o Niñera?</a></strong></h5>
 							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
+								¿Cuando debemos considerar contratar niñera o acudir a una guarderia?. &hellip;
 							</p>
-							<a href="#" class="more">Read more</a>
+							<a href="#" class="more">Leer más</a>
 						</div>
 					</div>
 				</div>
 				<div class="span3">
 					<div class="home-post">
 						<div class="post-image">
-							<img class="max-img" src="../img/blog/img3.jpg" alt="" />
+							<img class="max-img" src="../img/blog/seguridadcc.jpeg" alt="" />
 						</div>
 						<div class="post-meta">
 							<i class="icon-file icon-2x"></i>
-							<span class="date">June 22, 2013</span>
-							<span class="tags"><a href="#">Design</a>, <a href="#">Tips</a></span>
+							<span class="date">Julio 22, 2017</span>
+							
 						</div>
 						<div class="entry-content">
-							<h5><strong><a href="#">Isometric mockup</a></strong></h5>
+							<h5><strong><a href="#">Seguridad en Centros Comerciales</a></strong></h5>
 							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
+								¿Son en verdad seguros, los juegos para niños/as en los CC.? &hellip;
 							</p>
-							<a href="#" class="more">Read more</a>
+							<a href="#" class="more">Leer mas</a>
 						</div>
 					</div>
 				</div>
 				<div class="span3">
 					<div class="home-post">
 						<div class="post-image">
-							<img class="max-img" src="../img/blog/img4.jpg" alt="" />
+							<img class="max-img" src="../img/blog/padres-solteros-2.jpg" alt="" />
 						</div>
 						<div class="post-meta">
 							<i class="icon-file icon-2x"></i>
-							<span class="date">June 27, 2013</span>
-							<span class="tags"><a href="#">News</a>, <a href="#">Tutorial</a></span>
+							<span class="date">Agosto 27, 2017</span>
+							
 						</div>
 						<div class="entry-content">
-							<h5><strong><a href="#">Free icon set</a></strong></h5>
+							<h5><strong><a href="#">Padres Solteros, ¿existen?</a></strong></h5>
 							<p>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. &hellip;
+								¿Cuánto conocemos de la realidad en crianza de bebes, en nuestro país? &hellip;
 							</p>
-							<a href="#" class="more">Read more</a>
+							<a href="#" class="more">Leer mas</a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="blankdivider30"></div>
-			<div class="aligncenter">
+			
+            <!-- comentario
+            <div class="aligncenter">
 				<a href="#" class="btn btn-large btn-theme">More blog post</a>
 			</div>
+            -->
+            
 		</div>
 	</section>
 
@@ -169,12 +147,12 @@ session_start();
 						<li><a href="http://www.instagram.com"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
 						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
 					</ul>
-					<p class="copyright">
+					<p class="copyright"></p>
 						&copy; Safe DayCare. Todos los Derechos Reservados.
-						<div class="credits">
-							<a href="https://bootstrapmade.com/">Monitoreo y Seguridad  </a> 
-						</div>
-					</p>
+					<p></p>	
+                    <div class="credits">
+							<p>Monitoreo y Seguridad  </p> 
+				    </div>
 				</div>
 			</div>
         </div>
