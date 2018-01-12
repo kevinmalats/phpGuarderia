@@ -1,7 +1,4 @@
 
-.clearfix {
-  *zoom: 1;
-}
 
 .clearfix:before,
 .clearfix:after {
@@ -15,7 +12,7 @@
 }
 
 .hide-text {
-  font: 0/0 a;
+
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -102,7 +99,7 @@
 @media (min-width: 1200px) {
   .row {
     margin-left: -30px;
-    *zoom: 1;
+    zoom: 1;
   }
   .row:before,
   .row:after {

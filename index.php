@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -26,16 +29,26 @@
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
-					<h1 class="brand"><a href="index.html">Safe DayCare</a></h1>
+					<h1 class="brand"><a href="index.php">Safe DayCare</a></h1>
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="team" href="pages/quienes_somos.html">Acerca de</a></li>
-							<li><a title="services" href="pages/Servicios.html">Servicios</a></li>
-							<li><a title="works" href="pages/guarderias.html">Guarderías</a></li>
-							<li><a title="blog" href="pages/blog.html">Blog</a></li>
-							<li><a title="contact" href="pages/contactenos.html">Contáctenos</a></li>
-                            <li><a title="login" href="pages/login.php">Login</a></li>
+							<li><a title="team" href="pages/quienes_somos.php">Acerca de</a></li>
+							<li><a title="services" href="pages/Servicios.php">Servicios</a></li>
+							<li><a title="works" href="pages/guarderias.php">Guarderías</a></li>
+							<li><a title="blog" href="pages/blog.php">Blog</a></li>
+							<li><a title="contact" href="pages/contactenos.php">Contáctenos</a></li>
+                            <?php
+						if ($_SESSION){
+						?>
+						<li><a title ="Login" href="pages/logout.php">Logout</a></li>
+						<?php
+						}else{
+						?>
+						<li><a title ="Login" href="pages/login.php">Login</a></li>
+						<?
+					}
+					?>
 						</ul>
 					</nav>
 				</div>
