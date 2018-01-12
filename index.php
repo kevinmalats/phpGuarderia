@@ -32,12 +32,14 @@ session_start();
 					<h1 class="brand"><a href="index.php">Safe DayCare</a></h1>
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
-						<ul id="menu-main" class="nav">
+						<ul id="menu-main" class="nav navbar">
 							<li><a title="team" href="pages/quienes_somos.php">Acerca de</a></li>
 							<li><a title="services" href="pages/Servicios.php">Servicios</a></li>
 							<li><a title="works" href="pages/guarderias.php">Guarderías</a></li>
 							<li><a title="blog" href="pages/blog.php">Blog</a></li>
 							<li><a title="contact" href="pages/contactenos.php">Contáctenos</a></li>
+						</ul>
+						<ul id="menu-main" class="nav navbar-nav navbar-right">	
                             <?php
 						if ($_SESSION){
 						?>
