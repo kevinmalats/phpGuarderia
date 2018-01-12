@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -29,12 +32,23 @@
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="team" href="../pages/quienes_somos.html">Acerca de</a></li>
-							<li><a title="services" href="../pages/Servicios.html">Servicios</a></li>
-							<li><a title="works" href="../pages/guarderias.html">Guarderías</a></li>
-							<li><a title="blog" href="../pages/blog.html">Blog</a></li>
-							<li><a title="contact" href="../pages/contactenos.html">Contáctenos</a></li>
-							<li><a title="login" href="../pages/login.php">Login</a></li>
+							<li><a title="team" href="quienes_somos.php">Acerca de</a></li>
+							<li><a title="services" href="Servicios.php">Servicios</a></li>
+							<li><a title="works" href="guarderias.php">Guarderías</a></li>
+							<li><a title="blog" href="blog.php">Blog</a></li>
+							<li><a title="contact" href="contactenos.php">Contáctenos</a></li>
+									<?php
+						if ($_SESSION){
+						?>
+						<li><a title ="Login" href="logout.php">Logout</a></li>
+						<?php
+						}else{
+						?>
+						<li><a title ="Login" href="login.php">Login</a></li>
+						<?
+					}
+					?>
+
 						</ul>
 					</nav>
 				</div>
@@ -49,13 +63,13 @@
 	<!-- section: team -->
 	<section id="about" class="section">
 		<div class="container">
-			<h4 id="titulo3">Quiènes Somos</h4>
+			<h4 id="titulo3">Quienes Somos</h4>
 			<div class="row">
 				<div class="span4 offset1">
 					<div>
-						<h2 id="titulo2"><strong>Seguridad</strong> <strong>y Monitoreo</strong></h2>
+						<h2 id="titulo2">Seguridad <strong>y Monitoreo</strong></h2>
 						<p id="titulo">
-							Somos una empresa, radicada en la ciudad de Guayaquil con 3 años de experiencia en diseño de tecnología web, aplicativos móviles y tecnología streaming; que ahora desea aplicar su experiencia en el área de Monitoreo y Seguridad en Instituciones Educativas para infantes menores a 3 años de edad, tratando de esta manera aumentar los índices de confianza y precaución a la hora de contratar estos servicios por los padres de familia y de disminuir los índices de maltrato y malas prácticas que se suelen dar en estos establecimientos no regulados legalmente.
+							Somos una empresa, radicada en la ciudad de Guayaquil con 3 años de experiencia en diseño de tecnología web, aplicativos móviles y tecnología streaming; que ahora desea aplicar su experiencia en el área de monitoreo y seguridad en Instituciones Educativas para infantes menores a 5 años, tratando de esta manera aumentar los índices de confianza y precaución a la hora de contratar estos servicios por los padres de familia y de disminuir los índices de maltrato y malas prácticas que se suelen dar ene stos establecimientos no regulados legalmente.
 						</p>
 					</div>
 				</div>
@@ -71,7 +85,7 @@
 						<img class="team-thumb img-circle" src="../img/team/img-1.jpg" alt="" />
 						<h3 id="titulo4">Kevin M.</h3>
 						<p id="titulo5">
-							<strong>Gerente</strong>
+							Gerente
 						</p>
 					</div>
 				</div>
@@ -80,7 +94,7 @@
 						<img class="team-thumb img-circle" src="../img/team/img-2.jpg" alt="" />
 						<h3 id="titulo6">Darwin V.</h3>
 						<p id="titulo7">
-							<strong>Director Técnico</strong>
+							Director Técnico
 						</p>
 					</div>
 				</div>
@@ -89,16 +103,16 @@
 						<img class="team-thumb img-circle" src="../img/team/img-3.jpg" alt="" />
 						<h3 id="titulo8">David R.</h3>
 						<p id="titulo9">
-							<strong>Monitoreo</strong>
+							Monitoreo
 						</p>
 					</div>
 				</div>
 				<div class="span2 flyIn">
 					<div class="people">
 						<img class="team-thumb img-circle" src="../img/team/img-4.jpg" alt="" />
-						<h3 id="titulo10">Liseth O.</h3>
+						<h3 id="titulo10">Lisethe O.</h3>
 						<p id="titulo11">
-							<strong>Analista </strong>
+							Analista 
 						</p>
 					</div>
 				</div>
@@ -107,7 +121,7 @@
 						<img class="team-thumb img-circle" src="../img/team/img-5.jpg" alt="" />
 						<h3 id="titulo12">Diego C.</h3>
 						<p id="titulo13">
-							<strong>Supervisor de Area</strong>
+							Supervisor de Area
 						</p>
 					</div>
 				</div>

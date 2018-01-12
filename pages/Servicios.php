@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 
@@ -29,12 +32,23 @@
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="team" href="../pages/quienes_somos.html">Acerca de</a></li>
-							<li><a title="services" href="../pages/Servicios.html">Servicios</a></li>
-							<li><a title="works" href="../pages/guarderias.html">Guarderías</a></li>
-							<li><a title="blog" href="../pages/blog.html">Blog</a></li>
-							<li><a title="contact" href="../pages/contactenos.html">Contáctenos</a></li>
-							<li><a title="login" href="../pages/login.php">Login</a></li>
+							<li><a title="team" href="quienes_somos.php">Acerca de</a></li>
+							<li><a title="services" href="Servicios.php">Servicios</a></li>
+							<li><a title="works" href="guarderias.php">Guarderías</a></li>
+							<li><a title="blog" href="blog.php">Blog</a></li>
+							<li><a title="contact" href="contactenos.php">Contáctenos</a></li>
+									<?php
+						if ($_SESSION){
+						?>
+						<li><a title ="Login" href="logout.php">Logout</a></li>
+						<?php
+						}else{
+						?>
+						<li><a title ="Login" href="login.php">Login</a></li>
+						<?
+					}
+					?>
+
 						</ul>
 					</nav>
 				</div>
