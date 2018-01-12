@@ -28,7 +28,7 @@ session_start();
           <!-- Responsive navbar -->
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
         </a>
-          <a href="../index.html"><img src="../img/logo.gif" class="logotipo" alt=""></a>
+          <a href="../index.php"><img src="../img/logo.gif" class="logotipo" alt=""></a>
            
           <!-- navigation -->
           <nav class="pull-right nav-collapse collapse">
@@ -66,11 +66,11 @@ session_start();
       <button>create</button>
       <p class="messages">ya estás registrado? <a href="#">Inicia Sesión</a></p>
     </form>
-    <form class="login-forms">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+     <form class="login-forms" action="../src/validarusuario.php" method="post">
+      <input type="text" placeholder="username" name="nombre"/>
+      <input type="password" placeholder="password" name="password"/>
       <button>login</button>
-      <p class="messages">No estás registrado? <a href="registro.html">Crea una cuenta</a></p>
+      <p class="messages">Not registered? <a href="registro.html">Create an account</a></p>
     </form>
   </div>
 </div>

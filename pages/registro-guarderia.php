@@ -28,7 +28,7 @@ session_start();
           <!-- Responsive navbar -->
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
         </a>
-         <a href="../index.html"><img src="../img/logo.gif" class="logotipo" alt=""></a>
+         <a href="../index.php"><img src="../img/logo.gif" class="logotipo" alt=""></a>
         
           <!-- navigation -->
          <nav class="pull-right nav-collapse collapse">
