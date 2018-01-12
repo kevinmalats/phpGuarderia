@@ -1,7 +1,4 @@
 
-.clearfix {
-  *zoom: 1;
-}
 
 .clearfix:before,
 .clearfix:after {
@@ -15,7 +12,7 @@
 }
 
 .hide-text {
-  font: 0/0 a;
+
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -102,7 +99,7 @@
 @media (min-width: 1200px) {
   .row {
     margin-left: -30px;
-    *zoom: 1;
+    zoom: 1;
   }
   .row:before,
   .row:after {
@@ -954,17 +951,6 @@
   .navbar-fixed-bottom {
     margin-top: 20px;
   }
-  .navbar-inverse .navbar-inner {
-  background-color: #1b1b1b;
-  background-image: -moz-linear-gradient(top, #222222, #111111);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
-  background-image: -webkit-linear-gradient(top, #222222, #111111);
-  background-image: -o-linear-gradient(top, #222222, #111111);
-  background-image: linear-gradient(to bottom, green, #62c462);
-  background-repeat: repeat-x;
-  border-color: #252525;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='green', endColorstr='#ff111111', GradientType=0);
-}
   .navbar-fixed-top .navbar-inner,
   .navbar-fixed-bottom .navbar-inner {
     padding: 5px;

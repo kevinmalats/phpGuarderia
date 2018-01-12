@@ -5,31 +5,24 @@ background:#e06d5e;
 background:#e06d5e;
 }
 
-.navbar .brand .nav ,a:hover {
+.navbar .brand a:hover {
 	color:#42FF33;
 }
 
-.navegacion {
-	 background-image:green ;
-}
-nav {
-	
-}
-
 ul#menu-main > li > a:hover {
-	color: #333333;
+	color: #1BAC91;
 }
 
 
 ul#menu-main > li > a:focus,ul#menu-main > li > a:active, ul#menu-main > li > a.selected, ul#menu-main li a.selected:active    {
-	color: #333;
+	color: #1BAC91;
 }
 #header-wrapper h1 span {
 	color:#1BAC91;
 }
 
 #header-wrapper input[type=submit] {
-	background: #42FF33 !important;
+	background: #1BAC91 !important;
 }
 
 #theme-form input[type=submit] {

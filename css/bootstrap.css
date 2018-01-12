@@ -1,12 +1,4 @@
-/*!
- * Bootstrap v2.3.2
- *
- * Copyright 2012 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
- */
+
 
 .clearfix {
   *zoom: 1;
@@ -6165,4 +6157,49 @@ a.badge:focus {
 
 .affix {
   position: fixed;
+}
+
+#titulo {
+    color: darkgreen;
+}
+
+#titulo2 {
+    color: darkgreen;
+}
+
+#titulo3 {
+    color: darkgreen;
+}
+#titulo4 {
+    color: darkgreen;
+}
+#titulo5 {
+    color: darkgreen;
+}
+#titulo6 {
+    color: darkgreen;
+}
+#titulo7 {
+    color: darkgreen;
+}
+#titulo8 {
+    color: darkgreen;
+}
+#titulo9 {
+    color: darkgreen;
+}
+#titulo10 {
+    color: darkgreen;
+}
+#titulo11 {
+    color: darkgreen;
+}
+#titulo12 {
+    color: darkgreen;
+}
+#titulo14 {
+    color: darkgreen;
+}
+#titulo13 {
+    color: darkgreen;
 }
