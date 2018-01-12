@@ -70,7 +70,7 @@ session_start();
       <input type="text" placeholder="username" name="nombre"/>
       <input type="password" placeholder="password" name="password"/>
       <button>login</button>
-      <p class="messages">Not registered? <a href="registro.html">Create an account</a></p>
+      <p class="messages">Not registered? <a href="registro.php">Create an account</a></p>
     </form>
   </div>
 </div>
