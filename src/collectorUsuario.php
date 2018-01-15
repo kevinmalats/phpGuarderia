@@ -10,7 +10,11 @@ class UsuarioCollector extends Collector
     $rows = self::$db->getRows("SELECT * FROM usuario ");        
     $arrayUsuario= array();        
     foreach ($rows as $c){
-      $aux = new Usuario($c{'idusuario'},$c{'usuario'},$c{'contrasenia'},$c{'tipousuario'});
+      $aux = new Usuario();
+      $aux->setId($c{'id_usuario'});
+      $aux->setNombre($c{'nombre'});
+      $aux->setPassword($c{'password'});
+      $aux->setPerfil($c{'perfil'});
       array_push($arrayUsuario, $aux);
     }
     return $arrayUsuario;        
@@ -19,7 +23,11 @@ class UsuarioCollector extends Collector
 
 function showUsuario($id) {
     $rows = self::$db->getRows("SELECT * FROM usuario where idusuario= ? ", array ("{$id}"));        
-$ObjUsuario= new Usuario($rows[0]{'idusuario'},$rows[0]{'usuario'},$rows[0]{'contrasenia'},$rows[0]{'tipousuario'});
+$ObjUsuario= new Usuario();
+$ObjUsuario->setId($rows[0]{'id_usuario'});
+$ObjUsuario->setNombre($rows[0]{'nombre'});
+$ObjUsuario->setPassword($rows[0]{'password'});
+$ObjUsuario->setPerfil($rows[0]{'perfil'});
     
     return $ObjUsuario;        
   }
@@ -38,7 +46,7 @@ $ObjUsuario->setPerfil($rows[0]{'perfil'});
   }
 
 function updateUsuario($id_usuario,$nombre, $password, $perfil) {
-    $insertrow = self::$db->updateRow("UPDATE public.usuario SET usuario = ?, contrasenia = ?, tipousuario = ? where idusuario= ? ", array ("{$usuario}","{$contrasenia}","{$tipousuario}",$id));
+    $insertrow = self::$db->updateRow("UPDATE public.usuario SET nombre = ?, password = ?, perfil = ? where id_usuario= ? ", array ("{$nombre}","{$password}","{$perfil}",$id));
 
 }
 function deleteUsuario($id) {
@@ -46,12 +54,12 @@ function deleteUsuario($id) {
 
 }
 function insertUsuario($usuario, $contrasenia, $tipousuario) {
-    $rows = self::$db->insertRow("INSERT INTO public.usuario(usuario, contrasenia, tipousuario) VALUES (?,?,?)", array ("{$usuario}","{$contrasenia}","{$tipousuario}"));             
+    $rows = self::$db->insertRow("INSERT INTO public.usuario(nombre, password, perfil) VALUES (?,?,?)", array ("{$usuario}","{$contrasenia}","{$tipousuario}"));             
   }
 
 //funciones para combobox de denunciantes y autoridades
 
-function showUD() {
+/*function showUD() {
     $rows = self::$db->getRows("SELECT * FROM usuario where tipousuario = 2");        
     $arrayUsuario= array();        
     foreach ($rows as $c){
@@ -69,7 +77,7 @@ function showUD() {
     }
     return $arrayUsuario;        
   }
-
+*/
 
 
 
