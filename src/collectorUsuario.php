@@ -22,7 +22,7 @@ class UsuarioCollector extends Collector
   
 
 function showUsuario($id) {
-    $rows = self::$db->getRows("SELECT * FROM usuario where idusuario= ? ", array ("{$id}"));        
+    $rows = self::$db->getRows("SELECT * FROM usuario where id_usuario= ? ", array ("{$id}"));        
 $ObjUsuario= new Usuario();
 $ObjUsuario->setId($rows[0]{'id_usuario'});
 $ObjUsuario->setNombre($rows[0]{'nombre'});
@@ -46,11 +46,11 @@ $ObjUsuario->setPerfil($rows[0]{'perfil'});
   }
 
 function updateUsuario($id_usuario,$nombre, $password, $perfil) {
-    $insertrow = self::$db->updateRow("UPDATE public.usuario SET nombre = ?, password = ?, perfil = ? where id_usuario= ? ", array ("{$nombre}","{$password}","{$perfil}",$id));
+    $insertrow = self::$db->updateRow("UPDATE public.usuario SET nombre = ?, password = ?, perfil = ? where id_usuario= ? ", array ("{$nombre}","{$password}","{$perfil}",$id_usuario));
 
 }
 function deleteUsuario($id) {
-    $deleterow = self::$db->deleteRow("DELETE FROM public.usuario where idusuario= ? ", array ("{$id}"));
+    $deleterow = self::$db->deleteRow("DELETE FROM public.usuario where id_usuario= ? ", array ("{$id}"));
 
 }
 function insertUsuario($usuario, $contrasenia, $tipousuario) {
