@@ -55,9 +55,12 @@ class dataBase
     try{ 
       $stmt = $this->datab->prepare($query); 
       $stmt->execute($params);
+     $admin = $stmt->fetch();
       }catch(PDOException $e){
       throw new Exception($e->getMessage());
-    }           
+    }     
+   
+    return $admin;      
   }
 
   public function updateRow($query, $params){

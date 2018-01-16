@@ -56,36 +56,26 @@ session_start();
 		</div>
 	</div>
 	<!-- multistep form -->
-<form id="msform">
+<form id="msform" action="../src/util/registrarUsuario.php" method="post">
   <!-- progressbar -->
     
-  <ul id="progressbar">
-    <li class="active">Creación de Cuenta</li>
-    <li>Información Personal</li>
-  </ul>
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">Crea tu cuenta</h2>
-    <input type="text" name="email" placeholder="Email" />
-    <input type="password" name="pass" placeholder="Password" />
-    <input type="password" name="cpass" placeholder="Confirmar Password" />
-    <input type="button" name="next" class="next action-button" value="Siguiente" />
-  </fieldset>
-  
-  <fieldset>
+    <input type="text" name="usuario" placeholder="Usuario" />
+    <input type="password" name="password" placeholder="Contraseña" />
+    <input type="text" name="perfil" placeholder="Perfil" />
+ 
     <h2 id="infopersonal" class="fs-title">Información Personal</h2>
-    <input type="text" name="twitter" placeholder="Nombres" />
-    <input type="text" name="facebook" placeholder="Apellidos" />
-    <input type="text" name="gplus" placeholder="Telefono" />
-    <textarea name="address" placeholder="Dirección"></textarea>
-    <input type="button" name="previous" class="previous action-button" value="Previo" />
+     <input type="text" name="correo" placeholder="Correo" />
+    <input type="text" name="nombres" placeholder="Nombres" />
+    <input type="text" name="apellidos" placeholder="Apellidos" />
+    <input type="text" name="telefono" placeholder="Telefono" />
+    <textarea name="direccion" placeholder="Dirección"></textarea>
     <input type="submit" name="submit" class="submit action-button" value="Enviar" />
   </fieldset>
 </form>
     
-<script  src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script  src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script  src="../js/registro.js"></script>
 	
 
 
