@@ -7,10 +7,11 @@ define("DB_USER", "gcsmegnwpekghd");
 define("DB_PASS", "5b2b53bc89ee99edb82a8bfd1953b764dd9d870aca60d2918b7876687ff97625");
 define("DB_NAME", "d2l7s76r7g7gs6");
 
-//define("DB_HOST", "localhost");
-//define("DB_USER", "postgres");
-//define("DB_PASS", "postgres");
-//define("DB_NAME", "comunidad");
+/*define("DB_HOST", "localhost");
+define("DB_USER", "postgres");
+define("DB_PASS", "1234");
+define("DB_NAME", "guarderia");
+*/
 
 
 
