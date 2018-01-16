@@ -38,7 +38,10 @@ function deleteTelefono($id) {
 
 }
 function insertTelefono($descripcion) {
-    $rows = self::$db->insertRow("INSERT INTO public.telefono(descripcion) VALUES (?)", array ("{$descripcion}"));             
+    
+    $rows = self::$db->insertRow("INSERT INTO public.telefono(descripcion) VALUES (?) returning id_telefono", array ("{$descripcion}"));  
+
+   return  $rows{"id_telefono"};         
   }
 
 //funciones para combobox de denunciantes y autoridades

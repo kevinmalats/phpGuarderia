@@ -51,7 +51,7 @@ function deleteInfoUsuario($id) {
 
 }
 function insertInfoUsuario($nombres, $apellidos,$foto_perfil ,$correo, $telefono, $usuario_id_usuario,$direccion) {
-    $rows = self::$db->insertRow("INSERT INTO public.infromacion_usuario(nombres, apellidos, foto_perfil, correo, id_telefono, usuario_id_usuario, id_direccion) VALUES (?,?,?,?,?,?,?)", array ("{$nombres}","{$apellidos}","{$foto_perfil}","{$correo}","{$telefono}","{$usuario_id_usuario}","{$direccion}"));             
+    $rows = self::$db->insertRow("INSERT INTO public.informacion_usuario(nombres, apellidos, foto_perfil, correo, id_telefono, usuario_id_usuario, id_direccion) VALUES (?,?,?,?,?,?,?)", array ("{$nombres}","{$apellidos}","{$foto_perfil}","{$correo}","{$telefono}","{$usuario_id_usuario}","{$direccion}"));             
   }
 
 

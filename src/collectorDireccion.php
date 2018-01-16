@@ -6,7 +6,7 @@ include_once('database/collector.php');
 class DireccionCollector extends Collector
 {
   
-  function showDireccion() {
+  function showDirecciones() {
     $rows = self::$db->getRows("SELECT * FROM direccion ");        
     $arrayDireccion= array();        
     foreach ($rows as $c){
@@ -29,7 +29,7 @@ $aux->setDescripcion($c{'descripcion'});
   }
 
 
-function updateDireccion($$id_direccion,$descripcion) {
+function updateDireccion($id_direccion,$descripcion) {
     $insertrow = self::$db->updateRow("UPDATE public.direccion SET descripcion = ? where id_direccion= ? ", array ("{$descripcion}",$id_direccion));
 
 }
@@ -38,7 +38,8 @@ function deleteDireccion($id) {
 
 }
 function insertDireccion($descripcion) {
-    $rows = self::$db->insertRow("INSERT INTO public.direccion(descripcion) VALUES (?)", array ("{$descripcion}"));             
+    $rows = self::$db->insertRow("INSERT INTO public.direccion(descripcion) VALUES (?) returning id_direccion", array ("{$descripcion}"));   
+    return $rows{"id_direccion"};         
   }
 
 

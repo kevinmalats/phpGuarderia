@@ -54,7 +54,8 @@ function deleteUsuario($id) {
 
 }
 function insertUsuario($usuario, $contrasenia, $tipousuario) {
-    $rows = self::$db->insertRow("INSERT INTO public.usuario(nombre, password, perfil) VALUES (?,?,?)", array ("{$usuario}","{$contrasenia}","{$tipousuario}"));             
+    $rows = self::$db->insertRow("INSERT INTO public.usuario(nombre, password, perfil) VALUES (?,?,?) returning id_usuario", array ("{$usuario}","{$contrasenia}","{$tipousuario}"));      
+    return $rows{"id_usuario"} ;      
   }
 
 //funciones para combobox de denunciantes y autoridades

@@ -64,9 +64,10 @@ session_start();
     <h2 class="fs-title">Crea tu cuenta</h2>
     <input type="text" name="usuario" placeholder="Usuario" />
     <input type="password" name="password" placeholder="Contraseña" />
-    <input type="password" name="perfil" placeholder="Perfil" />
+    <input type="text" name="perfil" placeholder="Perfil" />
  
     <h2 id="infopersonal" class="fs-title">Información Personal</h2>
+     <input type="text" name="correo" placeholder="Correo" />
     <input type="text" name="nombres" placeholder="Nombres" />
     <input type="text" name="apellidos" placeholder="Apellidos" />
     <input type="text" name="telefono" placeholder="Telefono" />
