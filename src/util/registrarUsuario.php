@@ -11,25 +11,26 @@ require_once("../collectorDireccion.php");
  $apellidos=$_POST["apellidos"];
  $telefono=$_POST["telefono"];
  $direccion=$_POST["direccion"];
- $foto_perfil=$_POST["foto_perfil"];
+ //$foto_perfil=$_POST["foto_perfil"];
+ $foto_perfil="img/perfil/";
  $correo=$_POST["correo"];
 
  //insert del usuario
  $objeCollectorUsu= new UsuarioCollector();
- $objeCollectorUsu->insertUsuario($usuario, $password, $perfil);
+ $usuario_id_usuario=$objeCollectorUsu->insertUsuario($usuario, $password, $perfil);
 
 //insert del telefono
  $objColleTelefono= new TelefonoCollector();
- $objColleTelefono->insertTelefono($telefono);
+ $id_telefono=$objColleTelefono->insertTelefono($telefono);
 
 //insert de la direccion
 $objeColleDire= new DireccionCollector();
-$objeColleDire->insertDireccion($direccion);
+$id_direccion=$objeColleDire->insertDireccion($direccion);
 
 
 
 //insert de la infromacion del usuario
  $objCollectorInfo= new InformacionUsuarioCollector();
- $objCollectorInfo->insertInfoUsuario();
+ $objCollectorInfo->insertInfoUsuario($nombres, $apellidos, $foto_perfil, $correo, $id_telefono, $usuario_id_usuario, $id_direccion);
  
 ?>
