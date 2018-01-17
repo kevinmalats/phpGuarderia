@@ -32,16 +32,27 @@ session_start();
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="team" href="quienes_somos.php">Acerca de</a></li>
-							<li><a title="services" href="Servicios.php">Servicios</a></li>
-							<li><a title="works" href="guarderias.php">Guarderías</a></li>
+							<li><a title="Quienes Somos" href="quienes_somos.php">Acerca de</a></li>
+							<li><a title="servicios" href="Servicios.php">Servicios</a></li>
+							<li><a title="Guarderías" href="guarderias.php">Guarderías</a></li>
 							<li><a title="blog" href="blog.php">Blog</a></li>
-							<li><a title="contact" href="contactenos.php">Contáctenos</a></li>
-									<?php
+							<li><a title="contactenos" href="contactenos.php">Contáctenos</a></li>
+                       <?php
+						
+									
 						if ($_SESSION){
 						?>
-						<li><a title ="Login" href="logout.php">Logout</a></li>
-						<?php
+						<li><a title ="Logout" href="logout.php">Logout</a></li>
+						     <?php
+							if ( $_SESSION["perfil"]=="admin"){
+								?>
+                          <li><a title="Administrar" href="../admin/index.php"><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
+						    <?php
+					    }else{
+					    	?>
+					    	 <li class="noHover"><a title="Bienvenido" ><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
+					    	<?php
+					    }
 						}else{
 						?>
 						<li><a title ="Login" href="login.php">Login</a></li>

@@ -1706,3 +1706,16 @@ i.icon-white {
 		width: 100%;
 	}
 }
+/* Color del mensaje de registro.php */
+.rojo {
+	color: red;
+}
+.verde {
+	color: green;
+}
+.noHover{
+    pointer-events: none;
+    margin-left: 9px;
+    color: red;
+    
+}
