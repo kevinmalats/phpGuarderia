@@ -9,3 +9,6 @@ install:
 before_script:
  - phpenv rehash
  - phpcs -i
+ 
+script:
+ - phpcs -n --standard=PSR1,PSR2 src/
