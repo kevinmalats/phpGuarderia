@@ -11,6 +11,7 @@
    $usuario=$objColector->consUsuario("$nombre","$password");
    if($usuario->getNombre() and $usuario->getPassword()){
     $_SESSION["perfil"]=$usuario->getPerfil();
+    $_SESSION["nombre"]=$usuario->getNombre();
    	header("location:../index.php");
 
    }else

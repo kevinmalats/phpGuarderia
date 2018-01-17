@@ -32,25 +32,39 @@ session_start();
 					<h1 class="brand"><a href="index.php">Safe DayCare</a></h1>
 					<!-- navigation -->
 					<nav class="pull-right nav-collapse collapse">
+
 						<ul id="menu-main" class="nav navbar">
-							<li><a title="team" href="pages/quienes_somos.php">Acerca de</a></li>
-							<li><a title="services" href="pages/Servicios.php">Servicios</a></li>
-							<li><a title="works" href="pages/guarderias.php">Guarderías</a></li>
+							<li><a title="Quienes Somos" href="pages/quienes_somos.php">Acerca de</a></li>
+							<li><a title="servicios" href="pages/Servicios.php">Servicios</a></li>
+							<li><a title="Guarderías" href="pages/guarderias.php">Guarderías</a></li>
 							<li><a title="blog" href="pages/blog.php">Blog</a></li>
-							<li><a title="contact" href="pages/contactenos.php">Contáctenos</a></li>
+							<li><a title="contactenos" href="pages/contactenos.php">Contáctenos</a></li>
 						</ul>
 						<ul id="menu-main" class="nav navbar-nav navbar-right">	
-                            <?php
+                       <?php
+						
+							
 						if ($_SESSION){
 						?>
-						<li><a title ="Login" href="pages/logout.php">Logout</a></li>
-						<?php
+						<li><a title ="Logout" href="pages/logout.php">Logout</a></li>
+                         <?php
+							if ( $_SESSION["perfil"]=="admin"){
+								?>
+                          <li><a title="Administrar" href="admin/index.php"><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
+						    <?php
+					    }else{
+					    	?>
+					    	 <li class="noHover"><a title="Bienvenido" ><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
+					    	<?php
+					    }
 						}else{
 						?>
-						<li><a title ="Login" href="pages/login.php">Login</a></li>
+						<li><a title ="Login" href="pages/login.php">Login</a></li> 
 						<?
 					}
 					?>
+
+
 						</ul>
 					</nav>
 				</div>
