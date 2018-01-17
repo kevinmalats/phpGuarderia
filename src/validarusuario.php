@@ -14,7 +14,11 @@
     $_SESSION["nombre"]=$usuario->getNombre();
    	header("location:../index.php");
 
-   }else
-      echo "login incorrecto";
+   }else{
+     $mensaje="login incorrecto";
+     header("location:../pages/login.php?mensaje=$mensaje");
+      
+    }
+   
   
   ?>

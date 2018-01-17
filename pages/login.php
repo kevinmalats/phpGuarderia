@@ -86,7 +86,13 @@ session_start();
     </form>
   </div>
 </div>
-
+<?php
+ if($_GET["mensaje"]){
+  ?>
+  <div class="col-md-5 text-center"><p <?php echo "class='$color'"?>><?php echo $_GET["mensaje"];?></p></div>
+  <?php
+ }
+?>
     <!-- 
     <script type="text/javascript">
         $('.message a').click(function(){
