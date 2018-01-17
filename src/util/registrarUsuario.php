@@ -14,6 +14,12 @@ require_once("../collectorDireccion.php");
  //$foto_perfil=$_POST["foto_perfil"];
  $foto_perfil="img/perfil/";
  $correo=$_POST["correo"];
+ if($usuario == null || $password == null || $perfil== null || $nombres == null || $apellidos == null || $telefono== null || $direccion == null){
+ 	echo "$nombres";
+ 	$mensaje= "No deje campos vacios";
+
+header("Location: ../../pages/registro.php?mensaje=$mensaje");
+ }else{
 
  //insert del usuario
  $objeCollectorUsu= new UsuarioCollector();
@@ -33,4 +39,8 @@ $id_direccion=$objeColleDire->insertDireccion($direccion);
  $objCollectorInfo= new InformacionUsuarioCollector();
  $objCollectorInfo->insertInfoUsuario($nombres, $apellidos, $foto_perfil, $correo, $id_telefono, $usuario_id_usuario, $id_direccion);
  
+ $mensaje= "Registro exitoso";
+
+header("Location: ../../pages/registro.php?mensaje=$mensaje");
+}
 ?>
