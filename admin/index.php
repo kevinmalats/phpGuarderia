@@ -3,7 +3,7 @@ session_start();
 if ( $_SESSION["perfil"]!= "admin"){
 	header("location: ../index.php");
 }
-echo "Bienvenido admin";
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ echo "Bienvenido admin";
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="../index.php">
                         <img src="../img/logo.gif" />
 
                     </a>
@@ -73,7 +73,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-circle-o-notch fa-5x"></i>
-                      <h4>Check Data</h4>
+                      <h4>Guarderias</h4>
                       </a>
                       </div>
                      
@@ -84,7 +84,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-envelope-o fa-5x"></i>
-                      <h4>Mail Box</h4>
+                      <h4>Telefonos</h4>
                       </a>
                       </div>
                      
@@ -94,7 +94,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-lightbulb-o fa-5x"></i>
-                      <h4>New Issues</h4>
+                      <h4>Direcciones</h4>
                       </a>
                       </div>
                      
@@ -104,7 +104,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="usuario/index.php" >
  <i class="fa fa-users fa-5x"></i>
-                      <h4>Ver Usuarios</h4>
+                      <h4>Usuarios</h4>
                       </a>
                       </div>
                      
@@ -114,7 +114,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-key fa-5x"></i>
-                      <h4>Admin </h4>
+                      <h4>Comentarios</h4>
                       </a>
                       </div>
                      
@@ -124,7 +124,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-comments-o fa-5x"></i>
-                      <h4>Support</h4>
+                      <h4>Personal Guarderias</h4>
                       </a>
                       </div>
                      
@@ -138,7 +138,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-clipboard fa-5x"></i>
-                      <h4>All Docs</h4>
+                      <h4>Imagenes</h4>
                       </a>
                       </div>
                      
@@ -148,7 +148,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-gear fa-5x"></i>
-                      <h4>Settings</h4>
+                      <h4>Horario</h4>
                       </a>
                       </div>
                      
@@ -158,7 +158,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-wechat fa-5x"></i>
-                      <h4>Live Talk</h4>
+                      <h4>Dia</h4>
                       </a>
                       </div>
                      
@@ -168,7 +168,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-bell-o fa-5x"></i>
-                      <h4>Notifications </h4>
+                      <h4>Informacion Usuarios </h4>
                       </a>
                       </div>
                      
@@ -178,7 +178,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-rocket fa-5x"></i>
-                      <h4>Launch</h4>
+                      <h4>Ciudades</h4>
                       </a>
                       </div>
                      
@@ -188,7 +188,7 @@ echo "Bienvenido admin";
                       <div class="div-square">
                            <a href="blank.php" >
  <i class="fa fa-user fa-5x"></i>
-                      <h4>Register User</h4>
+                      <h4>Actividades</h4>
                       </a>
                       </div>
                      
