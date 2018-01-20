@@ -18,7 +18,7 @@ public function setId($id_usuario){
      $this->id_usuario=$id_usuario;
 }
 public function getId(){
-	return $this-->id_usuario;
+	return $this->id_usuario;
 }
 public function setNombre($var){
      $this->nombre=$var;

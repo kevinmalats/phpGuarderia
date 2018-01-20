@@ -50,6 +50,8 @@ function updateUsuario($id_usuario,$nombre, $password, $perfil) {
 
 }
 function deleteUsuario($id) {
+    $sql="DELETE from informacion_usuario where usuario_id_usuario= ?";
+    $deleterow = self::$db->deleteRow($sql, array ("{$id}"));
     $deleterow = self::$db->deleteRow("DELETE FROM public.usuario where id_usuario= ? ", array ("{$id}"));
 
 }
