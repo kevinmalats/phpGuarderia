@@ -72,6 +72,12 @@ echo "</tbody>";
 echo "</table>";
 echo "</div>";
 echo "</div>";
+if(isset($_GET["mensaje"])){
+    ?>
+    <div class="col-md-5 text-center"><p><?php echo $_GET["mensaje"];?></p></div>
+        
+    <?php
+}
 ?>
 </aside>
 </body>
