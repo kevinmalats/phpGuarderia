@@ -6,11 +6,10 @@ final class TestAplicacion{
     header("location: ../index.php");
    }
 }
-function testAdmin(){
       function testSession(){
       	session_start();
       	session_destroy();
       }
-  }
 }
+
 ?>
