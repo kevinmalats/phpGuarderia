@@ -124,7 +124,7 @@ session_start();
 	<!-- end spacer section -->
 	
 	<!-- section: contact -->
-	
+</body>	
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -143,8 +143,7 @@ session_start();
 			</div>
         </div>
 		
-	</footer>
-	<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
+  <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.scrollTo.js"></script>
 	<script src="js/jquery.nav.js"></script>
@@ -158,6 +157,8 @@ session_start();
 	<script src="js/custom.js"></script>
 	<script src="contactform/contactform.js"></script>
 
-</body>
+	</footer>
+
+
 
 </html>
