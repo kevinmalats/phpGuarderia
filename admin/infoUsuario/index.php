@@ -4,7 +4,7 @@ if($_SESSION["perfil"]!= "admin"){
 	header("location: ../../index.php");
 
 }
-require_once("../../src/collectorUsuario.php");
+require_once("../../src/collectorInformacionUsuario.php");
 ?>
 <html lang="es">
 	<head>
@@ -42,26 +42,34 @@ require_once("../../src/collectorUsuario.php");
     echo "</div>";
     echo "</nav>";
     echo "<div class='container'>";
-    echo "<h2>Usuario</h2>";
+    echo "<h2>Informacion Usuario</h2>";
     echo "<div class='table-responsive'>"; 
 		  echo "<table class='table'>"; 
 		   echo "<thead>"; 
 		   echo "<tr>"; 
 		echo " 	   <th>Código</th>"; 
-		echo "     <th>Usuario</th>"; 
-		echo " 	   <th>Contraseña</th>"; 
-		echo "     <th>Tipo de Usuario</th>";  
+		echo "     <th>Nombres</th>"; 
+		echo "     <th>Apellidos</th>";
+		echo "     <th>Correo</th>";  
+		echo " 	   <th>Foto Perfil</th>"; 
+		echo "     <th>Id_Usuario</th>";  
+		echo "     <th>Id_Telefono</th>";
+		echo "     <th>Id_Direccion</th>";  
 		echo "</tr>"; 
 		echo "</thead>"; 
 
-$objCollector= new UsuarioCollector();
-foreach ($objCollector->showUsuarios() as $usuarios) {
+$objCollector= new InformacionUsuarioCollector();
+foreach ($objCollector->showInfoUsuarios() as $usuarios) {
 	echo "<tbody>"; 
 echo "<tr>"; 
 echo "<td>".$usuarios->getId()."</td>"; 
-echo "<td>".$usuarios->getNombre()."</td>";
-echo "<td>".$usuarios->getPassword()."</td>"; 
-echo "<td>".$usuarios->getPerfil()."</td>";
+echo "<td>".$usuarios->getNombres()."</td>";
+echo "<td>".$usuarios->getApellidos()."</td>"; 
+echo "<td>".$usuarios->getCorreo()."</td>";
+echo "<td>".$usuarios->getFotoPerfil()."</td>";
+echo "<td>".$usuarios->getUsuario_idUsuario()."</td>";
+echo "<td>".$usuarios->getIdTelefono()."</td>";
+echo "<td>".$usuarios->getIdDireccion()."</td>";
 
     echo "<td><a href='editar.php?id=".$usuarios->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$usuarios->getId()."'>Eliminar</a></td>"; 

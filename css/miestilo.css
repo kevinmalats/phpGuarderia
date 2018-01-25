@@ -129,3 +129,11 @@ body {
 	background: #27AE60;
 	color: white;
 }
+  .miselect {
+        width: 20%;
+        margin-left: 40px;
+    }
+    .misopciones {
+    	width: 20%;
+    	margin-left: 40px;
+    }
