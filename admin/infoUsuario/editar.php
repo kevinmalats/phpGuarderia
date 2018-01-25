@@ -78,42 +78,6 @@ $usuario=$objColl->showInfoUsuario($id);
  placeholder="<?php echo $usuario->getFotoPerfil();?>"  required/>
          </div>
      </div>
-     <label for="inputName" class="control-label col-xs-2">Telefono:</label>
-    <select name="telefonos" required  class="form-control miselect">
-    <?php
-        foreach ($objColl->telefonoXUsuario($id) as $telefono) {
-            ?>
-          <option  value= <?php echo $telefono->getId();?> > <?php echo $telefono->getDescripcion();?> </option>";
-        <?php
-        }
-        
-    ?>
-    </select>
-
- <label for="inputName" class="control-label col-xs-2">Direccion:</label>
-    <select name="direcciones" required  class="form-control miselect">
-    <?php
-        foreach ($objColl->direccionXUsuario($id) as $direccion) {
-
-            ?>
-          <option  value= <?php echo $direccion->getId();?> > <?php echo $direccion->getDescripcion();?> </option>";
-        <?php
-        }
-        
-    ?>
-    </select>
-  <label for="inputName" class="control-label col-xs-2">Usuario:</label>
-    <select name="direcciones" required  class="form-control miselect">
-    <?php
-        foreach ($objColl->usXUsuario($id) as $usuario) {
-         
-            ?>
-          <option  value= <?php echo $usuario->getId();?> > <?php echo $usuario->getNombre();?> </option>";
-        <?php
-        }
-        
-    ?>
-    </select>
     
 
      <div class="form-group">

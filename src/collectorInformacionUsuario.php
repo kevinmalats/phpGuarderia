@@ -89,16 +89,12 @@ function usXUsuario($id){
   require_once("usuario.php");
   $sql="SELECT u.id_usuario, u.nombre FROM usuario u join informacion_usuario i on u.id_usuario= i.usuario_id_usuario where i.id_usuario= ?";
   $valor=self::$db->getRows($sql, array("{$id}"));
-  $arrayUsu=array();
-  foreach ($valor as $usuario) {
-    
-    $aux= new Usuario();
-    
-    $aux->SetId($usuario{"id_usuario"});
-    $aux->SetDescripcion($usuario{"nombre"});
-         array_push($arrayUsu, $aux);
-   } 
-   return$arrayUsu;
+
+$usuario= new Usuario();
+$usuario->SetId($valor[0]{"id_usuario"});
+$usuario->SetNombre($valor[0]{"nombre"});
+
+   return$usuario;
 }
 }
 ?>
