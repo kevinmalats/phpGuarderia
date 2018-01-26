@@ -59,6 +59,9 @@ require_once("../../src/collectorInformacionUsuario.php");
 		echo "</thead>"; 
 
 $objCollector= new InformacionUsuarioCollector();
+$idTel=0;
+$idDir=0;
+
 foreach ($objCollector->showInfoUsuarios() as $usuarios) {
 	echo "<tbody>"; 
 echo "<tr>"; 
@@ -73,23 +76,15 @@ echo "<td><select name=telefonos´ required  class=form-control miselect´>";
             ?>
           <option  value= <?php echo $telefono->getId();?> > <?php echo $telefono->getDescripcion();?> </option>";
         <?php
+         $idTel=$telefono->getId();
         }
         
     
   echo "  </select> </td>";
 
-echo "<td> <select name='direcciones' required  class='form-control miselect'>";
-        foreach ($objCollector->direccionXUsuario($usuarios->getId()) as $direccion) {
+echo "<td> ".$usuarios->getIdDireccion()."</td> ";
 
-            ?>
-          <option  value= <?php echo $direccion->getId();?> > <?php echo $direccion->getDescripcion();?> </option>";
-        <?php
-        }
-        
-   
-   echo " </select> </td> ";
-
-    echo "<td><a href='editar.php?id=".$usuarios->getId()."'>Editar</a></td>"; 
+    echo "<td><a href='editar.php?id=".$usuarios->getId()."&idTel=".$idTel."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$usuarios->getId()."'>Eliminar</a></td>"; 
 	echo "</tr>"; 
 

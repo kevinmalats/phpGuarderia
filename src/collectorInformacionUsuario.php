@@ -17,8 +17,7 @@ class InformacionUsuarioCollector extends Collector
       $aux->setCorreo($c{'correo'});
       $aux->setFotoPerfil($c{'foto_perfil'});
       $aux->setUsuario_idUasuario($c{'usuario_id_usuario'});
-      $aux->setIdDireccion($c{'id_direccion'});
-      $aux->setIdTelefono($c{'id_telefono'});
+      $aux->setIdDireccion($c{'direccion'});
       array_push($arrayUsuario, $aux);
     }
     return $arrayUsuario;        
@@ -34,8 +33,8 @@ function showInfoUsuario($id) {
       $aux->setCorreo($rows[0]{'correo'});
       $aux->setFotoPerfil($rows[0]{'foto_perfil'});
       $aux->setUsuario_idUasuario($rows[0]{'usuario_id_usuario'});
-      $aux->setIdDireccion($rows[0]{'id_direccion'});
-      $aux->setIdTelefono($rows[0]{'id_telefono'});
+      $aux->setIdDireccion($rows[0]{'direccion'});
+      
       
     
     return $aux;        
@@ -43,46 +42,33 @@ function showInfoUsuario($id) {
 
 
 
-function updateInfoUsuario($id_usuario,$nombres, $apellidos,$foto_perfil ,$correo, $telefono, $usuario_id_usuario,$direccion) {
-    $insertrow = self::$db->updateRow("UPDATE public.informacion_usuario SET nombres = ?, apellidos = ?, foto_perfil = ?, correo = ?, id_telefono = ?, usuario_id_usuario = ?,  id_direccion = ? where id_usuario= ? ", array ("{$nombres}","{$apellidos}","{$foto_perfil}","{$correo}","{$id_telefono}","{$usuario_id_usuario}","{$id_direccion}",$id_usuario));
+function updateInfoUsuario($id_usuario,$nombres, $apellidos,$foto_perfil ,$correo, $usuario_id_usuario,$direccion) {
+    $insertrow = self::$db->updateRow("UPDATE public.informacion_usuario SET nombres = ?, apellidos = ?, foto_perfil = ?, correo = ?, usuario_id_usuario = ?,  direccion = ? where id_usuario= ? ", array ("{$nombres}","{$apellidos}","{$foto_perfil}","{$correo}","{$usuario_id_usuario}","{$direccion}",$id_usuario));
 
 }
 function deleteInfoUsuario($id) {
-    $deleterow = self::$db->deleteRow("DELETE FROM public.informacion_usuario where id_usuario= ? ", array ("{$id}"));
+   $deleterow = self::$db->deleteRow("DELETE FROM public.informacion_usuario where id_usuario= ? ", array ("{$id}"));
 
 }
-function insertInfoUsuario($nombres, $apellidos,$foto_perfil ,$correo, $telefono, $usuario_id_usuario,$direccion) {
-    $rows = self::$db->insertRow("INSERT INTO public.informacion_usuario(nombres, apellidos, foto_perfil, correo, id_telefono, usuario_id_usuario, id_direccion) VALUES (?,?,?,?,?,?,?)", array ("{$nombres}","{$apellidos}","{$foto_perfil}","{$correo}","{$telefono}","{$usuario_id_usuario}","{$direccion}"));             
+function insertInfoUsuario($nombres, $apellidos,$foto_perfil ,$correo,$usuario_id_usuario,$direccion) {
+    $rows = self::$db->insertRow("INSERT INTO public.informacion_usuario(nombres, apellidos, foto_perfil, correo, usuario_id_usuario, direccion) VALUES (?,?,?,?,?,?) returning id_usuario", array ("{$nombres}","{$apellidos}","{$foto_perfil}","{$correo}","{$usuario_id_usuario}","{$direccion}")); 
+    return  $rows{"id_usuario"};            
   }
 
 function telefonoXUsuario($id){
   require_once("telefono.php");
-  $sql="SELECT t.id_telefono, t.descripcion FROM telefono t join informacion_usuario i on t.id_telefono= i.id_telefono where i.id_usuario= ?";
+  $sql="SELECT t.id_telefono, t.descripcion, t.informacion_usuario_id_usuario FROM telefono t join informacion_usuario i on t.informacion_usuario_id_usuario= i.id_usuario where i.id_usuario= ?";
   $valor=self::$db->getRows($sql, array("{$id}"));
   $arrayTelefono=array();
   foreach ($valor as $telefono) {
     
     $aux= new Telefono();
-    $aux->SetId($telefono{"id_telefono"});
-    $aux->SetDescripcion($telefono{"descripcion"});
-    echo $aux->getDescripcion();
+    $aux->setId($telefono{"id_telefono"});
+    $aux->setDescripcion($telefono{"descripcion"});
+    $aux->setInfoUsua($telefono{"informacion_usuario_id_usuario"});
      array_push($arrayTelefono, $aux);
    } 
    return$arrayTelefono;
-}
-function direccionXUsuario($id){
-  require_once("direccion.php");
-  $sql="SELECT d.id_direccion, d.descripcion FROM direccion d join informacion_usuario i on d.id_direccion= i.id_direccion where i.id_usuario= ?";
-  $valor=self::$db->getRows($sql, array("{$id}"));
-  $arrayDireccion=array();
-  foreach ($valor as $direccion) {
-    
-    $aux= new Direccion();
-    $aux->SetId($direccion{"id_direccion"});
-    $aux->SetDescripcion($direccion{"descripcion"});
-         array_push($arrayDireccion, $aux);
-   } 
-   return$arrayDireccion;
 }
 
 function usXUsuario($id){
@@ -96,5 +82,7 @@ $usuario->SetNombre($valor[0]{"nombre"});
 
    return$usuario;
 }
+
+
 }
 ?>

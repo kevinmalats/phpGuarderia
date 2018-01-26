@@ -2,7 +2,6 @@
 require_once("../collectorUsuario.php");
 require_once("../collectorInformacionUsuario.php");
 require_once("../collectorTelefono.php");
-require_once("../collectorDireccion.php");
  
  $usuario=$_POST["usuario"];
  $password=$_POST["password"];
@@ -25,19 +24,14 @@ header("Location: ../../pages/registro.php?mensaje=$mensaje");
  $objeCollectorUsu= new UsuarioCollector();
  $usuario_id_usuario=$objeCollectorUsu->insertUsuario($usuario, $password, $perfil);
 
-//insert del telefono
- $objColleTelefono= new TelefonoCollector();
- $id_telefono=$objColleTelefono->insertTelefono($telefono);
 
-//insert de la direccion
-$objeColleDire= new DireccionCollector();
-$id_direccion=$objeColleDire->insertDireccion($direccion);
-
-
-
-//insert de la infromacion del usuario
+//insert de la informacion del usuario
  $objCollectorInfo= new InformacionUsuarioCollector();
- $objCollectorInfo->insertInfoUsuario($nombres, $apellidos, $foto_perfil, $correo, $id_telefono, $usuario_id_usuario, $id_direccion);
+ $id_usuario=$objCollectorInfo->insertInfoUsuario($nombres, $apellidos, $foto_perfil, $correo, $usuario_id_usuario, $direccion);
+ //insert del telefono
+ $objColleTelefono= new TelefonoCollector();
+ $objColleTelefono->insertTelefono($telefono,$id_usuario);
+
  
  $mensaje= "Registro exitoso";
 

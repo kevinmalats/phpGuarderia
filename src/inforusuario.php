@@ -10,8 +10,8 @@ private $apellidos;
 private $correo;
 private $foto_perfil;
 private $usuario_id_usuario;
-private $id_direccion;
-private $id_telefono;
+private $direccion;
+
 
 public function __construct(){
    
@@ -54,16 +54,10 @@ public function getUsuario_idUsuario(){
 	return $this->usuario_id_usuario;
 }
 public function setIdDireccion($var){
-     $this->id_direccion=$var;
+     $this->direccion=$var;
 }
 public function getIdDireccion(){
-	return $this->id_direccion;
-}
-public function setIdTelefono($var){
-     $this->id_telefono=$var;
-}
-public function getIdTelefono(){
-	return $this->id_telefono;
+	return $this->direccion;
 }
 
 }
