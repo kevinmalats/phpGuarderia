@@ -83,14 +83,16 @@ if ( $_SESSION["perfil"]!= "admin"){
 <div class='form-group'>
 <label for='inputName' class='control-label col-xs-2'>Seleccione Usuario</label>
       <div class="col-xs-10">
-        <select name="perfil" required  class="form-control miselect">
+        <select name="usuario" required  class="form-control miselect">
   
       <?php
+      
       require_once("../../src/collectorUsuario.php");
       $obUsua= new UsuarioCollector();
       foreach ($obUsua->showUsuarios() as $usuario) {
-        echo $usuario->getNombre();
-       echo  "<option value='".$usuario->getId()."'>".$usuario->getNombre()," </option>";
+        
+       echo  "<option value='".$usuario->getId()."'>".$usuario->getNombre()." </option>";
+      
       }
       ?>
         </select>
