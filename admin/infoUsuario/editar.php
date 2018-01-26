@@ -13,7 +13,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="../../css/miestilo.css" rel="stylesheet" >
+<link href="../assets/css/miestilo.css" rel="stylesheet" >
 </head>
 <body>
 
@@ -54,67 +54,37 @@ $usuario=$objColl->showInfoUsuario($id);
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Nombres:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="<?php echo $usuario->getNombres();?>" autofocus required/>
+             <input name = "nombres" type="text" id= "nombres" class="form-control" placeholder="<?php echo $usuario->getNombres();?>" autofocus required/>
          </div>
      </div>
   <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Apellidos:</label>
          <div class="col-xs-10">
-             <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
+             <input name = "apellidos" type="text" id= "apellidos" class="form-control misopciones"
  placeholder="<?php echo $usuario->getApellidos();?>"  required/>
          </div>
      </div>
       <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Correo:</label>
          <div class="col-xs-10">
-             <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
+             <input name = "correo" type="text" id= "correo" class="form-control misopciones"
  placeholder="<?php echo $usuario->getCorreo();?>"  required/>
          </div>
      </div>
       <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Foto Perfil:</label>
          <div class="col-xs-10">
-             <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
+             <input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
  placeholder="<?php echo $usuario->getFotoPerfil();?>"  required/>
          </div>
      </div>
-     <label for="inputName" class="control-label col-xs-2">Telefono:</label>
-    <select name="telefonos" required  class="form-control miselect">
-    <?php
-        foreach ($objColl->telefonoXUsuario($id) as $telefono) {
-            ?>
-          <option  value= <?php echo $telefono->getId();?> > <?php echo $telefono->getDescripcion();?> </option>";
-        <?php
-        }
-        
-    ?>
-    </select>
-
- <label for="inputName" class="control-label col-xs-2">Direccion:</label>
-    <select name="direcciones" required  class="form-control miselect">
-    <?php
-        foreach ($objColl->direccionXUsuario($id) as $direccion) {
-
-            ?>
-          <option  value= <?php echo $direccion->getId();?> > <?php echo $direccion->getDescripcion();?> </option>";
-        <?php
-        }
-        
-    ?>
-    </select>
-  <label for="inputName" class="control-label col-xs-2">Usuario:</label>
-    <select name="direcciones" required  class="form-control miselect">
-    <?php
-        foreach ($objColl->usXUsuario($id) as $usuario) {
-         
-            ?>
-          <option  value= <?php echo $usuario->getId();?> > <?php echo $usuario->getNombre();?> </option>";
-        <?php
-        }
-        
-    ?>
-    </select>
-    
+    <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Direccion:</label>
+         <div class="col-xs-10">
+             <input name = "direccion" type="text" id= "direccion" class="form-control misopciones"
+ placeholder="<?php echo $usuario->getIdDireccion();?>"  required/>
+         </div>
+     </div>
 
      <div class="form-group">
     
@@ -126,12 +96,12 @@ $usuario=$objColl->showInfoUsuario($id);
 
 
 <?php
-if(isset($_POST["nombre"])|| isset($_POST["password"]) || isset($_POST["perfil"])){
+if(isset($_POST["nombre"])|| isset($_POST["apellidos"]) || isset($_POST["correo"])|| isset($_POST["fotoperfil"])|| isset($_POST["direccion"])){
    
     $nombrenuevo=$_POST["nombre"];
     $passwordnuevo= $_POST["password"];
     $perfilnuevo= $_POST["perfil"];
-    $objColl->updateUsuario($id,$nombrenuevo, $passwordnuevo, $perfilnuevo);
+    $objColl->updateInfoUsuario($id,$nombres, $apellidos,$foto_perfil ,$correo, $usuario_id_usuario,$direccion);
     header("location:index.php?mensaje=Edición correcta");
 }
 ?>

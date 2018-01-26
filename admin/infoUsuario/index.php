@@ -52,13 +52,16 @@ require_once("../../src/collectorInformacionUsuario.php");
 		echo "     <th>Apellidos</th>";
 		echo "     <th>Correo</th>";  
 		echo " 	   <th>Foto Perfil</th>"; 
-		echo "     <th>Id_Usuario</th>";  
-		echo "     <th>Id_Telefono</th>";
-		echo "     <th>Id_Direccion</th>";  
+		echo "     <th>Usuario</th>";  
+		echo "     <th>Telefono</th>";
+		echo "     <th>Direccion</th>";  
 		echo "</tr>"; 
 		echo "</thead>"; 
 
 $objCollector= new InformacionUsuarioCollector();
+$idTel=0;
+$idDir=0;
+
 foreach ($objCollector->showInfoUsuarios() as $usuarios) {
 	echo "<tbody>"; 
 echo "<tr>"; 
@@ -67,11 +70,21 @@ echo "<td>".$usuarios->getNombres()."</td>";
 echo "<td>".$usuarios->getApellidos()."</td>"; 
 echo "<td>".$usuarios->getCorreo()."</td>";
 echo "<td>".$usuarios->getFotoPerfil()."</td>";
-echo "<td>".$usuarios->getUsuario_idUsuario()."</td>";
-echo "<td>".$usuarios->getIdTelefono()."</td>";
-echo "<td>".$usuarios->getIdDireccion()."</td>";
+echo "<td>".$objCollector->usXUsuario($usuarios->getId())->getNombre()."</td>";
+echo "<td><select name=telefonos´ required  class=form-control miselect´>";
+        foreach ($objCollector->telefonoXUsuario($usuarios->getId()) as $telefono) {
+            ?>
+          <option  value= <?php echo $telefono->getId();?> > <?php echo $telefono->getDescripcion();?> </option>";
+        <?php
+         $idTel=$telefono->getId();
+        }
+        
+    
+  echo "  </select> </td>";
 
-    echo "<td><a href='editar.php?id=".$usuarios->getId()."'>Editar</a></td>"; 
+echo "<td> ".$usuarios->getIdDireccion()."</td> ";
+
+    echo "<td><a href='editar.php?id=".$usuarios->getId()."&idTel=".$idTel."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$usuarios->getId()."'>Eliminar</a></td>"; 
 	echo "</tr>"; 
 

@@ -13,7 +13,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="../../css/miestilo.css" rel="stylesheet" >
+<link href="../assets/css/miestilo.css" rel="stylesheet" >
 </head>
 <body>
 
@@ -53,30 +53,51 @@ if ( $_SESSION["perfil"]!= "admin"){
 <form method= "POST" class="form-horizontal" action= "guardar.php" >
    
      <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Usuario:</label>
+         <label for="inputName" class="control-label col-xs-2">Nombres:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="usuario" autofocus required/>
+             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="Nombres" autofocus required/>
          </div>
      </div>
   <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Contraseña:</label>
+         <label for="inputName" class="control-label col-xs-2">Apellidos:</label>
          <div class="col-xs-10">
              <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
- placeholder="Contraseña"  required/>
+ placeholder="Apellidos"  required/>
          </div>
      </div>
      
 <div class='form-group'>
-<label for='inputName' class='control-label col-xs-2'>Perfil:</label>
-      <select name="perfil" required  class="form-control miselect">
-          <option selected="true" disabled="disabled">Seleccione el perfil </option>
-         <option value="admin">Admin</option> 
-         <option value="padre">Padre</option>
-        
-         
-      </select>
+<label for='inputName' class='control-label col-xs-2'>Correo:</label>
+      <div class="col-xs-10">
+             <input name = "correo" type="text" id= "correo" class="form-control misopciones"
+ placeholder="Correo"  required/>
 </div>
-     
+</div>
+<div class='form-group'>
+<label for='inputName' class='control-label col-xs-2'>Foto Perfil:</label>
+      <div class="col-xs-10">
+             <input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
+ placeholder="fotoperfil"  required/>
+</div>
+</div>
+<div class='form-group'>
+<label for='inputName' class='control-label col-xs-2'>Seleccione Usuario</label>
+      <div class="col-xs-10">
+        <select name="usuario" required  class="form-control miselect">
+  
+      <?php
+      
+      require_once("../../src/collectorUsuario.php");
+      $obUsua= new UsuarioCollector();
+      foreach ($obUsua->showUsuarios() as $usuario) {
+        
+       echo  "<option value='".$usuario->getId()."'>".$usuario->getNombre()." </option>";
+      
+      }
+      ?>
+        </select>
+    </div>
+</div>     
 
      <div class="form-group">
     

@@ -16,6 +16,7 @@ session_start();
     <link href="../css/style.css" rel="stylesheet">
     <!-- efectos -->
 	<link href="../color/default.css" rel="stylesheet">
+
 	<link rel="shortcut icon" href="../img/icono.gif">
 	
 </head>
@@ -75,7 +76,13 @@ session_start();
     <h2 class="fs-title">Crea tu cuenta</h2>
     <input type="text" name="usuario" placeholder="Usuario" />
     <input type="password" name="password" placeholder="Contraseña" />
-    <input type="text" name="perfil" placeholder="Perfil" />
+   <select name="perfil" required  class="form-control selectregistro">
+          <option selected="true" disabled="disabled">Seleccione el perfil </option>
+         <option value="admin">Admin</option> 
+         <option value="padre">Padre</option>
+        
+         
+      </select>
  
     <h2 id="infopersonal" class="fs-title">Información Personal</h2>
      <input type="text" name="correo" placeholder="Correo" />
@@ -100,7 +107,22 @@ session_start();
 	}
 
 ?>
-    <footer>
+   
+	<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.scrollTo.js"></script>
+	<script src="../js/jquery.nav.js"></script>
+	<script src="../js/jquery.localScroll.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/jquery.prettyPhoto.js"></script>
+	<script src="../js/isotope.js"></script>
+	<script src="../js/jquery.flexslider.js"></script>
+	<script src="../js/inview.js"></script>
+	<script src="../js/animate.js"></script>
+	<script src="../js/custom.js"></script>
+	<script src="../contactform/contactform.js"></script>
+    </body>
+     <footer>
 		<div class="container">
 			<div class="row">
 				<div class="span6 offset3">
@@ -119,18 +141,4 @@ session_start();
         </div>
 		
 	</footer>
-	<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
-	<script src="../js/jquery.js"></script>
-	<script src="../js/jquery.scrollTo.js"></script>
-	<script src="../js/jquery.nav.js"></script>
-	<script src="../js/jquery.localScroll.js"></script>
-	<script src="../js/bootstrap.js"></script>
-	<script src="../js/jquery.prettyPhoto.js"></script>
-	<script src="../js/isotope.js"></script>
-	<script src="../js/jquery.flexslider.js"></script>
-	<script src="../js/inview.js"></script>
-	<script src="../js/animate.js"></script>
-	<script src="../js/custom.js"></script>
-	<script src="../contactform/contactform.js"></script>
-    </body>
 </html>
