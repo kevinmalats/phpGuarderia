@@ -60,9 +60,11 @@ session_start();
 						}else{
 						?>
 						<li><a title ="Login" href="pages/login.php">Login</a></li> 
+
 						<?php
 					}
 					?>
+
 
 
 						</ul>

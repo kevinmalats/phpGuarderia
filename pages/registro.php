@@ -58,7 +58,7 @@ session_start();
 						?>
 						<li><a title ="Login" href="login.php">Login</a></li>
 					<?php
-					}
+                     }
 					?>
 
 
