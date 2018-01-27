@@ -28,7 +28,6 @@ $aux->setDescripcion($c{'descripcion'});
     return $aux;        
   }
 
-
 function updateDireccion($id_direccion,$descripcion) {
     $insertrow = self::$db->updateRow("UPDATE public.direccion SET descripcion = ? where id_direccion= ? ", array ("{$descripcion}",$id_direccion));
 
