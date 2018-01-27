@@ -96,7 +96,7 @@ session_start();
 </form>
     
 	<?php
-	if($_GET["mensaje"]){
+	if($_GET["mensaje"]== " "){
 		if($_GET["mensaje"]== "No deje campos vacios"){
 			$color="rojo";
 		}else{
