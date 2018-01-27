@@ -13,8 +13,8 @@ public function __construct(){
    
 
 }
-public function setId($id_usuario){
-     $this->id_telefono=$id_usuario;
+public function setId($id_telefono){
+     $this->id_telefono=$id_telefono;
 }
 public function getId(){
 	return $this->id_telefono;
