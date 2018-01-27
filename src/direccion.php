@@ -11,7 +11,6 @@ private $descripcion ;
 
 public function __construct(){
    
-
 }
 public function setId($id_usuario){
      $this->id_direccion=$id_usuario;
