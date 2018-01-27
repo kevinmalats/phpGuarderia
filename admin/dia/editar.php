@@ -8,7 +8,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <html lang="es">
 <head>
 <meta charset ="utf-8">
-<title>Editar Usuario</title>
+<title>Editar Horario del día</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -38,56 +38,103 @@ echo "</ul>";
 echo "</div>";
 echo "</nav>";
 
-require_once("../../src/collectorUsuario.php"); 
-$objColl= new UsuarioCollector();
-$usuario= new Usuario ();
+require_once("../../src/collector_dia.php"); 
+$objColl= new DiaCollector();
+$dia= new Dia ();
 
 $id=$_GET['id'];
     
-$usuario=$objColl->showUsuario($id);
+$dia=$objColl->showDias($id);
 
 ?>
 
 <form method= "POST" class="form-horizontal" action= "#" >
    
-     <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Usuario:</label>
-         <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="<?php echo $usuario->getNombre();?>" autofocus required/>
-         </div>
-     </div>
-  <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Contraseña:</label>
-         <div class="col-xs-10">
-             <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
- placeholder="<?php echo $usuario->getPassword();?>"  required/>
-         </div>
-     </div>
-     
-<div class='form-group'>
-<label for='inputName' class='control-label col-xs-2'>Perfil:</label>
-      <select name="perfil" required  class="form-control miselect">
-          <option  disabled="disabled">Seleccione el perfil </option>
+    
+    <div class='form-group'>
+<label for='inputName' class='control-label col-xs-2'>Dia:</label>
+      <select name="nombre" required  class="form-control miselect">
+          <option  disabled="disabled">Seleccione el dia </option>
          <?php
-            if($usuario->getPerfil()== "admin"){
+            if($usuario->getNombre()== "lunes"){
               ?>
-              <option selected="true" value="admin">Admin</option>
-               <option  value="padre">Padre</option>
+              <option selected="true" value="lunes">Lunes</option>
+               <option  value="martes">Martes</option>
+                <option  value="miercoles">Miércoles</option>
+                <option  value="jueves">Jueves</option>
+                <option  value="viernes">Viernes</option>
               <?php  
             }else
             {
                 ?>
-                <option value="admin">Admin</option>
-                <option selected="true" value="padre">Padre</option>
+                <option  value="lunes">Lunes</option>
+               <option  selected="true" value="martes">Martes</option>
+                <option  value="miercoles">Miércoles</option>
+                <option  value="jueves">Jueves</option>
+                <option  value="viernes">Viernes</option>
                 <?php
             }
-         ?>
+          else
+            {
+                ?>
+                <option  value="lunes">Lunes</option>
+               <option   value="martes">Martes</option>
+                <option  selected="true" value="miercoles">Miércoles</option>
+                <option  value="jueves">Jueves</option>
+                <option  value="viernes">Viernes</option>
+                <?php
+            }
+          else
+            {
+                ?>
+                <option  value="lunes">Lunes</option>
+               <option   value="martes">Martes</option>
+                <option  value="miercoles">Miércoles</option>
+                <option  selected="true" value="jueves">Jueves</option>
+                <option  value="viernes">Viernes</option>
+                <?php
+              
+            }
+          else
+            {
+                ?>
+                <option  value="lunes">Lunes</option>
+               <option   value="martes">Martes</option>
+                <option  value="miercoles">Miércoles</option>
+                <option  value="jueves">Jueves</option>
+                <option  selected="true" value="viernes">Viernes</option>
+                <?php
+            }
           
-         
-        
-         
+         ?>
+               
       </select>
 </div>
+    
+     <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Hora Inicio:</label>
+         <div class="col-xs-10">
+             <input name = "hora inicio" type="text" id= "hora_inicio" class="form-control misopciones"
+                placeholder="<?php echo $dia->getHoraInicio();?>"  required/>
+         </div>
+     </div>
+    
+    <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Hora Fin:</label>
+         <div class="col-xs-10">
+             <input name = "hora fin" type="text" id= "hora_fin" class="form-control misopciones"
+                placeholder="<?php echo $dia->getHoraFin();?>"  required/>
+         </div>
+     </div>
+     
+    <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Código de horario:</label>
+         <div class="col-xs-10">
+             <input name = "codigo horario" type="text" id= "codigo_horario" class="form-control misopciones"
+                placeholder="<?php echo $dia->getHorarioIdHorario();?>"  required/>
+         </div>
+     </div>
+
      
 
      <div class="form-group">
@@ -100,12 +147,13 @@ $usuario=$objColl->showUsuario($id);
 
 
 <?php
-if(isset($_POST["nombre"])|| isset($_POST["password"]) || isset($_POST["perfil"])){
+if(isset($_POST["nombre"])|| isset($_POST["hora_inicio"]) || isset($_POST["hora_fin"]) || isset($_POST["codigo_horario"])){
    
     $nombrenuevo=$_POST["nombre"];
-    $passwordnuevo= $_POST["password"];
-    $perfilnuevo= $_POST["perfil"];
-    $objColl->updateUsuario($id,$nombrenuevo, $passwordnuevo, $perfilnuevo);
+    $hora_inicionuevo= $_POST["hora_inicio"];
+    $hora_finnuevo= $_POST["hora_fin"];
+    $horario_id_horario= $_POST["codigo_horario"];
+    $objColl->updateDia($id,$hora_inicionuevo, $hora_finnnuevo, $horario_id_horario);
     header("location:index.php?mensaje=Edición correcta");
 }
 ?>
