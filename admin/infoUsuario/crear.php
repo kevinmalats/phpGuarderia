@@ -39,7 +39,11 @@ if ( $_SESSION["perfil"]!= "admin"){
     echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
     echo " <ul class='nav navbar-nav'>";
                 echo "<li><a href='index.php'>Menú</a></li>";
+<<<<<<< HEAD
             echo "<li><a href='#>Nuevo</a></li>";
+=======
+            echo "<li><a href='#' disable>Nuevo</a></li>";
+>>>>>>> produccion
         echo "</ul>";
     echo " <ul class='nav navbar-nav navbar-right'>";
     echo "<li><a href='#'>Hola Usuario : (" . $_SESSION ['nombre'] . ")</a></li>";
@@ -55,13 +59,13 @@ if ( $_SESSION["perfil"]!= "admin"){
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Nombres:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="Nombres" autofocus required/>
+             <input name = "nombres" type="text" id= "nombres" class="form-control" placeholder="Nombres" autofocus required/>
          </div>
      </div>
   <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Apellidos:</label>
          <div class="col-xs-10">
-             <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
+             <input name = "apellidos" type="text" id= "apellidos" class="form-control misopciones"
  placeholder="Apellidos"  required/>
          </div>
      </div>
@@ -77,9 +81,17 @@ if ( $_SESSION["perfil"]!= "admin"){
 <label for='inputName' class='control-label col-xs-2'>Foto Perfil:</label>
       <div class="col-xs-10">
              <input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
- placeholder="fotoperfil"  required/>
+ placeholder="Fotoperfil"  required/>
 </div>
 </div>
+<div class='form-group'>
+<label for='inputName' class='control-label col-xs-2'>Direccion:</label>
+      <div class="col-xs-10">
+             <input name = "direccion" type="text" id= "direccion" class="form-control misopciones"
+ placeholder="Direccion"  required/>
+</div>
+</div>
+
 <div class='form-group'>
 <label for='inputName' class='control-label col-xs-2'>Seleccione Usuario</label>
       <div class="col-xs-10">
@@ -89,13 +101,14 @@ if ( $_SESSION["perfil"]!= "admin"){
       
       require_once("../../src/collectorUsuario.php");
       $obUsua= new UsuarioCollector();
-      foreach ($obUsua->showUsuarios() as $usuario) {
+      foreach ($obUsua->usuarioDisponibles() as $usuario) {
         
        echo  "<option value='".$usuario->getId()."'>".$usuario->getNombre()." </option>";
       
       }
       ?>
         </select>
+        <label ><a href="../usuario/crear.php">Crear Usuario</a></label>
     </div>
 </div>     
 

@@ -43,9 +43,11 @@ $objColl= new InformacionUsuarioCollector();
 $usuario= new Informacion_usuario ();
 
 $id=$_GET['id'];
-    
-$usuario=$objColl->showInfoUsuario($id);
 
+$nombreUsuario=$objColl->usXUsuario($id);
+   
+$usuario=$objColl->showInfoUsuario($id);
+$idusuario=$nombreUsuario->getId();
 
 ?>
 
@@ -85,6 +87,15 @@ $usuario=$objColl->showInfoUsuario($id);
  placeholder="<?php echo $usuario->getIdDireccion();?>"  required/>
          </div>
      </div>
+      <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Usuario:</label>
+         <div class="col-xs-10">
+        <input disabled name = "usuario" type="text" id= "usuario" class="form-control misopciones miselect"
+          placeholder="<?php echo $nombreUsuario->getNombre();?>" />
+         <?php echo '<label ><a href="../usuario/editar.php?id='.$nombreUsuario->getId().'" >Editar Usuario</a></label>';
+         ?>   
+         </div>
+     </div>
 
      <div class="form-group">
     
@@ -96,13 +107,16 @@ $usuario=$objColl->showInfoUsuario($id);
 
 
 <?php
-if(isset($_POST["nombre"])|| isset($_POST["apellidos"]) || isset($_POST["correo"])|| isset($_POST["fotoperfil"])|| isset($_POST["direccion"])){
+if(isset($_POST["nombres"])|| isset($_POST["apellidos"]) || isset($_POST["correo"])|| isset($_POST["fotoperfil"])|| isset($_POST["direccion"])|| isset($_POST["usuario"])){
    
-    $nombrenuevo=$_POST["nombre"];
-    $passwordnuevo= $_POST["password"];
-    $perfilnuevo= $_POST["perfil"];
-    $objColl->updateInfoUsuario($id,$nombres, $apellidos,$foto_perfil ,$correo, $usuario_id_usuario,$direccion);
-    header("location:index.php?mensaje=Edición correcta");
+    $nombres=$_POST["nombres"];
+    $apellidos= $_POST["apellidos"];
+    $correo= $_POST["correo"];
+    $fotoperfil= $_POST["fotoperfil"];
+    $direccion= $_POST["direccion"];
+     $idusuario=$nombreUsuario->getId();
+    $objColl->updateInfoUsuario($id,$nombres, $apellidos,$fotoperfil ,$correo, $idusuario,$direccion);
+    header("location:index.php?");
 }
 ?>
 </aside>
