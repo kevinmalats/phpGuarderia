@@ -11,7 +11,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Responsive Admin</title>
+    <title>Administracion Guarderia</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -71,7 +71,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                             <div class="row text-center pad-top">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.php" >
+                           <a href="#" >
  <i class="fa fa-circle-o-notch fa-5x"></i>
                       <h4>Guarderias</h4>
                       </a>
@@ -82,7 +82,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                  
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.php" >
+                           <a href="#" >
  <i class="fa fa-envelope-o fa-5x"></i>
                       <h4>Telefonos</h4>
                       </a>
@@ -103,7 +103,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="usuario/index.php" >
- <i class="fa fa-users fa-5x"></i>
+ <i class="fa fa-user fa-5x"></i>
                       <h4>Usuarios</h4>
                       </a>
                       </div>
@@ -167,7 +167,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="infoUsuario/index.php" >
- <i class="fa fa-bell-o fa-5x"></i>
+ <i class="fa fa-users fa-5x"></i>
                       <h4>Informacion Usuarios </h4>
                       </a>
                       </div>
