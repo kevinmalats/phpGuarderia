@@ -20,7 +20,7 @@ class GuarderiaCollector extends Collector
   }
   
 function updateGuarderia($nombre,$ciudad_id_ciudad) {
-    $insertrow = self::$db->updateRow("UPDATE public.guarderia SET nombre = ?, ciudad_id_ciudad = ?, where id_guarderia= ? ", array ("{$nombre}","{$ciudad_id_ciudad}", $id_guarderia);
+    $insertrow = self::$db->updateRow("UPDATE public.guarderia SET nombre = ?, ciudad_id_ciudad = ?, where id_guarderia= ? ", array ("{$nombre}","{$ciudad_id_ciudad}", $id_guarderia));
 
 }
 function deleteGuarderia($id) {
