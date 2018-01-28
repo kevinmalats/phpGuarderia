@@ -21,8 +21,8 @@ class DiaCollector extends Collector
     return $arrayDia;        
   }
   
-function updateDia($id_dia,$nombre, $horario_inicio, $horario_fin, $horario_id_horario) {
-    $insertrow = self::$db->updateRow("UPDATE public.dia_horario SET nombre = ?, horario_inicio = ?, horario_fin = ? , horario_id_horario = ?, where id_dia= ? ", array ("{$nombre}","{$hora_inicio}","{$hora_fin}","{$hora_id_horario}",$id_dia));
+function updateDia($id_dia,$nombre, $hora_inicio, $hora_fin, $horario_id_horario) {
+    $insertrow = self::$db->updateRow("UPDATE public.dia_horario SET nombre = ?, hora_inicio = ?, hora_fin = ? , horario_id_horario = ?, where id_dia= ? ", array ("{$nombre}","{$hora_inicio}","{$hora_fin}","{$hora_id_horario}",$id_dia));
 
 }
 function deleteDia($id) {
@@ -30,7 +30,7 @@ function deleteDia($id) {
 
 }
 function insertDia($nombre, $hora_inicio, $hora_fin, $horario_id_horario) {
-    $rows = self::$db->insertRow("INSERT INTO public.dia_horario(nombre, horario_inicio, hora_fin, horario_id_horario) VALUES (?,?,?,?) returning id_dia", array ("{$nombre}","{$hora_inicio}","{$hora_fin}", "{$horario_id_horario}"));      
+    $rows = self::$db->insertRow("INSERT INTO public.dia_horario(nombre, hora_inicio, hora_fin, horario_id_horario) VALUES (?,?,?,?) returning id_dia", array ("{$nombre}","{$hora_inicio}","{$hora_fin}", "{$horario_id_horario}"));      
     return $rows{"id_dia"};      
   }
 
