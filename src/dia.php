@@ -39,10 +39,10 @@ public function setHoraFin($var){
 public function getHoraFin(){
 	return $this->hora_fin;
 }
-public function setHoraIdHorario($var){
+public function setHorarioIdHorario($var){
      $this->horario_id_horario=$var;
 }
-public function getHoraIdHorario(){
+public function getHorarioIdHorario(){
 	return $this->hora_id_horario;  
 }
     

@@ -34,8 +34,6 @@ function insertDia($nombre, $hora_inicio, $hora_fin, $horario_id_horario) {
     return $rows{"id_dia"};      
   }
 
-7
-
 
 }
 ?>
