@@ -18,8 +18,8 @@ class HorarioCollector extends Collector
     return $arrayHorario;        
   }
   
-function updateHorario($id_horario,$id_actividad) {
-    $insertrow = self::$db->updateRow("UPDATE public.horario SET id_actividad = ?, where id_horario= ? ", array ("{$id_horario}","{$id_actividad}");
+function updateHorario($id_actividad) {
+    $insertrow = self::$db->updateRow("UPDATE public.horario SET id_actividad = ?, where id_horario= ? ", array ("{$id_actividad}",$id_actividad);
 
 }
 function deleteHorario($id) {
