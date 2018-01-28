@@ -1,14 +1,15 @@
 <?php
 
 if(isset($_POST)){
-	require_once("../../src/collectorUsuario.php"); 
-$objColl= new UsuarioCollector();
+	require_once("../../src/collector_dia.php"); 
+$objColl= new DiaCollector();
     
    $nombre=$_POST["nombre"];
-   $password=$_POST["password"];
-   $perfil=$_POST["perfil"];
+   $hora_inicio=$_POST["hora_inicio"];
+   $hora_fin=$_POST["hora_fin"];
+   $horario_id_horario=$_POST["horario_id_horario"];
 
-  $objColl->insertUsuario($nombre, $password, $perfil);
+  $objColl->insertDia($nombre, $hora_inicio, $hora_fin, $horario_id_horario);
  header("location: crear.php?mensaje= Se creó exitosamente");
 }
     

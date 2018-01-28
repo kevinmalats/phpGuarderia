@@ -97,5 +97,6 @@ if(isset($_GET["mensaje"])){
     <?php
 }
 ?>
+    </aside>
 </body>
 </html>

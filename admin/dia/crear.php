@@ -54,7 +54,7 @@ if ( $_SESSION["perfil"]!= "admin"){
  
     <div class='form-group'>    
         <label for='inputName' class='control-label col-xs-2'>Dia de la Semana:</label>
-            <select name="perfil" required  class="form-control miselect">
+            <select name="nombre" required  class="form-control miselect">
                   <option selected="true" disabled="disabled">Seleccione el día de atención </option>
                  <option value="lunes">Lunes</option> 
                  <option value="martes">Martes</option>
@@ -81,7 +81,7 @@ if ( $_SESSION["perfil"]!= "admin"){
     <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Código Horario:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "codigo_horario" type="text" id= "codigo_horario" class="form-control" placeholder="código de horario" autofocus required/>
+             <input name = "horario_id_horario" type="text" id= "codigo_horario" class="form-control" placeholder="código de horario" autofocus required/>
          </div>
      </div>
 
