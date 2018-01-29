@@ -55,7 +55,7 @@ require_once("../../src/collectorPersonalGuarderia.php");
 		echo "</thead>"; 
 
 $objCollector= new PersonalGuarderiaCollector();
-foreach ($objCollector->showPersonalGuarderia() as $personal_guarderia) {
+foreach ($objCollector->showPersonal() as $personal_guarderia) {
 	echo "<tbody>"; 
 echo "<tr>"; 
 echo "<td>".$personal_guarderia->getId()."</td>"; 
