@@ -112,7 +112,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.php" >
+                           <a href="comentarios/index.php" >
                         <i class="fa fa-key fa-5x"></i>
                       <h4>Comentarios</h4>
                       </a>
@@ -176,7 +176,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.php" >
+                           <a href="ciudad/index.php" >
  <i class="fa fa-rocket fa-5x"></i>
                       <h4>Ciudades</h4>
                       </a>
