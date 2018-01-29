@@ -9,7 +9,7 @@ $objColl= new UsuarioCollector();
    $perfil=$_POST["perfil"];
 
   $objColl->insertUsuario($nombre, $password, $perfil);
- header("location: crear.php?mensaje= Se creó exitosamente");
-}
+header("location: crear.php?mensaje= Se creó exitosamente");
+}  
     
  ?>

@@ -39,11 +39,10 @@ if ( $_SESSION["perfil"]!= "admin"){
     echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
     echo " <ul class='nav navbar-nav'>";
                 echo "<li><a href='index.php'>Menú</a></li>";
-<<<<<<< HEAD
+
             echo "<li><a href='#>Nuevo</a></li>";
-=======
             echo "<li><a href='#' disable>Nuevo</a></li>";
->>>>>>> produccion
+
         echo "</ul>";
     echo " <ul class='nav navbar-nav navbar-right'>";
     echo "<li><a href='#'>Hola Usuario : (" . $_SESSION ['nombre'] . ")</a></li>";

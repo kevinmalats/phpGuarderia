@@ -105,8 +105,17 @@ if(isset($_POST["nombre"])|| isset($_POST["password"]) || isset($_POST["perfil"]
     $nombrenuevo=$_POST["nombre"];
     $passwordnuevo= $_POST["password"];
     $perfilnuevo= $_POST["perfil"];
-    $objColl->updateUsuario($id,$nombrenuevo, $passwordnuevo, $perfilnuevo);
-    header("location:index.php?mensaje=Edición correcta");
+    if($objColl->updateUsuario($id,$nombrenuevo, $passwordnuevo, $perfilnuevo)){
+          $mensaje="Edición correcta";
+          echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";
+    }else{
+      $mensaje= "Usuario ya existente, utlice otro nombre de usuario";
+      echo "<p>$mensaje</p>";
+    
+    }
+  
+  
+
 }
 ?>
 </aside>
