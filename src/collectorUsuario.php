@@ -19,7 +19,19 @@ class UsuarioCollector extends Collector
     }
     return $arrayUsuario;        
   }
-  
+    function showInfoUsuXUsuarios() {
+    $rows = self::$db->getRows("SELECT i.id_usuario, u.nombre, u.perfil, u.password FROM usuario u join informacion_usuario i on u.id_usuario= i.usuario_id_usuario");        
+    $arrayUsuario= array();        
+    foreach ($rows as $c){
+      $aux = new Usuario();
+      $aux->setId($c{'id_usuario'});
+      $aux->setNombre($c{'nombre'});
+      $aux->setPassword($c{'password'});
+      $aux->setPerfil($c{'perfil'});
+      array_push($arrayUsuario, $aux);
+    }
+    return $arrayUsuario;        
+  }
 function usuarioDisponibles(){
   $rows = self::$db->getRows("SELECT u.id_usuario, u.nombre, u.password, u.perfil from usuario u  where NOT u.id_usuario in (select i.usuario_id_usuario from informacion_usuario i) ");        
     $arrayUsuario= array();        
