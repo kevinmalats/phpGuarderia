@@ -8,7 +8,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <html lang="es">
 <head>
 <meta charset ="utf-8">
-<title>Crear Usuario</title>
+<title>Crear Dia con horario</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -51,32 +51,40 @@ if ( $_SESSION["perfil"]!= "admin"){
 ?>
 
 <form method= "POST" class="form-horizontal" action= "guardar.php" >
-   
+ 
+    <div class='form-group'>    
+        <label for='inputName' class='control-label col-xs-2'>Dia de la Semana:</label>
+            <select name="nombre" required  class="form-control miselect">
+                  <option selected="true" disabled="disabled">Seleccione el día de atención </option>
+                 <option value="lunes">Lunes</option> 
+                 <option value="martes">Martes</option>
+                  <option value="miercoles">Miércoles</option>
+                  <option value="jueves">Jueves</option>
+                  <option value="viernes">Viernes</option>
+            </select>
+    </div>
+    
      <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Usuario:</label>
+         <label for="inputName" class="control-label col-xs-2">Hora Inicio:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="usuario" autofocus required/>
+             <input name = "hora_inicio" type="text" id= "hora_inicio" class="form-control" placeholder="hora de inicio" autofocus required/>
          </div>
      </div>
-  <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Contraseña:</label>
-         <div class="col-xs-10">
-             <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
- placeholder="Contraseña"  required/>
+  
+     <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Hora FIn:</label>
+         <div class="col-xs-10 misopciones">
+             <input name = "hora_fin" type="text" id= "hora_fin" class="form-control" placeholder="hora de término" autofocus required/>
          </div>
      </div>
-     
-<div class='form-group'>
-<label for='inputName' class='control-label col-xs-2'>Perfil:</label>
-      <select name="perfil" required  class="form-control miselect">
-          <option selected="true" disabled="disabled">Seleccione el perfil </option>
-         <option value="admin">Admin</option> 
-         <option value="padre">Padre</option>
-        
-         
-      </select>
-</div>
-     
+    
+    <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Código Horario:</label>
+         <div class="col-xs-10 misopciones">
+             <input name = "horario_id_horario" type="text" id= "codigo_horario" class="form-control" placeholder="código de horario" autofocus required/>
+         </div>
+     </div>
+
 
      <div class="form-group">
     

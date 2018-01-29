@@ -8,7 +8,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <html lang="es">
 <head>
 <meta charset ="utf-8">
-<title>Crear Usuario</title>
+<title>Agregar Personal de Guarderias</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -36,9 +36,9 @@ if ( $_SESSION["perfil"]!= "admin"){
 
  echo "<nav class='navbar navbar-default'>";
     echo "<div class='container-fluid'>";
-    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
+    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla de Personal de Guarderías</a></div>";
     echo " <ul class='nav navbar-nav'>";
-                echo "<li><a href='index.php'>Menú</a></li>";
+                echo "<li><a href='index.php'>Atrás</a></li>";
             echo "<li><a href='#'>Nuevo</a></li>";
         echo "</ul>";
     echo " <ul class='nav navbar-nav navbar-right'>";
@@ -51,33 +51,40 @@ if ( $_SESSION["perfil"]!= "admin"){
 ?>
 
 <form method= "POST" class="form-horizontal" action= "guardar.php" >
-   
-     <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Usuario:</label>
-         <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="usuario" autofocus required/>
-         </div>
-     </div>
-  <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Contraseña:</label>
-         <div class="col-xs-10">
-             <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
- placeholder="Contraseña"  required/>
-         </div>
-     </div>
-     
-<div class='form-group'>
-<label for='inputName' class='control-label col-xs-2'>Perfil:</label>
-      <select name="perfil" required  class="form-control miselect">
-          <option selected="true" disabled="disabled">Seleccione el perfil </option>
-         <option value="admin">Admin</option> 
-         <option value="padre">Padre</option>
-        
-         
-      </select>
-</div>
-     
+ 
 
+    <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Nombres:</label>
+         <div class="col-xs-10">
+             <input name = "nombres" type="text" id= "nombres" class="form-control misopciones"
+                placeholder="nombres"  required/>
+         </div>
+     </div>
+    
+    <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Apellidos:</label>
+         <div class="col-xs-10">
+             <input name = "apellidos" type="text" id= "apellidos" class="form-control misopciones"
+                placeholder="apellidos"  required/>
+         </div>
+     </div>
+    
+     <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Cargo:</label>
+         <div class="col-xs-10">
+             <input name = "cargo" type="text" id= "cargo" class="form-control misopciones"
+                placeholder="cargo"  required/>
+         </div>
+     </div>
+    
+    <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Código Guarderia:</label>
+         <div class="col-xs-10">
+             <input name = "guarderia_id_guarderia" type="text" id= "guarderia_id_guarderia" class="form-control misopciones"
+                placeholder="guarderia_id_guarderia"  required/>
+         </div>
+     </div>
+    
      <div class="form-group">
     
          <div class="col-xs-offset-2 col-xs-10">

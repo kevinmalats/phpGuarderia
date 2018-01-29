@@ -71,8 +71,8 @@ if ( $_SESSION["perfil"]!= "admin"){
                             <div class="row text-center pad-top">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="#" >
- <i class="fa fa-circle-o-notch fa-5x"></i>
+                           <a href="guarderia/index.php" >
+                        <i class="fa fa-circle-o-notch fa-5x"></i>
                       <h4>Guarderias</h4>
                       </a>
                       </div>
@@ -103,7 +103,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="usuario/index.php" >
- <i class="fa fa-user fa-5x"></i>
+                        <i class="fa fa-user fa-5x"></i>
                       <h4>Usuarios</h4>
                       </a>
                       </div>
@@ -113,7 +113,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="blank.php" >
- <i class="fa fa-key fa-5x"></i>
+                        <i class="fa fa-key fa-5x"></i>
                       <h4>Comentarios</h4>
                       </a>
                       </div>
@@ -122,8 +122,8 @@ if ( $_SESSION["perfil"]!= "admin"){
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.php" >
- <i class="fa fa-comments-o fa-5x"></i>
+                           <a href="personal_guarderia/index.php" >
+                        <i class="fa fa-comments-o fa-5x"></i>
                       <h4>Personal Guarderias</h4>
                       </a>
                       </div>
@@ -137,7 +137,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="blank.php" >
- <i class="fa fa-clipboard fa-5x"></i>
+                        <i class="fa fa-clipboard fa-5x"></i>
                       <h4>Imagenes</h4>
                       </a>
                       </div>
@@ -147,7 +147,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="blank.php" >
- <i class="fa fa-gear fa-5x"></i>
+                        <i class="fa fa-gear fa-5x"></i>
                       <h4>Horario</h4>
                       </a>
                       </div>
@@ -156,8 +156,8 @@ if ( $_SESSION["perfil"]!= "admin"){
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.php" >
- <i class="fa fa-wechat fa-5x"></i>
+                           <a href="dia/index.php" >
+                        <i class="fa fa-wechat fa-5x"></i>
                       <h4>Dia</h4>
                       </a>
                       </div>
@@ -167,7 +167,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
                            <a href="infoUsuario/index.php" >
- <i class="fa fa-users fa-5x"></i>
+                    <i class="fa fa-users fa-5x"></i>
                       <h4>Informacion Usuarios </h4>
                       </a>
                       </div>
@@ -208,7 +208,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                     <div class="col-lg-12 ">
 					<br/>
                         <div class="alert alert-danger">
-                             <strong>Want More Icons Free ? </strong> Checkout fontawesome website and use any icon <a target="_blank" href="http://fortawesome.github.io/Font-Awesome/icons/">Click Here</a>.
+                             <strong>Safe DayCare </strong> Administración de sitio web 
                         </div>
                        
                     </div>

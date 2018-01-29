@@ -83,14 +83,14 @@ session_start();
       <input type="text" placeholder="username" name="nombre"/>
       <input type="password" placeholder="password" name="password"/>
       <button>login</button>
-      <p class="messages">Not registered? <a href="registro.php">Create an account</a></p>
+      <p class="messages">No estas registrado aun?? <a href="registro.php">Crea tu cuenta</a></p>
     </form>
   </div>
 </div>
 <?php
  if($_GET["mensaje"]){
   ?>
-  <div class="col-md-5 text-center"><p <?php echo "class='$color'"?>><?php echo $_GET["mensaje"];?></p></div>
+  <div class="col-md-5 text-center"><?php echo $_GET["mensaje"];?></p></div>
   <?php
  }
 ?>

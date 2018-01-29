@@ -58,16 +58,27 @@ $ObjUsuario->setPerfil($rows[0]{'perfil'});
   }
 
 function updateUsuario($id_usuario,$nombre, $password, $perfil) {
+   $rows = self::$db->getRows("SELECT * FROM usuario where nombre= ? ", array ("{$nombre}"));
+  if($rows[0]{'nombre'}==$nombre){
+    return false;
+  }else{
     $insertrow = self::$db->updateRow("UPDATE public.usuario SET nombre = ?, password = ?, perfil = ? where id_usuario= ? ", array ("{$nombre}","{$password}","{$perfil}",$id_usuario));
-
+    return true;
+   }
 }
 function deleteUsuario($id) {
     $deleterow = self::$db->deleteRow("DELETE FROM public.usuario where id_usuario= ? ", array ("{$id}"));
 
 }
 function insertUsuario($usuario, $contrasenia, $tipousuario) {
-    $rows = self::$db->insertRow("INSERT INTO public.usuario(nombre, password, perfil) VALUES (?,?,?) returning id_usuario", array ("{$usuario}","{$contrasenia}","{$tipousuario}"));      
+  $rows = self::$db->getRows("SELECT * FROM usuario where nombre= ? ", array ("{$usuario}"));
+  if($rows[0]{'nombre'}==$usuario){
+    header("location: ../usuario/crear.php?mensaje= Usuario ya existente, utlice otro nombre");
+  }else{
+  $rows = self::$db->insertRow("INSERT INTO public.usuario(nombre, password, perfil) VALUES (?,?,?) returning id_usuario", array ("{$usuario}","{$contrasenia}","{$tipousuario}"));      
     return $rows{"id_usuario"} ;      
+    
+     }
   }
 
 //funciones para combobox de denunciantes y autoridades
