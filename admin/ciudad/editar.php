@@ -8,7 +8,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <html lang="es">
 <head>
 <meta charset ="utf-8">
-<title>Editar Usuario</title>
+<title>Editar Ciudad</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -38,57 +38,26 @@ echo "</ul>";
 echo "</div>";
 echo "</nav>";
 
-require_once("../../src/collectorUsuario.php"); 
-$objColl= new UsuarioCollector();
-$usuario= new Usuario ();
+require_once("../../src/collectorCiudad.php"); 
+$objColl= new CiudadCollector();
+$usuario= new Ciudad ();
 
 $id=$_GET['id'];
     
-$usuario=$objColl->showUsuario($id);
+$ciudad=$objColl->showCIudad($id);
 
 ?>
 
 <form method= "POST" class="form-horizontal" action= "#" >
    
      <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Usuario:</label>
+         <label for="inputName" class="control-label col-xs-2">Nombre de la ciudad:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="<?php echo $usuario->getNombre();?>" autofocus required/>
-         </div>
-     </div>
-  <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Contraseña:</label>
-         <div class="col-xs-10">
-             <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
- placeholder="<?php echo $usuario->getPassword();?>"  required/>
+             <input name = "nombre" type="text" id= "nombre" class="form-control" placeholder="<?php echo $ciudad->getNombre();?>" autofocus required/>
          </div>
      </div>
      
 <div class='form-group'>
-<label for='inputName' class='control-label col-xs-2'>Perfil:</label>
-      <select name="perfil" required  class="form-control miselect">
-          <option  disabled="disabled">Seleccione el perfil </option>
-         <?php
-            if($usuario->getPerfil()== "admin"){
-              ?>
-              <option selected="true" value="admin">Admin</option>
-               <option  value="padre">Padre</option>
-              <?php  
-            }else
-            {
-                ?>
-                <option value="admin">Admin</option>
-                <option selected="true" value="padre">Padre</option>
-                <?php
-            }
-         ?>
-          
-         
-        
-         
-      </select>
-</div>
-     
 
      <div class="form-group">
     
@@ -100,22 +69,12 @@ $usuario=$objColl->showUsuario($id);
 
 
 <?php
-if(isset($_POST["nombre"])|| isset($_POST["password"]) || isset($_POST["perfil"])){
+if(isset($_POST["nombre"])){
    
     $nombrenuevo=$_POST["nombre"];
-    $passwordnuevo= $_POST["password"];
-    $perfilnuevo= $_POST["perfil"];
-    if($objColl->updateUsuario($id,$nombrenuevo, $passwordnuevo, $perfilnuevo)){
+    $objColl->updateCiudad($id,$nombrenuevo);
           $mensaje="Edición correcta";
           echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";
-    }else{
-      $mensaje= "Usuario ya existente, utlice otro nombre de usuario";
-      echo "<p>$mensaje</p>";
-    
-    }
-  
-  
-
 }
 ?>
 </aside>
