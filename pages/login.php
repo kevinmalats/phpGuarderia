@@ -90,7 +90,7 @@ session_start();
 <?php
  if($_GET["mensaje"]){
   ?>
-  <div class="col-md-5 text-center"><?php echo $_GET["mensaje"];?></p></div>
+  <div class="col-md-5 text-center"><?php echo $_GET["mensaje"];?></div>
   <?php
  }
 ?>
