@@ -40,11 +40,11 @@ echo "</nav>";
 
 require_once("../../src/collectorPersonalGuarderia.php"); 
 $objColl= new PersonalGuarderiaCollector();
-$personal_guarderia= new Personal_Guarderia ();
+$personal_guarderia= new PersonalGuarderia ();
 
 $id=$_GET['id'];
     
-$personal_guarderia=$objColl->showPersonalGuarderia($id);
+$personal_guarderia=$objColl->showPersonal();
 
 ?>
 
