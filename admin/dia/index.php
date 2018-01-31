@@ -61,8 +61,8 @@ foreach ($objCollector->showDias() as $dias) {
 echo "<tr>"; 
 echo "<td>".$dias->getId()."</td>"; 
 echo "<td>".$dias->getNombre()."</td>";
-echo "<td>".$dias->getHorarioInicio()."</td>"; 
-echo "<td>".$dias->getHorarioFin()."</td>";
+echo "<td>".$dias->getHoraInicio()."</td>"; 
+echo "<td>".$dias->getHoraFin()."</td>";
 echo "<td>".$dias->getHorarioIdHorario()."</td>";    
 
     echo "<td><a href='editar.php?id=".$dias->getId()."'>Editar</a></td>"; 

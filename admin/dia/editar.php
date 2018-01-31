@@ -49,67 +49,14 @@ $dia=$objColl->showDias($id);
 ?>
 
 <form method= "POST" class="form-horizontal" action= "#" >
-   
     
-    <div class='form-group'>
-<label for='inputName' class='control-label col-xs-2'>Dia:</label>
-      <select name="nombre" required  class="form-control miselect">
-          <option  disabled="disabled">Seleccione el dia </option>
-         <?php
-            if($usuario->getNombre()== "lunes"){
-              ?>
-              <option selected="true" value="lunes">Lunes</option>
-               <option  value="martes">Martes</option>
-                <option  value="miercoles">Miércoles</option>
-                <option  value="jueves">Jueves</option>
-                <option  value="viernes">Viernes</option>
-              <?php  
-            }else
-            {
-                ?>
-                <option  value="lunes">Lunes</option>
-               <option  selected="true" value="martes">Martes</option>
-                <option  value="miercoles">Miércoles</option>
-                <option  value="jueves">Jueves</option>
-                <option  value="viernes">Viernes</option>
-                <?php
-            }
-          else
-            {
-                ?>
-                <option  value="lunes">Lunes</option>
-               <option   value="martes">Martes</option>
-                <option  selected="true" value="miercoles">Miércoles</option>
-                <option  value="jueves">Jueves</option>
-                <option  value="viernes">Viernes</option>
-                <?php
-            }
-          else
-            {
-                ?>
-                <option  value="lunes">Lunes</option>
-               <option   value="martes">Martes</option>
-                <option  value="miercoles">Miércoles</option>
-                <option  selected="true" value="jueves">Jueves</option>
-                <option  value="viernes">Viernes</option>
-                <?php
-              
-            }
-          else
-            {
-                ?>
-                <option  value="lunes">Lunes</option>
-               <option   value="martes">Martes</option>
-                <option  value="miercoles">Miércoles</option>
-                <option  value="jueves">Jueves</option>
-                <option  selected="true" value="viernes">Viernes</option>
-                <?php
-            }
-          
-         ?>
-               
-      </select>
-</div>
+   <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Día:</label>
+         <div class="col-xs-10">
+             <input name = "nombre" type="text" id= "nombre" class="form-control misopciones"
+                placeholder="<?php echo $dia->getNombre();?>"  required/>
+         </div>
+     </div>
     
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Hora Inicio:</label>
