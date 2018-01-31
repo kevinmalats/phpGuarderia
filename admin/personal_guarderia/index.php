@@ -42,7 +42,7 @@ require_once("../../src/collectorPersonalGuarderia.php");
     echo "</div>";
     echo "</nav>";
     echo "<div class='container'>";
-    echo "<h2>Guarderías</h2>";
+    echo "<h2>Personal</h2>";
     echo "<div class='table-responsive'>"; 
 		  echo "<table class='table'>"; 
 		   echo "<thead>"; 

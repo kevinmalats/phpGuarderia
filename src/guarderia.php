@@ -2,7 +2,7 @@
 /**
 * 
 */
-class Dia {
+class Guarderia {
 
 private $id_guarderia;
 private $nombre ;
