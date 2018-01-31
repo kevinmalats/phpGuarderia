@@ -53,7 +53,8 @@ $usuario=$objColl->showUsuario($id);
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Usuario:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="<?php echo $usuario->getNombre();?>" autofocus required/>
+             <input name = "nombre" type="text" id= "usuario" class="form-control" 
+                placeholder="<?php echo $usuario->getNombre();?>" autofocus required/>
          </div>
      </div>
   
@@ -61,7 +62,7 @@ $usuario=$objColl->showUsuario($id);
          <label for="inputName" class="control-label col-xs-2">Contraseña:</label>
          <div class="col-xs-10">
              <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
- placeholder="<?php echo $usuario->getPassword();?>"  required/>
+                placeholder="<?php echo $usuario->getPassword();?>"  required/>
          </div>
      </div>
      
