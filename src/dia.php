@@ -43,7 +43,7 @@ public function setHorarioIdHorario($var){
      $this->horario_id_horario=$var;
 }
 public function getHorarioIdHorario(){
-	return $this->hora_id_horario;  
+	return $this->horario_id_horario;  
 }
     
 }

@@ -32,7 +32,7 @@ require_once("../../src/collector_dia.php");
     echo "<div class='container-fluid'>";
     echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Días</a></div>";
     echo " <ul class='nav navbar-nav'>";
-		      	echo "<li><a href='../index.php'>Menú</a></li>";
+		      	echo "<li><a href='../index.php'>Atrás</a></li>";
 			    echo "<li><a href='crear.php'>Nuevo</a></li>";
 		echo "</ul>";
     echo " <ul class='nav navbar-nav navbar-right'>";
@@ -61,8 +61,8 @@ foreach ($objCollector->showDias() as $dias) {
 echo "<tr>"; 
 echo "<td>".$dias->getId()."</td>"; 
 echo "<td>".$dias->getNombre()."</td>";
-echo "<td>".$dias->getHorarioInicio()."</td>"; 
-echo "<td>".$dias->getHorarioFin()."</td>";
+echo "<td>".$dias->getHoraInicio()."</td>"; 
+echo "<td>".$dias->getHoraFin()."</td>";
 echo "<td>".$dias->getHorarioIdHorario()."</td>";    
 
     echo "<td><a href='editar.php?id=".$dias->getId()."'>Editar</a></td>"; 

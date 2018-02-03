@@ -13,7 +13,7 @@ class PersonalGuarderiaCollector extends Collector
       $aux = new PersonalGuarderia();
       $aux->setId($c{'id_personal'});
       $aux->setNombres($c{'nombres'});
-      $aux->setApelidos($c{'apellidos'});
+      $aux->setApellidos($c{'apellidos'});
       $aux->setCargo($c{'cargo'});
       $aux->setGuarderiaIdGuarderia($c{'guarderia_id_guarderia'});    
       array_push($arrayPersonalGuarderia, $aux);

@@ -40,7 +40,7 @@ echo "</nav>";
 
 require_once("../../src/collectorGuarderia.php"); 
 $objColl= new GuarderiaCollector();
-$guarderia= new Dia ();
+$guarderia= new Guarderia ();
 
 $id=$_GET['id'];
     
