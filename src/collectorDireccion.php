@@ -36,9 +36,9 @@ foreach ($rows as $c){
 function showDireccion($id) {
     $rows = self::$db->getRows("SELECT * FROM direccion where id_direccion= ? ", array ("{$id}"));        
 $aux = new Direccion();
-$aux->setId($c{'id_direccion'});
-$aux->setDescripcion($c{'descripcion'});
-$aux->setGuarderia($c{'guarderia_id_guarderia'});    
+$aux->setId($rows[0]{'id_direccion'});
+$aux->setDescripcion($rows[0]{'descripcion'});
+$aux->setGuarderia($rows[0]{'guarderia_id_guarderia'});    
 
     
     return $aux;        
