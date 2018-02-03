@@ -59,7 +59,7 @@ foreach ($objCollector->showDirecciones() as $direccion) {
 echo "<tr>"; 
 echo "<td>".$direccion->getId()."</td>"; 
 echo "<td>".$direccion->getDescripcion()."</td>";
-echo "<td>".$objCollector->direccionxGuarderia()->getNombre()."</td>";
+echo "<td>".$objCollector->direccionxGuarderia($direccion->getId())->getNombre()."</td>";
 
     echo "<td><a href='editar.php?id=".$direccion->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$direccion->getId()."'>Eliminar</a></td>"; 
