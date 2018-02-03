@@ -85,7 +85,7 @@ function deleteUsuario($id) {
 function insertUsuario($usuario, $contrasenia, $tipousuario) {
   $rows = self::$db->getRows("SELECT * FROM usuario where nombre= ? ", array ("{$usuario}"));
   if($rows[0]{'nombre'}==$usuario){
-    header("location: ../usuario/crear.php?mensaje= Usuario ya existente, utlice otro nombre");
+    return false;
   }else{
   $rows = self::$db->insertRow("INSERT INTO public.usuario(nombre, password, perfil) VALUES (?,?,?) returning id_usuario", array ("{$usuario}","{$contrasenia}","{$tipousuario}"));      
     return $rows{"id_usuario"} ;      
