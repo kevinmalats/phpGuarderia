@@ -3,8 +3,8 @@ session_start();
 if ( $_SESSION["perfil"]!= "admin"){
 	header("location: ../index.php");
 }
-require_once("../../src/collectorCiudad.php"); 
-$objColl= new CIudadCollector();
+require_once("../../src/collectorDireccion.php"); 
+$objColl= new DireccionCollector();
 $id=$_GET["id"];
-$objColl->deleteCIudad($id);
-header("location:index.php?mensaje=Usuario borrado correctamente");
+$objColl->deleteDireccion($id);
+header("location:index.php?mensaje=Dirección borrado correctamente");

@@ -19,10 +19,10 @@ class DireccionCollector extends Collector
     return $arrayDireccion;        
   }
   
-function direccionxGuarderia(){
+function direccionxGuarderia($id){
    include_once('guarderia.php');
-   $sql="select g.nombre,g.id_guarderia,g.ciudad_id_ciudad from direccion d join guarderia g on guarderia_id_guarderia=id_guarderia";
-   $rows = self::$db->getRows($sql);
+   $sql="select g.nombre,g.id_guarderia,g.ciudad_id_ciudad from direccion d join guarderia g on guarderia_id_guarderia=id_guarderia where id_direccion=?";
+   $rows = self::$db->getRows($sql, array("{$id}"));
 foreach ($rows as $c){
    $aux= new Guarderia();
    $aux->setId($c{'id_guarderia'});
@@ -52,8 +52,8 @@ function deleteDireccion($id) {
     $deleterow = self::$db->deleteRow("DELETE FROM public.direccion where id_direccion= ? ", array ("{$id}"));
 
 }
-function insertDireccion($descripcion) {
-    $rows = self::$db->insertRow("INSERT INTO public.direccion(descripcion) VALUES (?) returning id_direccion", array ("{$descripcion}","{$guarderia_id_guarderia}"));   
+function insertDireccion($descripcion,$guarderia) {
+    $rows = self::$db->insertRow("INSERT INTO public.direccion(descripcion,guarderia_id_guarderia) VALUES (?,?) returning id_direccion", array ("{$descripcion}","{$guarderia}"));   
     return $rows{"id_direccion"};         
   }
     function guardeiasDisponibles(){
