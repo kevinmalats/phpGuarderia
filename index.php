@@ -25,13 +25,13 @@ session_start();
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			
             <div class="navbar-inner">
-				<div class="container">
+				<div class="container mihover">
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
 					<h1 class="brand"><a href="index.php">Safe DayCare</a></h1>
 					<!-- navigation -->
-					<nav class="pull-right nav-collapse collapse">
+					<nav class="pull-right nav-collapse collapse ">
 
 						<ul id="menu-main" class="nav navbar">
 							<li><a title="Quienes Somos" href="pages/quienes_somos.php">Acerca de</a></li>

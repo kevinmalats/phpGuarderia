@@ -18,6 +18,14 @@ session_start();
 	<link href="../color/default.css" rel="stylesheet">
 
 	<link rel="shortcut icon" href="../img/icono.gif">
+
+	<!-- links bootstrap para subida de archivos¡-->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+ 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../js/fileinput.min.js" type="text/javascript"></script>
+ 
 	
 </head>
 <body>
@@ -69,7 +77,7 @@ session_start();
 		</div>
 	</div>
 	<!-- multistep form -->
-<form id="msform" action="../src/util/registrarUsuario.php" method="post">
+<form id="msform" action="../src/util/registrarUsuario.php" method="post" enctype="multipart/form-data">
   <!-- progressbar -->
     
   <!-- fieldsets -->
@@ -89,6 +97,10 @@ session_start();
      <input type="text" name="correo" placeholder="Correo" />
     <input type="text" name="nombres" placeholder="Nombres" />
     <input type="text" name="apellidos" placeholder="Apellidos" />
+    <label>Foto Perfil:</label>
+       <input type="file" name="archivo" class="file">
+         
+
     <input type="text" name="telefono" placeholder="Telefono" />
     <textarea name="direccion" placeholder="Dirección"></textarea>
     <input type="submit" name="submit" class="submit action-button" value="Enviar" />
@@ -122,6 +134,15 @@ session_start();
 	<script src="../js/animate.js"></script>
 	<script src="../js/custom.js"></script>
 	<script src="../contactform/contactform.js"></script>
+	<script>
+$("#file-3").fileinput({
+showCaption: false,
+browseClass: "btn btn-primary btn-lg",
+fileType: "any"
+});
+</script>
+ 
+&nbsp;
     </body>
      <footer>
 		<div class="container">
@@ -132,7 +153,7 @@ session_start();
 						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
 					</ul>
                    <p class="copyright"></p>
-						&copy; Safe DayCare. Todos los Derechos Reservados.
+					  Safe DayCare. Todos los Derechos Reservados.
 					<p></p>	
                     <div class="credits">
 							<p>Monitoreo y Seguridad  </p> 

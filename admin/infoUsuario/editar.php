@@ -51,7 +51,7 @@ $idusuario=$nombreUsuario->getId();
 
 ?>
 
-<form method= "POST" class="form-horizontal" action= "#" >
+<form method= "POST" class="form-horizontal" action= "#" enctype="multipart/form-data" >
    
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Nombres:</label>
@@ -76,8 +76,11 @@ $idusuario=$nombreUsuario->getId();
       <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Foto Perfil:</label>
          <div class="col-xs-10">
-             <input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
- placeholder="<?php echo $usuario->getFotoPerfil();?>"  required/>
+         <img class= "imagenesEdit" src="../../<?php echo $usuario->getFotoPerfil();?>">
+          <input type="file" name="archivo" class="file mifile">
+
+             <!-- <input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
+ placeholder="<?php //echo $usuario->getFotoPerfil();?>"  required/> -->
          </div>
      </div>
     <div class="form-group">
@@ -108,15 +111,24 @@ $idusuario=$nombreUsuario->getId();
 
 <?php
 if(isset($_POST["nombres"])|| isset($_POST["apellidos"]) || isset($_POST["correo"])|| isset($_POST["fotoperfil"])|| isset($_POST["direccion"])|| isset($_POST["usuario"])){
-   
+$dir_subida = "/var/www/html/phpGuarderia/img/perfil/";
+$fichero_subido = $dir_subida.basename($_FILES['archivo']['name']."");
+$fotoperfil=$_SERVER_DOCUMENT['root']."img/perfil/".basename($_FILES['archivo']['name']."");
+
+echo '<pre>';
+ if(is_uploaded_file($_FILES['archivo']['tmp_name'])) {
+    copy($_FILES['archivo']['tmp_name'], $fichero_subido);
+                                
     $nombres=$_POST["nombres"];
     $apellidos= $_POST["apellidos"];
     $correo= $_POST["correo"];
-    $fotoperfil= $_POST["fotoperfil"];
+   
     $direccion= $_POST["direccion"];
      $idusuario=$nombreUsuario->getId();
     $objColl->updateInfoUsuario($id,$nombres, $apellidos,$fotoperfil ,$correo, $idusuario,$direccion);
-    header("location:index.php?");
+   echo "<meta http-equiv='refresh' content='0;URL= index.php'>";
+   // header("location:index.php?");
+  }
 }
 ?>
 </aside>
