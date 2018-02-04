@@ -8,7 +8,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <html lang="es">
 <head>
 <meta charset ="utf-8">
-<title>Crear Usuario</title>
+<title>Crear Dirección</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -53,30 +53,32 @@ if ( $_SESSION["perfil"]!= "admin"){
 <form method= "POST" class="form-horizontal" action= "guardar.php" >
    
      <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Usuario:</label>
+         <label for="inputName" class="control-label col-xs-2">Dirección:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "usuario" class="form-control" placeholder="usuario" autofocus required/>
+             <input name = "direccion" type="text" id= "id_direccion" class="form-control" placeholder="Direccion" autofocus required/>
          </div>
      </div>
-  <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Contraseña:</label>
-         <div class="col-xs-10">
-             <input name = "password" type="text" id= "contrasenia" class="form-control misopciones"
- placeholder="Contraseña"  required/>
-         </div>
-     </div>
-     
-<div class='form-group'>
-<label for='inputName' class='control-label col-xs-2'>Perfil:</label>
-      <select name="perfil" required  class="form-control miselect">
-          <option selected="true" disabled="disabled">Seleccione el perfil </option>
-         <option value="admin">Admin</option> 
-         <option value="padre">Padre</option>
-        
-         
-      </select>
+     <div class='form-group'>
+<label for='inputName' class='control-label col-xs-2'>Seleccione Guardería</label>
+      <div class="col-xs-10">
+        <select name="guarderia" required  class="form-control miselect">
+  
+      <?php
+      
+      require_once("../../src/collectorDireccion.php");
+      $obUsua= new DireccionCollector();
+      foreach ($obUsua->guardeiasDisponibles() as $guarderia) {
+        echo $guarderia->getNombre();
+       echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
+      
+      }
+      ?>
+        </select>
+        <label ><a href="../guarderia/crear.php">Crear Guardería</a></label>
+    </div>
 </div>
-     
+    
+    
 
      <div class="form-group">
     
@@ -92,7 +94,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <?php
 if(isset($_GET["mensaje"])){
     ?>
-    <div class="col-md-5 text-center"><p <?php echo "class=alert alert-success"?>><?php echo $_GET["mensaje"];?></p></div>
+    <div class="col-md-5 text-center"><p <?php echo "class='$color'"?>><?php echo $_GET["mensaje"];?></p></div>
         
     <?php
 }
