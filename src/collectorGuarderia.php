@@ -19,8 +19,20 @@ class GuarderiaCollector extends Collector
     return $arrayGuarderia;        
   }
   
-function updateGuarderia($nombre,$ciudad_id_ciudad) {
-    $insertrow = self::$db->updateRow("UPDATE public.guarderia SET nombre = ?, ciudad_id_ciudad = ?, where id_guarderia= ? ", array ("{$nombre}","{$ciudad_id_ciudad}", $id_guarderia));
+    
+    function showGuarderias($id) {
+    $rows = self::$db->getRows("SELECT * FROM guarderia where id_guarderia = ? ", array ("{$id}"));        
+$ObjGuarderia= new Guarderia();
+$ObjGuarderia->setId($rows[0]{'id_guarderia'});
+$ObjGuarderia->setNombre($rows[0]{'nombre'});
+$ObjGuarderia->setCiudadIdCiudad($rows[0]{'ciudad_id_ciudad'});        
+
+    
+    return $ObjGuarderia;        
+  }
+    
+function updateGuarderia($id_guarderia, $nombre, $ciudad_id_ciudad) {
+    $insertrow = self::$db->updateRow("UPDATE public.guarderia SET nombre = ?, ciudad_id_ciudad = ? where id_guarderia = ? ", array ("{$nombre}","{$ciudad_id_ciudad}", $id_guarderia));
 
 }
 function deleteGuarderia($id) {

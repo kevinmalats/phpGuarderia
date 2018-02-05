@@ -22,7 +22,7 @@ class DiaCollector extends Collector
   }
   
 function updateDia($id_dia,$nombre, $hora_inicio, $hora_fin, $horario_id_horario) {
-    $insertrow = self::$db->updateRow("UPDATE public.dia_horario SET nombre = ?, hora_inicio = ?, hora_fin = ? , horario_id_horario = ?, where id_dia= ? ", array ("{$nombre}","{$hora_inicio}","{$hora_fin}","{$hora_id_horario}",$id_dia));
+    $insertrow = self::$db->updateRow("UPDATE public.dia_horario SET nombre = ?, hora_inicio = ?, hora_fin = ? , horario_id_horario = ? where id_dia= ? ", array ("{$nombre}","{$hora_inicio}","{$hora_fin}","{$hora_id_horario}",$id_dia));
 
 }
 function deleteDia($id) {
