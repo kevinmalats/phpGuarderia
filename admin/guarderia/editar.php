@@ -44,7 +44,7 @@ $guarderia= new Guarderia ();
 
 $id=$_GET['id'];
     
-$guarderia=$objColl->showGuarderia($id);
+$guarderia=$objColl->showGuarderias($id);
 
 ?>
 
@@ -76,11 +76,11 @@ $guarderia=$objColl->showGuarderia($id);
 
 
 <?php
-if(isset($_POST["nombre"])|| isset($_POST["hora_inicio"]) || isset($_POST["hora_fin"]) || isset($_POST["codigo_horario"])){
+if(isset($_POST["nombre"])|| isset($_POST["ciudad_id_ciudad"])){
    
     $nombrenuevo=$_POST["nombre"];
     $ciudad_id_ciudadnuevo= $_POST["ciudad_id_ciudad"];
-    $objColl->updateGuarderia($id,$nombrenuevo, $ciudad_id_ciudad);
+    $objColl->updateGuarderia($id,$nombrenuevo, $ciudad_id_ciudadnuevo);
     header("location:index.php?mensaje=Edición correcta");
 }
 ?>

@@ -22,7 +22,7 @@ class PersonalGuarderiaCollector extends Collector
   }
   
 function updatePersonalGuarderia($nombres, $apellidos, $cargo, $guarderia_id_guarderia) {
-    $insertrow = self::$db->updateRow("UPDATE public.personal_guarderia SET nombres = ?, apellidos = ?, cargo = ?, guarderia_id_guarderia = ?, where id_personal= ? ", array ("{$nombres}","{$apellidos}", "{$cargo}","{$guarderia_id_guarderia}", $id_personal));
+    $insertrow = self::$db->updateRow("UPDATE public.personal_guarderia SET nombres = ?, apellidos = ?, cargo = ?, guarderia_id_guarderia = ? where id_personal= ? ", array ("{$nombres}","{$apellidos}", "{$cargo}","{$guarderia_id_guarderia}", $id_personal));
 
 }
 function deletePersonalGuarderia($id) {
