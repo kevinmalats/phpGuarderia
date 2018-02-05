@@ -2,13 +2,12 @@
 require_once("../collectorUsuario.php");
 require_once("../collectorInformacionUsuario.php");
 require_once("../collectorTelefono.php");
-$dir_subida = "/var/www/html/phpGuarderia/img/perfil/";
+$dir_subida = "../../img/perfil/";
 $fichero_subido = $dir_subida.basename($_FILES['archivo']['name']."");
 $foto_perfil=$_SERVER_DOCUMENT['root']."img/perfil/".basename($_FILES['archivo']['name']."");
 
 echo '<pre>';
- if(is_uploaded_file($_FILES['archivo']['tmp_name'])) {
- 	copy($_FILES['archivo']['tmp_name'], $fichero_subido);
+if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
                              
  $usuario=$_POST["usuario"];
  $password=$_POST["password"];
