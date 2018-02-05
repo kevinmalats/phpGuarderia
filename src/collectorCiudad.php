@@ -27,22 +27,7 @@ $ObjUsuario->setNombre($rows[0]{'descripcion'});
 
     
     return $ObjUsuario;        
-  }
-
-
-function CiudadesDisponibles(){
-  $rows = self::$db->getRows("SELECT u.id_usuario, u.nombre, u.password, u.perfil from usuario u  where NOT u.id_usuario in (select i.usuario_id_usuario from informacion_usuario i) ");        
-    $arrayUsuario= array();        
-    foreach ($rows as $c){
-      $aux = new Usuario();
-      $aux->setId($c{'id_usuario'});
-      $aux->setNombre($c{'nombre'});
-      $aux->setPassword($c{'password'});
-      $aux->setPerfil($c{'perfil'});
-      array_push($arrayUsuario, $aux);
-    }
-    return $arrayUsuario;
-}    
+  }   
     
 function updateCiudad($id_ciudad,$descripcion) {
 

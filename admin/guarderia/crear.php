@@ -61,13 +61,33 @@ if ( $_SESSION["perfil"]!= "admin"){
          </div>
      </div>
     
-    <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Código Ciudad:</label>
+    <!-- <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Ciudad:</label>
          <div class="col-xs-10">
              <input name = "ciudad_id_ciudad" type="text" id= "ciudad_id_ciudad" class="form-control misopciones"
                 placeholder="código de ciudad"  required/>
          </div>
      </div>
+    -->
+    
+    <div class='form-group'>
+        <label for='inputName' class='control-label col-xs-2'>Seleccione Ciudad</label>
+            <div class="col-xs-10">
+                <select name="ciudad_id_ciudad" type="text" id= "ciudad_id_ciudad" required  class="form-control miselect">
+  
+        <?php
+      
+        require_once("../../src/collectorCiudad.php");
+        $obUsua= new CiudadCollector();
+        foreach ($obUsua->ShowCiudades() as $ciudad) {
+        
+        echo  "<option value='".$ciudad->getId()."'>".$ciudad->getNombre()." </option>";
+      
+            }
+        ?>
+                </select>
+            </div>
+    </div>    
     
      <div class="form-group">
     
@@ -83,7 +103,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <?php
 if(isset($_GET["mensaje"])){
     ?>
-    <div class="col-md-5 text-center"><p <?php echo "class='$color'"?>><?php echo $_GET["mensaje"];?></p></div>
+    <div class="col-md-5 text-center"><?php echo $_GET["mensaje"];?></div>
         
     <?php
 }
