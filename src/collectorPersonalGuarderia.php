@@ -27,7 +27,7 @@ $ObjGuarderia= new PersonalGuarderia();
 $ObjGuarderia->setId($rows[0]{'id_personal'});
 $ObjGuarderia->setNombres($rows[0]{'nombres'});
 $ObjGuarderia->setApellidos($rows[0]{'apellidos'});
-$ObjGuarderia->setCArgo($rows[0]{'cargo'});
+$ObjGuarderia->setCargo($rows[0]{'cargo'});
 $ObjGuarderia->setGuarderiaIdGuarderia($rows[0]{'guarderia_id_guarderia'});        
          return $ObjGuarderia;        
   }

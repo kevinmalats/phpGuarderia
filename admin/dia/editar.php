@@ -44,7 +44,7 @@ $dia= new Dia ();
 
 $id=$_GET['id'];
     
-$dia=$objColl->showDias($id);
+$dia=$objColl->showDiasH($id);
 
 ?>
 
@@ -98,7 +98,7 @@ if(isset($_POST["nombre"])|| isset($_POST["hora_inicio"]) || isset($_POST["hora_
     $hora_inicionuevo= $_POST["hora_inicio"];
     $hora_finnuevo= $_POST["hora_fin"];
     $horario_id_horario= $_POST["codigo_horario"];
-    $objColl->updateDia($id,$nombrenuevo, $hora_inicionuevo, $hora_finnnuevo, $horario_id_horario);
+    $objColl->updateDia($id,$nombrenuevo, $hora_inicionuevo, $hora_finnuevo, $horario_id_horario);
     header("location:index.php?mensaje=Edición correcta");
 }
 ?>
