@@ -92,7 +92,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <?php
 if(isset($_GET["mensaje"])){
     ?>
-    <div class="col-md-5 text-center"><p <?php echo "class='$color'"?>><?php echo $_GET["mensaje"];?></p></div>
+    <div class="col-md-5 text-center"><p <?php echo "class=alert alert-success"?>><?php echo $_GET["mensaje"];?></p></div>
         
     <?php
 }

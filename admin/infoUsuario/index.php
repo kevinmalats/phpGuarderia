@@ -14,7 +14,7 @@ require_once("../../src/collectorInformacionUsuario.php");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   <link href="../../css/tablas.css" rel="stylesheet" >
+   <link href="../assets/css/miestilo.css" rel="stylesheet" >
 	</head>
 <body>
 <header>
@@ -35,7 +35,7 @@ require_once("../../src/collectorInformacionUsuario.php");
 		      	echo "<li><a href='../index.php'>Menú</a></li>";
 			    echo "<li><a href='crear.php'>Nuevo</a></li>";
 		echo "</ul>";
-    echo " <ul class='nav navbar-nav navbar-right'>";
+    echo " <ul class='nav navbar-nav navbar-right minav'>";
     echo "<li><a href='#'>Hola Usuario : (" . $_SESSION ['nombre'] . ")</a></li>";
     echo "<li><a href='../../pages/logout.php''><span class='glyphicon glyphicon-log-in'></span> Salir</a></li>";
     echo "</ul>";
@@ -69,7 +69,7 @@ echo "<td>".$usuarios->getId()."</td>";
 echo "<td>".$usuarios->getNombres()."</td>";
 echo "<td>".$usuarios->getApellidos()."</td>"; 
 echo "<td>".$usuarios->getCorreo()."</td>";
-echo "<td>".$usuarios->getFotoPerfil()."</td>";
+echo "<td > <img class='imagenes' src='../../".$usuarios->getFotoPerfil()."'</></td>";
 echo "<td>".$objCollector->usXUsuario($usuarios->getId())->getNombre()."</td>";
 echo "<td><select name=telefonos´ required  class=form-control miselect´>";
         foreach ($objCollector->telefonoXUsuario($usuarios->getId()) as $telefono) {

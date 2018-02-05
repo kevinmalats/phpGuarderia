@@ -69,6 +69,12 @@ $ObjUsuario->setPerfil($rows[0]{'perfil'});
     return $ObjUsuario;        
   }
 
+function retornaFoto ($usuario){
+$rows = self::$db->getRows("SELECT foto_perfil FROM informacion_usuario where usuario_id_usuario= ? ", array ("{$usuario}"));
+$fotoperfil=$rows[0]{'foto_perfil'};
+return $fotoperfil;
+}
+
 function updateUsuario($id_usuario,$nombre, $password, $perfil) {
    $rows = self::$db->getRows("SELECT * FROM usuario where nombre= ? ", array ("{$nombre}"));
   if($rows[0]{'nombre'}==$nombre){
@@ -85,7 +91,7 @@ function deleteUsuario($id) {
 function insertUsuario($usuario, $contrasenia, $tipousuario) {
   $rows = self::$db->getRows("SELECT * FROM usuario where nombre= ? ", array ("{$usuario}"));
   if($rows[0]{'nombre'}==$usuario){
-    header("location: ../usuario/crear.php?mensaje= Usuario ya existente, utlice otro nombre");
+    return false;
   }else{
   $rows = self::$db->insertRow("INSERT INTO public.usuario(nombre, password, perfil) VALUES (?,?,?) returning id_usuario", array ("{$usuario}","{$contrasenia}","{$tipousuario}"));      
     return $rows{"id_usuario"} ;      
