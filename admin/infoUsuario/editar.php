@@ -45,7 +45,6 @@ $usuario= new Informacion_usuario ();
 $id=$_GET['id'];
 
 $nombreUsuario=$objColl->usXUsuario($id);
-   
 $usuario=$objColl->showInfoUsuario($id);
 $idusuario=$nombreUsuario->getId();
 

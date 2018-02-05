@@ -69,8 +69,11 @@ echo "<td>".$usuarios->getId()."</td>";
 echo "<td>".$usuarios->getNombres()."</td>";
 echo "<td>".$usuarios->getApellidos()."</td>"; 
 echo "<td>".$usuarios->getCorreo()."</td>";
+
 echo "<td > <img class='imagenes' src='../../".$usuarios->getFotoPerfil()."'</></td>";
+
 echo "<td>".$objCollector->usXUsuario($usuarios->getId())->getNombre()."</td>";
+
 echo "<td><select name=telefonos´ required  class=form-control miselect´>";
         foreach ($objCollector->telefonoXUsuario($usuarios->getId()) as $telefono) {
             ?>
