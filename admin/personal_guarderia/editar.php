@@ -44,7 +44,7 @@ $personal_guarderia= new PersonalGuarderia ();
 
 $id=$_GET['id'];
     
-$personal_guarderia=$objColl->showPersonal();
+$personal_guarderia=$objColl->showPersonalG($id);
 
 ?>
 

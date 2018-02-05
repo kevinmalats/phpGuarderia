@@ -21,8 +21,20 @@ class PersonalGuarderiaCollector extends Collector
     return $arrayPersonalGuarderia;        
   }
   
-function updatePersonalGuarderia($nombres, $apellidos, $cargo, $guarderia_id_guarderia) {
-    $insertrow = self::$db->updateRow("UPDATE public.personal_guarderia SET nombres = ?, apellidos = ?, cargo = ?, guarderia_id_guarderia = ?, where id_personal= ? ", array ("{$nombres}","{$apellidos}", "{$cargo}","{$guarderia_id_guarderia}", $id_personal));
+    function showPersonalG($id) {
+    $rows = self::$db->getRows("SELECT * FROM personal_guarderia where id_personal = ? ", array ("{$id}"));        
+$ObjGuarderia= new PersonalGuarderia();
+$ObjGuarderia->setId($rows[0]{'id_personal'});
+$ObjGuarderia->setNombres($rows[0]{'nombres'});
+$ObjGuarderia->setApellidos($rows[0]{'apellidos'});
+$ObjGuarderia->setCArgo($rows[0]{'cargo'});
+$ObjGuarderia->setGuarderiaIdGuarderia($rows[0]{'guarderia_id_guarderia'});        
+         return $ObjGuarderia;        
+  }
+
+    
+function updatePersonalGuarderia($id_personal, $nombres, $apellidos, $cargo, $guarderia_id_guarderia) {
+    $insertrow = self::$db->updateRow("UPDATE public.personal_guarderia SET nombres = ?, apellidos = ?, cargo = ?, guarderia_id_guarderia = ? where id_personal= ? ", array ("{$nombres}","{$apellidos}", "{$cargo}","{$guarderia_id_guarderia}", $id_personal));
 
 }
 function deletePersonalGuarderia($id) {
