@@ -74,13 +74,24 @@ $personal_guarderia=$objColl->showPersonalG($id);
          </div>
      </div>
     
-    <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Código Guarderia:</label>
-         <div class="col-xs-10">
-             <input name = "guarderia_id_guarderia" type="text" id= "guarderia_id_guarderia" class="form-control misopciones"
-                placeholder="<?php echo $personal_guarderia->getGuarderiaIdGuarderia();?>"  required/>
-         </div>
-     </div>
+     <div class='form-group'>
+        <label for='inputName' class='control-label col-xs-2'>Seleccione Guarderia</label>
+            <div class="col-xs-10">
+                <select name="guarderia_id_guarderia" type="text" id= "guarderia_id_guarderia" required  class="form-control miselect">
+  
+        <?php
+      
+        require_once("../../src/collectorGuarderia.php");
+        $obUsua= new GuarderiaCollector();
+        foreach ($obUsua->ShowGuarderia() as $guarderia) {
+        
+        echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
+      
+            }
+        ?>
+                </select>
+            </div>
+    </div>
 
      <div class="form-group">
     

@@ -55,16 +55,7 @@ $ciudad->SetId($valor[0]{"id_ciudad"});
 $ciudad->SetNombre($valor[0]{"descripcion"});
 
    return$ciudad;
-}  
-    
-    
-    
-    
-    
-    
-    
-    
-    
+}      
     
 }
 ?>

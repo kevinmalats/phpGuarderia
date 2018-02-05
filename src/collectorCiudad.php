@@ -47,8 +47,5 @@ function insertCiudad($descripcion) {
   
   }
 
-
-
-
 }
 ?>

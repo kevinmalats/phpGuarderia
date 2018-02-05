@@ -57,7 +57,7 @@ require_once("../../src/collectorGuarderia.php");
 
 $objCollector= new GuarderiaCollector();
 foreach ($objCollector->showGuarderia() as $guarderias) {
-	echo "<tbody>"; 
+echo "<tbody>"; 
 echo "<tr>"; 
 echo "<td>".$guarderias->getId()."</td>"; 
 echo "<td>".$guarderias->getNombre()."</td>";
