@@ -1719,3 +1719,12 @@ i.icon-white {
     color: red;
     
 }
+   .imagenPerfil {
+    	width: 20%;
+    	
+    	display: inline-block;
+    }
+    .midrop {
+    	display: inline-block;
+    	width: 130px;
+    }

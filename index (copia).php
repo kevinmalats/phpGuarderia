@@ -25,14 +25,13 @@ session_start();
 		<div class="navbar navbar-inverse navbar-fixed-top">
 			
             <div class="navbar-inner">
-				<div class="container">
+				<div class="container mihover">
 					<!-- Responsive navbar -->
 					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 				</a>
 					<h1 class="brand"><a href="index.php">Safe DayCare</a></h1>
-
 					<!-- navigation -->
-					<nav class="pull-right nav-collapse collapse navbar-left">
+					<nav class="pull-right nav-collapse collapse ">
 
 						<ul id="menu-main" class="nav navbar">
 							<li><a title="Quienes Somos" href="pages/quienes_somos.php">Acerca de</a></li>
@@ -46,42 +45,27 @@ session_start();
 						
 							
 						if ($_SESSION){
-                         $fotoperfil=$_SESSION['fotoperfil'];
-                       
 						?>
-						<li class="dropdown">
-						<a href="#" class="dropdown-toggle midrop" data-toggle="dropdown">
-                          <img alt="" class="loat-left imagenPerfil" src="<?php echo  $fotoperfil;?>">
-                            <span class="dropdown-caret"></span> <b class="caret"></b>
-                         </a>
-						
-						<ul class="dropdown-menu">
-						
-						<li class="dropdown-header"><a href="#">
-                         Logeado como <strong class=""><?php echo $_SESSION['nombre'];?></strong>
-                          </a></li>
-                          <li><a title ="Logout" href="pages/logout.php">Logout</a></li>
-						
-						
+						<li><a title ="Logout" href="pages/logout.php">Logout</a></li>
                          <?php
 							if ( $_SESSION["perfil"]=="admin"){
 								?>
-							
-                          <li><a title="Administrar" href="admin/index.php">Administrar</a></li>
+                          <li><a title="Administrar" href="admin/index.php"><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
 						    <?php
+					    }else{
+					    	?>
+					    	 <li class="noHover"><a title="Bienvenido" ><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
+					    	<?php
 					    }
-					 }else{
+						}else{
 						?>
 						<li><a title ="Login" href="pages/login.php">Login</a></li> 
 
 						<?php
 					}
 					?>
-                    </ul>
-                   
-           
 
-                    </li>
+
 
 						</ul>
 					</nav>
