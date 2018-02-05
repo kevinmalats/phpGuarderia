@@ -84,15 +84,10 @@ $usuario=$objColl->showUsuario($id);
                 <?php
             }
          ?>
-          
-         
-        
-         
+ 
       </select>
 </div>
-     
-
-     <div class="form-group">
+    <div class="form-group">
     
          <div class="col-xs-offset-2 col-xs-10">
              <button type="submit" class="btn btn-primary">Guardar</button>
