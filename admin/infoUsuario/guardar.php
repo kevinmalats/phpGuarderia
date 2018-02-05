@@ -16,7 +16,7 @@ if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
    $id_usuario=$_POST["usuario"];
    $direccion=$_POST["direccion"];
   $objColl->insertInfoUsuario($nombres, $apellidos,$fotoperfil ,$correo,$id_usuario,$direccion);
-   //echo "<meta http-equiv='refresh' content='0;URL= crear.php?mensaje= Se creó exitosamente'>";
+   echo "<meta http-equiv='refresh' content='0;URL= crear.php?mensaje= Se creó exitosamente'>";
    //  header("location: crear.php?mensaje= Se creó exitosamente");
  } else
     print_r($_FILES);
