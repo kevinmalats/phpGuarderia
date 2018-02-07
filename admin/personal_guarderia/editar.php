@@ -54,7 +54,7 @@ $personal_guarderia=$objColl->showPersonalG($id);
          <label for="inputName" class="control-label col-xs-2">Nombres:</label>
          <div class="col-xs-10">
              <input name = "nombres" type="text" id= "nombres" class="form-control misopciones"
-                placeholder="<?php echo $personal_guarderia->getNombres();?>"  required/>
+                value="<?php echo $personal_guarderia->getNombres();?>"  />
          </div>
      </div>
     
@@ -62,7 +62,7 @@ $personal_guarderia=$objColl->showPersonalG($id);
          <label for="inputName" class="control-label col-xs-2">Apellidos:</label>
          <div class="col-xs-10">
              <input name = "apellidos" type="text" id= "apellidos" class="form-control misopciones"
-                placeholder="<?php echo $personal_guarderia->getApellidos();?>"  required/>
+                value="<?php echo $personal_guarderia->getApellidos();?>"  />
          </div>
      </div>
     
@@ -70,7 +70,7 @@ $personal_guarderia=$objColl->showPersonalG($id);
          <label for="inputName" class="control-label col-xs-2">Cargo:</label>
          <div class="col-xs-10">
              <input name = "cargo" type="text" id= "cargo" class="form-control misopciones"
-                placeholder="<?php echo $personal_guarderia->getCargo();?>"  required/>
+                value="<?php echo $personal_guarderia->getCargo();?>"  />
          </div>
      </div>
     

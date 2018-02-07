@@ -11,7 +11,7 @@ class ImagenCollector extends Collector
     $rows = self::$db->getRows("SELECT * FROM imagen ");        
     $arrayImagen= array();        
     foreach ($rows as $c){
-      $aux = new imagen();
+      $aux = new Imagenes();
       $aux->setId($c{'id_imagen'});
       $aux->setDescripcion($c{'descripcion'});
       $aux->setGuarderia($c{'guarderia_id_guarderia'});

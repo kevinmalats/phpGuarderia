@@ -53,7 +53,7 @@ $direccion=$objColl->showDireccion($id);
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Dirección:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "descripcion" type="text" id= "descripcion" class="form-control" placeholder="<?php echo $direccion->getDescripcion();?>" autofocus required/>
+             <input name = "descripcion" type="text" id= "descripcion" class="form-control" value="<?php echo $direccion->getDescripcion();?>" autofocus required/>
          </div>
      </div>
       <label for="inputName" class="control-label col-xs-2">Guardería:</label>

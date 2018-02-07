@@ -2,19 +2,17 @@
 // En versiones de PHP anteriores a la 4.1.0, debería utilizarse $HTTP_POST_FILES en lugar
 // de $_FILES.
 require_once("../../src/collectorImagen.php");
-$dir_subida = "/var/www/html/phpGuarderia/img/";
+$dir_subida = "../../img/";
 $fichero_subido = $dir_subida.basename($_FILES['archivo']['name']."");
 $descripcion=$_SERVER_DOCUMENT['root']."img/".basename($_FILES['archivo']['name']."");
 
 echo '<pre>';
- if(is_uploaded_file($_FILES['archivo']['tmp_name'])) {
- 	copy($_FILES['archivo']['tmp_name'], $fichero_subido);
-                             
-                                echo "<b>Subida correcta!. Datos:</b><br>"; 
-echo $descripcion;                            
+if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
+                                         
   $objColle= new ImagenCollector();
-  $objColle->insertImagen($descripcion,1);
-  echo "<a href='index.php'>Regresar</a>";
+  $guarderia=$_POST['guarderia'];
+  $objColle->insertImagen($descripcion,$guarderia);
+  echo "<meta http-equiv='refresh' content='0;URL= crear.php?mensaje= Se creó exitosamente'>";
 
     }else
     print_r($_FILES);

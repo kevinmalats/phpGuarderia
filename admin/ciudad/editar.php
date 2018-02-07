@@ -53,7 +53,7 @@ $ciudad=$objColl->showCIudad($id);
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Nombre de la ciudad:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "nombre" class="form-control" placeholder="<?php echo $ciudad->getNombre();?>" autofocus required/>
+             <input name = "nombre" type="text" id= "nombre" class="form-control" value="<?php echo $ciudad->getNombre();?>" autofocus required/>
          </div>
      </div>
      

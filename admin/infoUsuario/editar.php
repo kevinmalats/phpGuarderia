@@ -48,6 +48,10 @@ $nombreUsuario=$objColl->usXUsuario($id);
 $usuario=$objColl->showInfoUsuario($id);
 $idusuario=$nombreUsuario->getId();
 
+
+
+   
+
 ?>
 
 <form method= "POST" class="form-horizontal" action= "#" enctype="multipart/form-data" >
@@ -55,21 +59,21 @@ $idusuario=$nombreUsuario->getId();
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Nombres:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombres" type="text" id= "nombres" class="form-control" placeholder="<?php echo $usuario->getNombres();?>" autofocus required/>
+             <input name = "nombres" type="text" id= "nombres" class="form-control" value="<?php echo $usuario->getNombres();?>" autofocus/>
          </div>
      </div>
   <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Apellidos:</label>
          <div class="col-xs-10">
              <input name = "apellidos" type="text" id= "apellidos" class="form-control misopciones"
- placeholder="<?php echo $usuario->getApellidos();?>"  required/>
+ value="<?php echo $usuario->getApellidos();?>"  />
          </div>
      </div>
       <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Correo:</label>
          <div class="col-xs-10">
              <input name = "correo" type="text" id= "correo" class="form-control misopciones"
- placeholder="<?php echo $usuario->getCorreo();?>"  required/>
+ value="<?php echo $usuario->getCorreo();?>"  />
          </div>
      </div>
       <div class="form-group">
@@ -86,14 +90,14 @@ $idusuario=$nombreUsuario->getId();
          <label for="inputName" class="control-label col-xs-2">Direccion:</label>
          <div class="col-xs-10">
              <input name = "direccion" type="text" id= "direccion" class="form-control misopciones"
- placeholder="<?php echo $usuario->getIdDireccion();?>"  required/>
+ value="<?php echo $usuario->getIdDireccion();?>"  />
          </div>
      </div>
       <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Usuario:</label>
          <div class="col-xs-10">
         <input disabled name = "usuario" type="text" id= "usuario" class="form-control misopciones miselect"
-          placeholder="<?php echo $nombreUsuario->getNombre();?>" />
+          value="<?php echo $nombreUsuario->getNombre();?>" />
          <?php echo '<label ><a href="../usuario/editar.php?id='.$nombreUsuario->getId().'" >Editar Usuario</a></label>';
          ?>   
          </div>
@@ -112,12 +116,15 @@ $idusuario=$nombreUsuario->getId();
 if(isset($_POST["nombres"])|| isset($_POST["apellidos"]) || isset($_POST["correo"])|| isset($_POST["fotoperfil"])|| isset($_POST["direccion"])|| isset($_POST["usuario"])){
 $dir_subida = "../../img/perfil/";
 $fichero_subido = $dir_subida.basename($_FILES['archivo']['name']."");
-$fotoperfil=$_SERVER_DOCUMENT['root']."img/perfil/".basename($_FILES['archivo']['name']."");
-
+$fotoperfil=$usuario->getFotoPerfil();
 echo '<pre>';
  if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
-                                
-    $nombres=$_POST["nombres"];
+     $fotoperfil=$_SERVER_DOCUMENT['root']."img/perfil/".basename($_FILES['archivo']['name']."");
+                           
+   
+  }
+
+   $nombres=$_POST["nombres"];
     $apellidos= $_POST["apellidos"];
     $correo= $_POST["correo"];
    
@@ -126,7 +133,6 @@ echo '<pre>';
     $objColl->updateInfoUsuario($id,$nombres, $apellidos,$fotoperfil ,$correo, $idusuario,$direccion);
    echo "<meta http-equiv='refresh' content='0;URL= index.php'>";
    // header("location:index.php?");
-  }
 }
 ?>
 </aside>

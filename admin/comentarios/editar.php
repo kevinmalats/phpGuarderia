@@ -53,7 +53,7 @@ $usuario=$objColl->showComentario($id);
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Comentario:</label>
          <div class="col-xs-10 misopciones">
-         <textarea name="comentario" placeholder="comentario" placeholder="<?php echo $usuario->getDescripcion();?>"></textarea>
+         <textarea name="comentario" id="comentario" value="<?php echo $usuario->getDescripcion();?>"></textarea>
              
          </div>
      </div>

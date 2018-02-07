@@ -54,7 +54,7 @@ $guarderia=$objColl->showGuarderias($id);
          <label for="inputName" class="control-label col-xs-2">Guardería:</label>
          <div class="col-xs-10">
              <input name = "nombre" type="text" id= "nombre" class="form-control misopciones"
-                required placeholder="<?php echo $guarderia->getNombre();?>" />
+                 value="<?php echo $guarderia->getNombre();?>" />
          </div>
      </div>
     
@@ -62,7 +62,7 @@ $guarderia=$objColl->showGuarderias($id);
         <label for='inputName' class='control-label col-xs-2'>Seleccione Ciudad</label>
             <div class="col-xs-10">
                 <select name="ciudad_id_ciudad" type="text" id= "ciudad_id_ciudad" class="form-control miselect"
-                    required placeholder="<?php echo $guarderia->getCiudadIdCiudad();?>" >
+                     value="<?php echo $guarderia->getCiudadIdCiudad();?>" >
   
         <?php
       
