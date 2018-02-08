@@ -14,7 +14,7 @@ require_once("../../src/collectorImagen.php");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="../assets/css/miestilo.css" rel="stylesheet" >
+   <link href="../../css/tablas.css" rel="stylesheet" >
 	</head>
 <body>
 <header>
@@ -49,7 +49,6 @@ require_once("../../src/collectorImagen.php");
 		   echo "<tr>"; 
 		echo " 	   <th>Código</th>"; 
 		echo "     <th>Descripción</th>"; 
-        echo "     <th>Guarderia</th>"; 
 		echo "</tr>"; 
 		echo "</thead>"; 
 
@@ -58,7 +57,7 @@ foreach ($objCollector->showImagen() as $imagen) {
 	echo "<tbody>"; 
 echo "<tr>"; 
 echo "<td>".$imagen->getId()."</td>"; 
-echo "<td><img class='imagenes' src='../../".$imagen->getDescripcion()."'</></td>";
+echo "<td>".$imagen->getDescripcion()."</td>";
 
     echo "<td><a href='editar.php?id=".$imagen->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$imagen->getId()."'>Eliminar</a></td>"; 
