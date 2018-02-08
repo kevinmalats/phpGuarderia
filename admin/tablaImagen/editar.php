@@ -26,7 +26,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 
 echo "<nav class='navbar navbar-default'>";
 echo "<div class='container-fluid'>";
-echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Usuario</a></div>";
+echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Imagenes</a></div>";
 echo "<ul class='nav navbar-nav'>";
 echo "<li><a href='index.php'>Atrás</a></li>";
 echo "<li><a href='crear.php'>Nuevo</a></li>";
@@ -85,26 +85,6 @@ $imagen=$objColl->showImagenes($id);
      </div>
 </form>
 
-
-<?php
-if(isset($_POST["nombre"])|| isset($_POST["password"]) || isset($_POST["perfil"])){
-   
-    $nombrenuevo=$_POST["nombre"];
-    $passwordnuevo= $_POST["password"];
-    $perfilnuevo= $_POST["perfil"];
-    if($objColl->updateUsuario($id,$nombrenuevo, $passwordnuevo, $perfilnuevo)){
-          $mensaje="Edición correcta";
-          echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";
-    }else{
-      $mensaje= "Usuario ya existente, utlice otro nombre de usuario";
-      echo "<p>$mensaje</p>";
-    
-    }
-  
-  
-
-}
-?>
 </aside>
 </body>
 </html>
