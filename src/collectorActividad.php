@@ -1,7 +1,7 @@
 <?php
 
 include_once('actividad.php');
-include_once('guarderia.php');
+
 include_once('database/collector.php');
 
 class ActividadCollector extends Collector
@@ -38,6 +38,7 @@ function insertActividad($descripcion,$guarderia){
 }
 
 function guarderiaDisponibles(){
+include_once('guarderia.php');
   $rows = self::$db->getRows("SELECT id_guarderia, nombre from guarderia ");        
     $arrayGuarderia= array();        
     foreach ($rows as $c){
@@ -48,6 +49,18 @@ function guarderiaDisponibles(){
     }
     return $arrayGuarderia;
 }
+
+function GuarderiaXActividad($id){
+  require_once("guarderia.php");
+  $sql="SELECT a.id_guarderia, a.nombre FROM guarderia a join actividad i on a.id_guarderia= i.guarderia_id_guarderia where i.id_actividad= ?";
+  $valor=self::$db->getRows($sql, array("{$id}"));
+
+$guarderia= new Guarderia();
+$guarderia->SetId($valor[0]{"id_guarderia"});
+$guarderia->SetNombre($valor[0]{"nombre"});
+
+   return$guarderia;
+}      
 
 
 function updateActividad($id_actividad,$descripcion, $guarderia) {
