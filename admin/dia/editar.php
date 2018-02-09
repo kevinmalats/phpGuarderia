@@ -44,7 +44,7 @@ $dia= new Dia ();
 
 $id=$_GET['id'];
     
-$dia=$objColl->showDias($id);
+$dia=$objColl->showDiasH($id);
 
 ?>
 
@@ -54,7 +54,7 @@ $dia=$objColl->showDias($id);
          <label for="inputName" class="control-label col-xs-2">Día:</label>
          <div class="col-xs-10">
              <input name = "nombre" type="text" id= "nombre" class="form-control"
-                placeholder="<?php echo $dia->getNombre();?>"  required/>
+                value="<?php echo $dia->getNombre();?>"  required/>
          </div>
      </div>
     
@@ -62,7 +62,7 @@ $dia=$objColl->showDias($id);
          <label for="inputName" class="control-label col-xs-2">Hora Inicio:</label>
          <div class="col-xs-10">
              <input name = "hora inicio" type="text" id= "hora_inicio" class="form-control"
-                placeholder="<?php echo $dia->getHoraInicio();?>"  required/>
+                value="<?php echo $dia->getHoraInicio();?>"  required/>
          </div>
      </div>
     
@@ -70,7 +70,7 @@ $dia=$objColl->showDias($id);
          <label for="inputName" class="control-label col-xs-2">Hora Fin:</label>
          <div class="col-xs-10">
              <input name = "hora fin" type="text" id= "hora_fin" class="form-control"
-                placeholder="<?php echo $dia->getHoraFin();?>"  required/>
+                value="<?php echo $dia->getHoraFin();?>"  required/>
          </div>
      </div>
      
@@ -78,7 +78,7 @@ $dia=$objColl->showDias($id);
          <label for="inputName" class="control-label col-xs-2">Código de horario:</label>
          <div class="col-xs-10">
              <input name = "codigo horario" type="text" id= "codigo_horario" class="form-control"
-                placeholder="<?php echo $dia->getHorarioIdHorario();?>"  required/>
+                value="<?php echo $dia->getHorarioIdHorario();?>"  required/>
          </div>
      </div>
 
@@ -98,7 +98,7 @@ if(isset($_POST["nombre"])|| isset($_POST["hora_inicio"]) || isset($_POST["hora_
     $hora_inicionuevo= $_POST["hora_inicio"];
     $hora_finnuevo= $_POST["hora_fin"];
     $horario_id_horario= $_POST["codigo_horario"];
-    $objColl->updateDia($id,$nombrenuevo, $hora_inicionuevo, $hora_finnnuevo, $horario_id_horario);
+    $objColl->updateDia($id,$nombrenuevo, $hora_inicionuevo, $hora_finnuevo, $horario_id_horario);
     header("location:index.php?mensaje=Edición correcta");
 }
 ?>

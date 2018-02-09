@@ -14,15 +14,27 @@ class DiaCollector extends Collector
       $aux->setId($c{'id_dia'});
       $aux->setNombre($c{'nombre'});
       $aux->setHoraInicio($c{'hora_inicio'});
-      $aux->setHoraFIn($c{'hora_fin'});
+      $aux->setHoraFin($c{'hora_fin'});
       $aux->setHorarioIdHorario($c{'horario_id_horario'});
       array_push($arrayDia, $aux);
     }
     return $arrayDia;        
   }
   
+    function showDiasH($id) {
+    $rows = self::$db->getRows("SELECT * FROM dia_horario where id_dia = ? ", array ("{$id}"));        
+$ObjGuarderia= new Dia();
+$ObjGuarderia->setId($rows[0]{'id_dia'});
+$ObjGuarderia->setNombre($rows[0]{'nombre'});
+$ObjGuarderia->setHoraInicio($rows[0]{'hora_inicio'});
+$ObjGuarderia->setHoraFin($rows[0]{'hora_fin'});
+$ObjGuarderia->setHorarioIdHorario($rows[0]{'horario_id_horario'});        
+         return $ObjGuarderia;        
+  }
+
+    
 function updateDia($id_dia,$nombre, $hora_inicio, $hora_fin, $horario_id_horario) {
-    $insertrow = self::$db->updateRow("UPDATE public.dia_horario SET nombre = ?, hora_inicio = ?, hora_fin = ? , horario_id_horario = ?, where id_dia= ? ", array ("{$nombre}","{$hora_inicio}","{$hora_fin}","{$hora_id_horario}",$id_dia));
+    $insertrow = self::$db->updateRow("UPDATE public.dia_horario SET nombre = ?, hora_inicio = ?, hora_fin = ? , horario_id_horario = ? where id_dia= ? ", array ("{$nombre}","{$hora_inicio}","{$hora_fin}","{$horario_id_horario}",$id_dia));
 
 }
 function deleteDia($id) {

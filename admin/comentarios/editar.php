@@ -28,7 +28,7 @@ echo "<nav class='navbar navbar-default'>";
 echo "<div class='container-fluid'>";
 echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Usuario</a></div>";
 echo "<ul class='nav navbar-nav'>";
-echo "<li><a href='index.php'>Menú</a></li>";
+echo "<li><a href='index.php'>Atrás</a></li>";
 echo "<li><a href='crear.php'>Nuevo</a></li>";
 echo "</ul>";
 echo "<ul class='nav navbar-nav navbar-right'>";
@@ -53,7 +53,7 @@ $usuario=$objColl->showComentario($id);
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Comentario:</label>
          <div class="col-xs-10 misopciones">
-         <textarea name="comentario" placeholder="comentario" placeholder="<?php echo $usuario->getDescripcion();?>"></textarea>
+         <textarea name="comentario" id="comentario" value="<?php echo $usuario->getDescripcion();?>"></textarea>
              
          </div>
      </div>

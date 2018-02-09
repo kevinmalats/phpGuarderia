@@ -28,7 +28,7 @@ echo "<nav class='navbar navbar-default'>";
 echo "<div class='container-fluid'>";
 echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Usuario</a></div>";
 echo "<ul class='nav navbar-nav'>";
-echo "<li><a href='index.php'>Menú</a></li>";
+echo "<li><a href='index.php'>Atrás</a></li>";
 echo "<li><a href='crear.php'>Nuevo</a></li>";
 echo "</ul>";
 echo "<ul class='nav navbar-nav navbar-right'>";

@@ -44,7 +44,7 @@ $guarderia= new Guarderia ();
 
 $id=$_GET['id'];
     
-$guarderia=$objColl->showGuarderia($id);
+$guarderia=$objColl->showGuarderias($id);
 
 ?>
 
@@ -54,17 +54,29 @@ $guarderia=$objColl->showGuarderia($id);
          <label for="inputName" class="control-label col-xs-2">Guardería:</label>
          <div class="col-xs-10">
              <input name = "nombre" type="text" id= "nombre" class="form-control misopciones"
-                placeholder="<?php echo $guarderia->getNombre();?>"  required/>
+                 value="<?php echo $guarderia->getNombre();?>" />
          </div>
      </div>
     
-    <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Código Ciudad:</label>
-         <div class="col-xs-10">
-             <input name = "ciudad_id_ciudad" type="text" id= "ciudad_id_ciudad" class="form-control misopciones"
-                placeholder="<?php echo $guarderia->getCiudadIdCiudad();?>"  required/>
-         </div>
-     </div>
+    <div class='form-group'>
+        <label for='inputName' class='control-label col-xs-2'>Seleccione Ciudad</label>
+            <div class="col-xs-10">
+                <select name="ciudad_id_ciudad" type="text" id= "ciudad_id_ciudad" class="form-control miselect"
+                     value="<?php echo $guarderia->getCiudadIdCiudad();?>" >
+  
+        <?php
+      
+        require_once("../../src/collectorCiudad.php");
+        $obUsua= new CiudadCollector();
+        foreach ($obUsua->ShowCiudades() as $ciudad) {
+        
+        echo  "<option value='".$ciudad->getId()."'>".$ciudad->getNombre()." </option>";
+      
+            }
+        ?>
+                </select>
+            </div>
+    </div> 
 
      <div class="form-group">
     
@@ -76,11 +88,11 @@ $guarderia=$objColl->showGuarderia($id);
 
 
 <?php
-if(isset($_POST["nombre"])|| isset($_POST["hora_inicio"]) || isset($_POST["hora_fin"]) || isset($_POST["codigo_horario"])){
+if(isset($_POST["nombre"])|| isset($_POST["ciudad_id_ciudad"])){
    
     $nombrenuevo=$_POST["nombre"];
     $ciudad_id_ciudadnuevo= $_POST["ciudad_id_ciudad"];
-    $objColl->updateGuarderia($id,$nombrenuevo, $ciudad_id_ciudad);
+    $objColl->updateGuarderia($id,$nombrenuevo, $ciudad_id_ciudadnuevo);
     header("location:index.php?mensaje=Edición correcta");
 }
 ?>

@@ -32,6 +32,7 @@ class UsuarioCollector extends Collector
     }
     return $arrayUsuario;        
   }
+    
 function usuarioDisponibles(){
   $rows = self::$db->getRows("SELECT u.id_usuario, u.nombre, u.password, u.perfil from usuario u  where NOT u.id_usuario in (select i.usuario_id_usuario from informacion_usuario i) ");        
     $arrayUsuario= array();        
@@ -45,6 +46,7 @@ function usuarioDisponibles(){
     }
     return $arrayUsuario;
 }
+    
 function showUsuario($id) {
     $rows = self::$db->getRows("SELECT * FROM usuario where id_usuario= ? ", array ("{$id}"));        
 $ObjUsuario= new Usuario();
@@ -68,6 +70,12 @@ $ObjUsuario->setPerfil($rows[0]{'perfil'});
     
     return $ObjUsuario;        
   }
+
+function retornaFoto ($usuario){
+$rows = self::$db->getRows("SELECT foto_perfil FROM informacion_usuario where usuario_id_usuario= ? ", array ("{$usuario}"));
+$fotoperfil=$rows[0]{'foto_perfil'};
+return $fotoperfil;
+}
 
 function updateUsuario($id_usuario,$nombre, $password, $perfil) {
    $rows = self::$db->getRows("SELECT * FROM usuario where nombre= ? ", array ("{$nombre}"));

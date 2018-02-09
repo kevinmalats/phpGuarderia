@@ -9,7 +9,7 @@ $objColl= new PersonalGuarderiaCollector();
    $cargo=$_POST["cargo"]; 
    $guarderia_id_guarderia=$_POST["guarderia_id_guarderia"];    
 
-  $objColl->insertPersonalGuarderia($nombres, $apellidos$, $cargo, $guarderia_id_guarderia);
+  $objColl->insertPersonalGuarderia($nombre, $apellidos, $cargo, $guarderia_id_guarderia);
  header("location: crear.php?mensaje= Se creó exitosamente");
 }
     

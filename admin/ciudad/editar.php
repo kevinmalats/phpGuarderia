@@ -26,9 +26,9 @@ if ( $_SESSION["perfil"]!= "admin"){
 
 echo "<nav class='navbar navbar-default'>";
 echo "<div class='container-fluid'>";
-echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Usuario</a></div>";
+echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Ciudad</a></div>";
 echo "<ul class='nav navbar-nav'>";
-echo "<li><a href='index.php'>Menú</a></li>";
+echo "<li><a href='index.php'>Atrás</a></li>";
 echo "<li><a href='crear.php'>Nuevo</a></li>";
 echo "</ul>";
 echo "<ul class='nav navbar-nav navbar-right'>";
@@ -53,7 +53,7 @@ $ciudad=$objColl->showCIudad($id);
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Nombre de la ciudad:</label>
          <div class="col-xs-10 misopciones">
-             <input name = "nombre" type="text" id= "nombre" class="form-control" placeholder="<?php echo $ciudad->getNombre();?>" autofocus required/>
+             <input name = "nombre" type="text" id= "nombre" class="form-control" value="<?php echo $ciudad->getNombre();?>" autofocus required/>
          </div>
      </div>
      
@@ -65,6 +65,7 @@ $ciudad=$objColl->showCIudad($id);
              <button type="submit" class="btn btn-primary">Guardar</button>
          </div>
      </div>
+    </div>
 </form>
 
 

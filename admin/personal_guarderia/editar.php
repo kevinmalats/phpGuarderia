@@ -44,7 +44,7 @@ $personal_guarderia= new PersonalGuarderia ();
 
 $id=$_GET['id'];
     
-$personal_guarderia=$objColl->showPersonal();
+$personal_guarderia=$objColl->showPersonalG($id);
 
 ?>
 
@@ -54,7 +54,7 @@ $personal_guarderia=$objColl->showPersonal();
          <label for="inputName" class="control-label col-xs-2">Nombres:</label>
          <div class="col-xs-10">
              <input name = "nombres" type="text" id= "nombres" class="form-control misopciones"
-                placeholder="<?php echo $personal_guarderia->getNombres();?>"  required/>
+                value="<?php echo $personal_guarderia->getNombres();?>"  />
          </div>
      </div>
     
@@ -62,7 +62,7 @@ $personal_guarderia=$objColl->showPersonal();
          <label for="inputName" class="control-label col-xs-2">Apellidos:</label>
          <div class="col-xs-10">
              <input name = "apellidos" type="text" id= "apellidos" class="form-control misopciones"
-                placeholder="<?php echo $personal_guarderia->getApellidos();?>"  required/>
+                value="<?php echo $personal_guarderia->getApellidos();?>"  />
          </div>
      </div>
     
@@ -70,17 +70,28 @@ $personal_guarderia=$objColl->showPersonal();
          <label for="inputName" class="control-label col-xs-2">Cargo:</label>
          <div class="col-xs-10">
              <input name = "cargo" type="text" id= "cargo" class="form-control misopciones"
-                placeholder="<?php echo $personal_guarderia->getCargo();?>"  required/>
+                value="<?php echo $personal_guarderia->getCargo();?>"  />
          </div>
      </div>
     
-    <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Código Guarderia:</label>
-         <div class="col-xs-10">
-             <input name = "guarderia_id_guarderia" type="text" id= "guarderia_id_guarderia" class="form-control misopciones"
-                placeholder="<?php echo $personal_guarderia->getGuarderiaIdGuarderia();?>"  required/>
-         </div>
-     </div>
+     <div class='form-group'>
+        <label for='inputName' class='control-label col-xs-2'>Seleccione Guarderia</label>
+            <div class="col-xs-10">
+                <select name="guarderia_id_guarderia" type="text" id= "guarderia_id_guarderia" required  class="form-control miselect">
+  
+        <?php
+      
+        require_once("../../src/collectorGuarderia.php");
+        $obUsua= new GuarderiaCollector();
+        foreach ($obUsua->ShowGuarderia() as $guarderia) {
+        
+        echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
+      
+            }
+        ?>
+                </select>
+            </div>
+    </div>
 
      <div class="form-group">
     

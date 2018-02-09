@@ -77,6 +77,7 @@ if ( $_SESSION["perfil"]!= "admin"){
          </div>
      </div>
     
+    <!--
     <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Código Guarderia:</label>
          <div class="col-xs-10">
@@ -84,6 +85,25 @@ if ( $_SESSION["perfil"]!= "admin"){
                 placeholder="guarderia_id_guarderia"  required/>
          </div>
      </div>
+    -->
+    <div class='form-group'>
+        <label for='inputName' class='control-label col-xs-2'>Seleccione Guarderia</label>
+            <div class="col-xs-10">
+                <select name="guarderia_id_guarderia" type="text" id= "guarderia_id_guarderia" required  class="form-control miselect">
+  
+        <?php
+      
+        require_once("../../src/collectorGuarderia.php");
+        $obUsua= new GuarderiaCollector();
+        foreach ($obUsua->ShowGuarderia() as $guarderia) {
+        
+        echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
+      
+            }
+        ?>
+                </select>
+            </div>
+    </div>   
     
      <div class="form-group">
     
@@ -99,7 +119,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <?php
 if(isset($_GET["mensaje"])){
     ?>
-    <div class="col-md-5 text-center"><p <?php echo "class='$color'"?>><?php echo $_GET["mensaje"];?></p></div>
+    <div class="col-md-5 text-center"><?php echo $_GET["mensaje"];?></div>
         
     <?php
 }

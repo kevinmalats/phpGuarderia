@@ -31,6 +31,18 @@ function insertHorario($id_actividad) {
     return $rows{"id_horario"};      
   }
 
+                                      
+function ActividadXHorario($id){
+  require_once("actividad.php");
+  $sql="SELECT u.id_actividad, u.descripcion FROM actividad u join horario i on u.id_= i.ciudad_id_ciudad where i.id_guarderia= ?";
+  $valor=self::$db->getRows($sql, array("{$id}"));
+
+$ciudad= new Ciudad();
+$ciudad->SetId($valor[0]{"id_ciudad"});
+$ciudad->SetNombre($valor[0]{"descripcion"});
+
+   return$ciudad;
+}  
 
 }
 ?>
