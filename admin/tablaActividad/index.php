@@ -59,7 +59,9 @@ foreach ($objCollector->showActividad() as $actividad) {
 echo "<tr>"; 
 echo "<td>".$actividad->getId()."</td>"; 
 echo "<td>".$actividad->getDescripcion()."</td>";
-echo "<td>".$actividad->getGuarderia()."</td>";
+//echo "<td>".$actividad->getGuarderia()."</td>";
+
+echo "<td>".$objCollector->GuarderiaXActividad($actividad->getId())->getNombre()."</td>";    
 
     echo "<td><a href='editar.php?id=".$actividad->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$actividad->getId()."'>Eliminar</a></td>"; 

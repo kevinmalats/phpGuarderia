@@ -71,9 +71,9 @@ $actividad=$objColl->showActividades($id);
       
       require_once("../../src/collectorActividad.php");
       $objAct= new ActividadCollector();
-      foreach ($objAct->guarderiaDisponibles() as $actividad) {
-        
-       echo  "<option value='".$actividad->getId()."'>".$actividad->getNombre()." </option>";
+      foreach ($objAct->guarderiaDisponibles() as $guarderia) {
+       echo $guarderia->getNombre();
+       echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
       
       }
       ?>
@@ -97,8 +97,8 @@ if(isset($_POST["descripcion"])|| isset($_POST["guarderia"]) ){
     $descripcionnuevo=$_POST["descripcion"];
     $guarderianuevo= $_POST["guarderia"];
     $objColl->updateActividad($id,$descripcionnuevo, $guarderianuevo);
-    header("location:index.php?mensaje=Edición correcta");
-  
+    $mensaje="Edición correcta";
+          echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";
   
 
 }
