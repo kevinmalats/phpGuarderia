@@ -146,7 +146,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.php" >
+                           <a href="tablaHorario/index.php">
                         <i class="fa fa-gear fa-5x"></i>
                       <h4>Horario</h4>
                       </a>
