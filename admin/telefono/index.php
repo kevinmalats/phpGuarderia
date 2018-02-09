@@ -4,12 +4,12 @@ if($_SESSION["perfil"]!= "admin"){
 	header("location: ../../index.php");
 
 }
-require_once("../../src/collectorCiudad.php");
+require_once("../../src/collectorTelefono.php");
 ?>
 <html lang="es">
 	<head>
 		<meta charset ="utf-8">
-		<title> Tabla Usuario </title>
+		<title> Tabla Teléfono </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -48,19 +48,21 @@ require_once("../../src/collectorCiudad.php");
 		   echo "<thead>"; 
 		   echo "<tr>"; 
 		echo " 	   <th>Código</th>"; 
-		echo "     <th>Ciudad</th>"; 
+		echo "     <th>Teléfono</th>"; 
+        echo "     <th>Usuario</th>"; 
 		echo "</tr>"; 
 		echo "</thead>"; 
 
-$objCollector= new CiudadCollector();
-foreach ($objCollector->showCiudades() as $ciudades) {
+$objCollector= new TelefonoCollector();
+foreach ($objCollector->showTelefonos() as $telefono) {
 	echo "<tbody>"; 
 echo "<tr>"; 
-echo "<td>".$ciudades->getId()."</td>"; 
-echo "<td>".$ciudades->getNombre()."</td>";
+echo "<td>".$telefono->getId()."</td>"; 
+echo "<td>".$telefono->getDescripcion()."</td>";
+echo "<td>".$objCollector->telefonoxusuario($telefono->getId())->getNombres()."</td>";
 
-    echo "<td><a href='editar.php?id=".$ciudades->getId()."'>Editar</a></td>"; 
-	echo "<td><a href='eliminar.php?id=".$ciudades->getId()."'>Eliminar</a></td>"; 
+    echo "<td><a href='editar.php?id=".$telefono->getId()."'>Editar</a></td>"; 
+	echo "<td><a href='eliminar.php?id=".$telefono->getId()."'>Eliminar</a></td>"; 
 	echo "</tr>"; 
 
 }
