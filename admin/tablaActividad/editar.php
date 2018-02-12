@@ -8,7 +8,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <html lang="es">
 <head>
 <meta charset ="utf-8">
-<title>Editar Dirección</title>
+<title>Editar Actividad</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,9 +26,9 @@ if ( $_SESSION["perfil"]!= "admin"){
 
 echo "<nav class='navbar navbar-default'>";
 echo "<div class='container-fluid'>";
-echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Usuario</a></div>";
+echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Actividad</a></div>";
 echo "<ul class='nav navbar-nav'>";
-echo "<li><a href='index.php'>Menú</a></li>";
+echo "<li><a href='index.php'>Atrás</a></li>";
 echo "<li><a href='crear.php'>Nuevo</a></li>";
 echo "</ul>";
 echo "<ul class='nav navbar-nav navbar-right'>";
@@ -38,42 +38,50 @@ echo "</ul>";
 echo "</div>";
 echo "</nav>";
 
-require_once("../../src/collectorTelefono.php"); 
-$objColl= new TelefonoCollector();
-$usuario= new telefono ();
+require_once("../../src/collectorActividad.php"); 
+$objColl= new ActividadCollector();
+$actividad= new Actividad ();
 
 $id=$_GET['id'];
     
-$telefono=$objColl->showTelefono($id);
+$actividad=$objColl->showActividades($id);
 
 ?>
 
+
 <form method= "POST" class="form-horizontal" action= "#" >
-   
+    
      <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Teléfono:</label>
-         <div class="col-xs-10 misopciones">
-             <input name = "descripcion" type="text" id= "descripcion" class="form-control" placeholder="<?php echo $telefono->getDescripcion();?>" autofocus required/>
+         <label for="inputName" class="control-label col-xs-2">Descripción:</label>
+         <div class="col-xs-10">
+             <input name = "descripcion" type="text" id= "descripcion" class="form-control misopciones"
+                 value="<?php echo $actividad->getDescripcion();?>" />
          </div>
      </div>
-      <label for="inputName" class="control-label col-xs-2">Usuario:</label>
-    <select name="usuario" required  class="form-control miselect">
+  
+
+
+
+	<div class='form-group'>
+	<label for='inputName' class='control-label col-xs-2'>Seleccione Guarderia</label>
+      	<div class="col-xs-10">
+        <select name="guarderia" required  class="form-control miselect">
   
       <?php
       
-      require_once("../../src/collectorInformacionUsuario.php");
-      $obUsua= new InformacionUsuarioCollector();
-      foreach ($obUsua->showInfoUsuarios() as $usuario) {
-        
-       echo  "<option value='".$usuario->getId()."'>".$usuario->getNombres()." </option>";
+      require_once("../../src/collectorActividad.php");
+      $objAct= new ActividadCollector();
+      foreach ($objAct->guarderiaDisponibles() as $guarderia) {
+       echo $guarderia->getNombre();
+       echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
       
       }
       ?>
         </select>
-     
-<div class='form-group'>
-
-     <div class="form-group">
+     </div>
+</div>     
+ 
+    <div class="form-group">
     
          <div class="col-xs-offset-2 col-xs-10">
              <button type="submit" class="btn btn-primary">Guardar</button>
@@ -83,13 +91,16 @@ $telefono=$objColl->showTelefono($id);
 
 
 <?php
-if(isset($_POST["descripcion"])){
+if(isset($_POST["descripcion"])|| isset($_POST["guarderia"]) ){
    
-    $telefononuevo=$_POST["descripcion"];
-     $usuarionuevo=$_POST["usuario"];
-    $objColl->updateTelefono($id,$telefononuevo,$usuarionuevo);
-          $mensaje="Edición correcta";
+ 
+    $descripcionnuevo=$_POST["descripcion"];
+    $guarderianuevo= $_POST["guarderia"];
+    $objColl->updateActividad($id,$descripcionnuevo, $guarderianuevo);
+    $mensaje="Edición correcta";
           echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";
+  
+
 }
 ?>
 </aside>

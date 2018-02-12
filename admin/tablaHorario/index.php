@@ -4,12 +4,12 @@ if($_SESSION["perfil"]!= "admin"){
 	header("location: ../../index.php");
 
 }
-require_once("../../src/collectorImagen.php");
+require_once("../../src/collectorHorario.php");
 ?>
 <html lang="es">
 	<head>
 		<meta charset ="utf-8">
-		<title> Tabla Imagen </title>
+		<title> Tabla Horario </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -30,7 +30,7 @@ require_once("../../src/collectorImagen.php");
 
  echo "<nav class='navbar navbar-default'>";
     echo "<div class='container-fluid'>";
-    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Imagen</a></div>";
+    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Horario</a></div>";
     echo " <ul class='nav navbar-nav'>";
 		      	echo "<li><a href='../index.php'>Menú</a></li>";
 			    echo "<li><a href='crear.php'>Nuevo</a></li>";
@@ -42,25 +42,25 @@ require_once("../../src/collectorImagen.php");
     echo "</div>";
     echo "</nav>";
     echo "<div class='container'>";
-    echo "<h2>Imagenes</h2>";
+    echo "<h2>Horarios Actividades</h2>";
     echo "<div class='table-responsive'>"; 
 		  echo "<table class='table'>"; 
 		   echo "<thead>"; 
 		   echo "<tr>"; 
 		echo " 	   <th>Código</th>"; 
-		echo "     <th>Descripción</th>"; 
+		echo "     <th>Actividad</th>";
 		echo "</tr>"; 
 		echo "</thead>"; 
 
-$objCollector= new ImagenCollector();
-foreach ($objCollector->showImagen() as $imagen) {
+$objCollector= new HorarioCollector();
+foreach ($objCollector->showHorario() as $horario) {
 	echo "<tbody>"; 
 echo "<tr>"; 
-echo "<td>".$imagen->getId()."</td>"; 
-echo "<td>".$imagen->getDescripcion()."</td>";
+echo "<td>".$horario->getId()."</td>"; 
+echo "<td>".$objCollector->HorarioXActividad($horario->getId())->getDescripcion()."</td>";    
 
-    echo "<td><a href='editar.php?id=".$imagen->getId()."'>Editar</a></td>"; 
-	echo "<td><a href='eliminar.php?id=".$imagen->getId()."'>Eliminar</a></td>"; 
+    echo "<td><a href='editar.php?id=".$horario->getId()."'>Editar</a></td>"; 
+	echo "<td><a href='eliminar.php?id=".$horario->getId()."'>Eliminar</a></td>"; 
 	echo "</tr>"; 
 
 }

@@ -18,30 +18,58 @@ class HorarioCollector extends Collector
     return $arrayHorario;        
   }
   
-function updateHorario($id_actividad) {
-    $insertrow = self::$db->updateRow("UPDATE public.horario SET id_actividad = ?, where id_horario= ? ", array ("{$id_actividad}",$id_actividad);
+function showHorarios($id) {
+    $rows = self::$db->getRows("SELECT * FROM horario where id_horario= ? ", array ("{$id}"));        
+    $ObjHor= new Horario();
+    $ObjHor->setId($rows[0]{'id_horario'});
+    $ObjHor->setIdActividad($rows[0]{'actividad_id_actividad'});
+    
+     
+    return $ObjHor;        
+  }
+
+
+function updateHorario($id_horario, $id_actividad) {
+    $insertrow = self::$db->updateRow("UPDATE public.horario SET actividad_id_actividad = ? where id_horario= ? ", array ("{$id_actividad}",$id_horario));
 
 }
+
+
 function deleteHorario($id) {
     $deleterow = self::$db->deleteRow("DELETE FROM public.horario where id_horario= ? ", array ("{$id}"));
 
 }
 function insertHorario($id_actividad) {
-    $rows = self::$db->insertRow("INSERT INTO public.horario(id_actividad) VALUES (?) returning id_horario", array ("{$id_horario}","{$hora_inicio}","{$hora_fin}", "{$horario_id_horario}"));      
+      $rows = self::$db->insertRow("INSERT INTO public.horario(actividad_id_actividad) VALUES (?) returning id_horario", array ("{$id_actividad}"));      
     return $rows{"id_horario"};      
+     
   }
 
+function ActividadDisponibles(){
+require_once("actividad.php");
+  $rows = self::$db->getRows("SELECT id_actividad, descripcion from actividad  ");        
+    $arrayActividad= array();        
+    foreach ($rows as $c){
+      $aux = new Actividad();
+      $aux->setId($c{'id_actividad'});
+      $aux->setDescripcion($c{'descripcion'});
+      array_push($arrayActividad, $aux);
+    }
+    return $arrayActividad;
+}
+    
+
                                       
-function ActividadXHorario($id){
+function HorarioXActividad($id){
   require_once("actividad.php");
-  $sql="SELECT u.id_actividad, u.descripcion FROM actividad u join horario i on u.id_= i.ciudad_id_ciudad where i.id_guarderia= ?";
+  $sql="SELECT u.id_actividad, u.descripcion FROM actividad u join horario i on u.id_actividad= i.actividad_id_actividad where i.id_horario= ?";
   $valor=self::$db->getRows($sql, array("{$id}"));
 
-$ciudad= new Ciudad();
-$ciudad->SetId($valor[0]{"id_ciudad"});
-$ciudad->SetNombre($valor[0]{"descripcion"});
+$actividad= new Actividad();
+$actividad->SetId($valor[0]{"id_actividad"});
+$actividad->SetDescripcion($valor[0]{"descripcion"});
 
-   return$ciudad;
+   return$actividad;
 }  
 
 }

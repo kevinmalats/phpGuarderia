@@ -36,7 +36,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 
  echo "<nav class='navbar navbar-default'>";
     echo "<div class='container-fluid'>";
-    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Imagen</a></div>";
+    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Actividad</a></div>";
     echo " <ul class='nav navbar-nav'>";
                 echo "<li><a href='index.php'>Menú</a></li>";
 
@@ -53,15 +53,15 @@ if ( $_SESSION["perfil"]!= "admin"){
 
 ?>
 
-<form method= "POST" class="form-horizontal" action= "subida.php" enctype="multipart/form-data">
+<form method= "POST" class="form-horizontal" action= "guardar.php">
    
-<div class='form-group'>
-<label for='inputName' class='control-label col-xs-2'>Foto Guarderia:</label>
-      <div class="col-xs-10">
-         <input type="file" name="archivo">
-      </div>
-</div>
-
+  <div class="form-group">
+         <label for="inputName" class="control-label col-xs-2">Descripción:</label>
+         <div class="col-xs-10">
+             <input name = "descripcion" type="text" id= "descripcion" class="form-control misopciones"
+                  placeholder="Descripción"  autofocus required/>
+         </div>
+     </div>
 
 
 
@@ -72,11 +72,11 @@ if ( $_SESSION["perfil"]!= "admin"){
   
       <?php
       
-      require_once("../../src/collectorImagen.php");
-      $objImg= new ImagenCollector();
-      foreach ($objImg->guarderiaDisponibles() as $imagen) {
+      require_once("../../src/collectorActividad.php");
+      $objAct= new ActividadCollector();
+      foreach ($objAct->guarderiaDisponibles() as $actividad) {
         
-       echo  "<option value='".$imagen->getId()."'>".$imagen->getNombre()." </option>";
+       echo  "<option value='".$actividad->getId()."'>".$actividad->getNombre()." </option>";
       
       }
       ?>

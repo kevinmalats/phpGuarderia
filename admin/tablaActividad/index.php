@@ -4,12 +4,12 @@ if($_SESSION["perfil"]!= "admin"){
 	header("location: ../../index.php");
 
 }
-require_once("../../src/collectorImagen.php");
+require_once("../../src/collectorActividad.php");
 ?>
 <html lang="es">
 	<head>
 		<meta charset ="utf-8">
-		<title> Tabla Imagen </title>
+		<title> Tabla Actividad </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -30,7 +30,7 @@ require_once("../../src/collectorImagen.php");
 
  echo "<nav class='navbar navbar-default'>";
     echo "<div class='container-fluid'>";
-    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Imagen</a></div>";
+    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Actividad</a></div>";
     echo " <ul class='nav navbar-nav'>";
 		      	echo "<li><a href='../index.php'>Menú</a></li>";
 			    echo "<li><a href='crear.php'>Nuevo</a></li>";
@@ -42,25 +42,29 @@ require_once("../../src/collectorImagen.php");
     echo "</div>";
     echo "</nav>";
     echo "<div class='container'>";
-    echo "<h2>Imagenes</h2>";
+    echo "<h2>Actividades</h2>";
     echo "<div class='table-responsive'>"; 
 		  echo "<table class='table'>"; 
 		   echo "<thead>"; 
 		   echo "<tr>"; 
 		echo " 	   <th>Código</th>"; 
-		echo "     <th>Descripción</th>"; 
+		echo "     <th>Descripción</th>";
+		echo "     <th>Guarderia</th>"; 
 		echo "</tr>"; 
 		echo "</thead>"; 
 
-$objCollector= new ImagenCollector();
-foreach ($objCollector->showImagen() as $imagen) {
+$objCollector= new ActividadCollector();
+foreach ($objCollector->showActividad() as $actividad) {
 	echo "<tbody>"; 
 echo "<tr>"; 
-echo "<td>".$imagen->getId()."</td>"; 
-echo "<td>".$imagen->getDescripcion()."</td>";
+echo "<td>".$actividad->getId()."</td>"; 
+echo "<td>".$actividad->getDescripcion()."</td>";
+//echo "<td>".$actividad->getGuarderia()."</td>";
 
-    echo "<td><a href='editar.php?id=".$imagen->getId()."'>Editar</a></td>"; 
-	echo "<td><a href='eliminar.php?id=".$imagen->getId()."'>Eliminar</a></td>"; 
+echo "<td>".$objCollector->GuarderiaXActividad($actividad->getId())->getNombre()."</td>";    
+
+    echo "<td><a href='editar.php?id=".$actividad->getId()."'>Editar</a></td>"; 
+	echo "<td><a href='eliminar.php?id=".$actividad->getId()."'>Eliminar</a></td>"; 
 	echo "</tr>"; 
 
 }
