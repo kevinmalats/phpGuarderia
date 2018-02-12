@@ -14,8 +14,8 @@ public function setId($id){
 public function getId(){
 	return $this->id_actividad;
 }
-public function setDescripcion($nombre){
-	$this->descripcion=$nombre;
+public function setDescripcion($descripcion){
+	$this->descripcion=$descripcion;
 
 }
 public function getDescripcion(){

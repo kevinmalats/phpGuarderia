@@ -31,7 +31,7 @@ $ObjComentario= new Comentario($rows[0]{'id_comentario'},$rows[0]{'descripcion'}
 function ComentarioXUsuario($id){
   require_once("usuario.php");
   $sql="SELECT u.id_usuario, u.nombre, u.password, u.perfil FROM comentario c join informacion_usuario i on c.informacion_usuario_id_usuario= i.id_usuario join 
-usuario u on i.usuario_id_usuario= u.id_usuario where c.id_comentario= ?";
+  usuario u on i.usuario_id_usuario= u.id_usuario where c.id_comentario= ?";
   $valor=self::$db->getRows($sql, array("{$id}"));
     $aux= new Usuario();
     $aux->setId($valor[0]{"id_usuario"});
