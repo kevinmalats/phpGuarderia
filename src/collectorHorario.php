@@ -12,7 +12,7 @@ class HorarioCollector extends Collector
     foreach ($rows as $c){
       $aux = new Horario();
       $aux->setId($c{'id_horario'});
-      $aux->setIdActividad($c{'id_actividad'});
+      $aux->setIdActividad($c{'actividad_id_actividad'});
       array_push($arrayHorario, $aux);
     }
     return $arrayHorario;        
@@ -29,7 +29,7 @@ function showHorarios($id) {
   }
 
 
-function updateHorario($id_horario, $id_actividad) {
+function updateHorario($id_horario, $actividad_id_actividad) {
     $insertrow = self::$db->updateRow("UPDATE public.horario SET actividad_id_actividad = ? where id_horario= ? ", array ("{$id_actividad}",$id_horario));
 
 }
@@ -39,7 +39,7 @@ function deleteHorario($id) {
     $deleterow = self::$db->deleteRow("DELETE FROM public.horario where id_horario= ? ", array ("{$id}"));
 
 }
-function insertHorario($id_actividad) {
+function insertHorario($actividad_id_actividad) {
       $rows = self::$db->insertRow("INSERT INTO public.horario(actividad_id_actividad) VALUES (?) returning id_horario", array ("{$id_actividad}"));      
     return $rows{"id_horario"};      
      
