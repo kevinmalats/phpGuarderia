@@ -13,7 +13,7 @@ echo '<pre>';
                                 echo "<b>Subida correcta!. Datos:</b><br>"; 
 echo $descripcion;                            
   $objColle= new ImagenCollector();
-  $objColle->insertImagen($descripcion,1);
+  $objColle->insertImagen($descripcion,4);
   echo "<a href='index.php'>Regresar</a>";
 
     }else

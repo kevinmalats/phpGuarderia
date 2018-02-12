@@ -43,5 +43,19 @@ function insertGuarderia($nombre, $ciudad_id_ciudad) {
     $rows = self::$db->insertRow("INSERT INTO public.guarderia(nombre, ciudad_id_ciudad) VALUES (?,?) returning id_guarderia", array ("{$nombre}","{$ciudad_id_ciudad}"));      
     return $rows{"id_guarderia"};      
   }
+    
+    
+function GuarderiaXCiudad($id){
+  require_once("ciudad.php");
+  $sql="SELECT u.id_ciudad, u.descripcion FROM ciudad u join guarderia i on u.id_ciudad= i.ciudad_id_ciudad where i.id_guarderia= ?";
+  $valor=self::$db->getRows($sql, array("{$id}"));
+
+$ciudad= new Ciudad();
+$ciudad->SetId($valor[0]{"id_ciudad"});
+$ciudad->SetNombre($valor[0]{"descripcion"});
+
+   return$ciudad;
+}      
+    
 }
 ?>

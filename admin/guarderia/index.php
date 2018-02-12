@@ -4,6 +4,8 @@ if($_SESSION["perfil"]!= "admin"){
 	header("location: ../../index.php");
 
 }
+
+
 require_once("../../src/collectorGuarderia.php");
 ?>
 <html lang="es">
@@ -49,17 +51,20 @@ require_once("../../src/collectorGuarderia.php");
 		   echo "<tr>"; 
 		echo " 	   <th>Código</th>"; 
 		echo "     <th>Nombre</th>"; 
-        echo "     <th>Código de Ciudad</th>";
+        echo "     <th>Ciudad</th>";
 		echo "</tr>"; 
 		echo "</thead>"; 
 
 $objCollector= new GuarderiaCollector();
 foreach ($objCollector->showGuarderia() as $guarderias) {
-	echo "<tbody>"; 
+echo "<tbody>"; 
 echo "<tr>"; 
 echo "<td>".$guarderias->getId()."</td>"; 
 echo "<td>".$guarderias->getNombre()."</td>";
-echo "<td>".$guarderias->getCiudadIdCiudad()."</td>"; 
+
+/*echo "<td>".$guarderias->getCiudadIdCiudad()."</td>";*/
+    
+echo "<td>".$objCollector->GuarderiaXCiudad($guarderias->getId())->getNombre()."</td>";    
    
 
     echo "<td><a href='editar.php?id=".$guarderias->getId()."'>Editar</a></td>"; 

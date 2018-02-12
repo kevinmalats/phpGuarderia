@@ -32,7 +32,7 @@ require_once("../../src/collectorInformacionUsuario.php");
     echo "<div class='container-fluid'>";
     echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
     echo " <ul class='nav navbar-nav'>";
-		      	echo "<li><a href='../index.php'>Menú</a></li>";
+		      	echo "<li><a href='../index.php'>Atrás</a></li>";
 			    echo "<li><a href='crear.php'>Nuevo</a></li>";
 		echo "</ul>";
     echo " <ul class='nav navbar-nav navbar-right minav'>";
@@ -69,8 +69,11 @@ echo "<td>".$usuarios->getId()."</td>";
 echo "<td>".$usuarios->getNombres()."</td>";
 echo "<td>".$usuarios->getApellidos()."</td>"; 
 echo "<td>".$usuarios->getCorreo()."</td>";
+
 echo "<td > <img class='imagenes' src='../../".$usuarios->getFotoPerfil()."'</></td>";
+
 echo "<td>".$objCollector->usXUsuario($usuarios->getId())->getNombre()."</td>";
+
 echo "<td><select name=telefonos´ required  class=form-control miselect´>";
         foreach ($objCollector->telefonoXUsuario($usuarios->getId()) as $telefono) {
             ?>

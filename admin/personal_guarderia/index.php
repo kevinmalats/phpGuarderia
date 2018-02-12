@@ -50,19 +50,21 @@ require_once("../../src/collectorPersonalGuarderia.php");
 		echo " 	   <th>Código</th>"; 
 		echo "     <th>Nombres</th>"; 
         echo "     <th>Apellidos</th>";
-        echo "     <th>Código Guarderia</th>";
+        echo "     <th>Cargo</th>";
+        echo "     <th>Guarderia</th>";
 		echo "</tr>"; 
 		echo "</thead>"; 
 
 $objCollector= new PersonalGuarderiaCollector();
 foreach ($objCollector->showPersonal() as $personal_guarderia) {
-	echo "<tbody>"; 
+echo "<tbody>"; 
 echo "<tr>"; 
 echo "<td>".$personal_guarderia->getId()."</td>"; 
 echo "<td>".$personal_guarderia->getNombres()."</td>";
 echo "<td>".$personal_guarderia->getApellidos()."</td>";
 echo "<td>".$personal_guarderia->getCargo()."</td>";
-echo "<td>".$personal_guarderia->getGuarderiaIdGuarderia()."</td>";    
+/*echo "<td>".$personal_guarderia->getGuarderiaIdGuarderia()."</td>";*/
+echo "<td>".$objCollector->PersonalXGuarderia($personal_guarderia->getId())->getNombre()."</td>";  
    
 
     echo "<td><a href='editar.php?id=".$personal_guarderia->getId()."'>Editar</a></td>"; 

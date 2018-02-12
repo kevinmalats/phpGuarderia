@@ -6,7 +6,7 @@ $objColl= new InformacionUsuarioCollector();
 $dir_subida = "../../img/perfil/";
 $fichero_subido = $dir_subida.basename($_FILES['archivo']['name']."");
 $fotoperfil=$_SERVER_DOCUMENT['root']."img/perfil/".basename($_FILES['archivo']['name']."");
-echo $fotoperfil;
+
 echo '<pre>';
 if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
                              

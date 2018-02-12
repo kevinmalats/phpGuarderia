@@ -54,17 +54,29 @@ $guarderia=$objColl->showGuarderias($id);
          <label for="inputName" class="control-label col-xs-2">Guardería:</label>
          <div class="col-xs-10">
              <input name = "nombre" type="text" id= "nombre" class="form-control misopciones"
-                placeholder="<?php echo $guarderia->getNombre();?>"  required/>
+                 value="<?php echo $guarderia->getNombre();?>" />
          </div>
      </div>
     
-    <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Código Ciudad:</label>
-         <div class="col-xs-10">
-             <input name = "ciudad_id_ciudad" type="text" id= "ciudad_id_ciudad" class="form-control misopciones"
-                placeholder="<?php echo $guarderia->getCiudadIdCiudad();?>"  required/>
-         </div>
-     </div>
+    <div class='form-group'>
+        <label for='inputName' class='control-label col-xs-2'>Seleccione Ciudad</label>
+            <div class="col-xs-10">
+                <select name="ciudad_id_ciudad" type="text" id= "ciudad_id_ciudad" class="form-control miselect"
+                     value="<?php echo $guarderia->getCiudadIdCiudad();?>" >
+  
+        <?php
+      
+        require_once("../../src/collectorCiudad.php");
+        $obUsua= new CiudadCollector();
+        foreach ($obUsua->ShowCiudades() as $ciudad) {
+        
+        echo  "<option value='".$ciudad->getId()."'>".$ciudad->getNombre()." </option>";
+      
+            }
+        ?>
+                </select>
+            </div>
+    </div> 
 
      <div class="form-group">
     

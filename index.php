@@ -41,7 +41,7 @@ session_start();
 							<li><a title="blog" href="pages/blog.php">Blog</a></li>
 							<li><a title="contactenos" href="pages/contactenos.php">Contáctenos</a></li>
 						</ul>
-						<ul id="menu-main" class="nav navbar-nav navbar-right">	
+						<ul id="menu-second" class="nav navbar-nav navbar-right">	
                        <?php
 						
 							
@@ -49,25 +49,25 @@ session_start();
                          $fotoperfil=$_SESSION['fotoperfil'];
                        
 						?>
-						<li class="dropdown">
-						<a href="#" class="dropdown-toggle midrop" data-toggle="dropdown">
-                          <img alt="" class="loat-left imagenPerfil" src="<?php echo  $fotoperfil;?>">
-                            <span class="dropdown-caret"></span> <b class="caret"></b>
+						<li class="dropdown navbar-toggle">
+						<a href="#" class="dropdown-toggle midrop navbar-toggle" data-toggle="dropdown">
+                          <img  alt="" class="imagenPerfil" src="<?php echo  $fotoperfil;?>">
+                            <span class="dropdown-caret"></span> <b class="caret mib"></b>
                          </a>
 						
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu mistyle">
 						
 						<li class="dropdown-header"><a href="#">
-                         Logeado como <strong class=""><?php echo $_SESSION['nombre'];?></strong>
+                         Logeado como <br><strong class=""><?php echo $_SESSION['nombre'];?></strong>
                           </a></li>
-                          <li><a title ="Logout" href="pages/logout.php">Logout</a></li>
+                          <li ><a class="dropdown-item" title ="Logout" href="pages/logout.php">Logout</a></li>
 						
 						
                          <?php
 							if ( $_SESSION["perfil"]=="admin"){
 								?>
 							
-                          <li><a title="Administrar" href="admin/index.php">Administrar</a></li>
+                          <li class="dropdown-item"><a title="Administrar" href="admin/index.php">Administrar</a></li>
 						    <?php
 					    }
 					 }else{
@@ -142,8 +142,14 @@ session_start();
 	<!-- end spacer section -->
 	
 	<!-- section: contact -->
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/jquery.nav.js"></script>
+	
+	<script src="js/bootstrap.js"></script>
 </body>	
-	<footer>
+
+<footer>
 		<div class="container">
 			<div class="row">
 				<div class="span6 offset3">
@@ -161,21 +167,7 @@ session_start();
 			</div>
         </div>
 		
-  <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.scrollTo.js"></script>
-	<script src="js/jquery.nav.js"></script>
-	<script src="js/jquery.localScroll.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/jquery.prettyPhoto.js"></script>
-	<script src="js/isotope.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-	<script src="js/inview.js"></script>
-	<script src="js/animate.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="contactform/contactform.js"></script>
-
-	</footer>
+</footer>
 
 
 

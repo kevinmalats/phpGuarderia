@@ -27,7 +27,7 @@ $ObjGuarderia= new PersonalGuarderia();
 $ObjGuarderia->setId($rows[0]{'id_personal'});
 $ObjGuarderia->setNombres($rows[0]{'nombres'});
 $ObjGuarderia->setApellidos($rows[0]{'apellidos'});
-$ObjGuarderia->setCArgo($rows[0]{'cargo'});
+$ObjGuarderia->setCargo($rows[0]{'cargo'});
 $ObjGuarderia->setGuarderiaIdGuarderia($rows[0]{'guarderia_id_guarderia'});        
          return $ObjGuarderia;        
   }
@@ -45,5 +45,19 @@ function insertPersonalGuarderia($nombres, $apellidos, $cargo, $guarderia_id_gua
     $rows = self::$db->insertRow("INSERT INTO public.personal_guarderia(nombres, apellidos, cargo, guarderia_id_guarderia) VALUES (?,?,?,?) returning id_personal", array ("{$nombres}","{$apellidos}", "{$cargo}","{$guarderia_id_guarderia}"));      
     return $rows{"id_personal"};      
   }
+    
+    
+        
+function PersonalXGuarderia($id){
+  require_once("guarderia.php");
+  $sql="SELECT u.id_guarderia, u.nombre FROM guarderia u join personal_guarderia i on u.id_guarderia= i.guarderia_id_guarderia where i.id_personal= ?";
+  $valor=self::$db->getRows($sql, array("{$id}"));
+
+$ciudad= new Guarderia();
+$ciudad->SetId($valor[0]{"id_guarderia"});
+$ciudad->SetNombre($valor[0]{"nombre"});
+
+   return$ciudad;
+}  
 }
 ?>

@@ -82,7 +82,8 @@ if ( $_SESSION["perfil"]!= "admin"){
                  
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="telefono/index.php" >
+                           <a href="telefono/index.php">
+
  <i class="fa fa-envelope-o fa-5x"></i>
                       <h4>Telefonos</h4>
                       </a>
@@ -146,7 +147,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.php" >
+                           <a href="tablaHorario/index.php">
                         <i class="fa fa-gear fa-5x"></i>
                       <h4>Horario</h4>
                       </a>
@@ -186,7 +187,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                   </div>
                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-                           <a href="blank.php" >
+                           <a href="tablaActividad/index.php" >
  <i class="fa fa-user fa-5x"></i>
                       <h4>Actividades</h4>
                       </a>

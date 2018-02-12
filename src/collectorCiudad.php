@@ -27,9 +27,8 @@ $ObjUsuario->setNombre($rows[0]{'descripcion'});
 
     
     return $ObjUsuario;        
-  }
-
-
+  }   
+    
 function updateCiudad($id_ciudad,$descripcion) {
 
       $insertrow = self::$db->updateRow("UPDATE public.ciudad SET descripcion = ? where id_ciudad= ? ", array ("{$descripcion}",$id_ciudad));
@@ -47,9 +46,6 @@ function insertCiudad($descripcion) {
     
   
   }
-
-
-
 
 }
 ?>
