@@ -21,8 +21,8 @@ public function setDescripcion($nombre){
 public function getDescripcion(){
 	return $this->descripcion;
 }
-public function setGuarderia($nombre){
-	$this->$guarderia_id_guarderia=$nombre;
+public function setGuarderia($guarderia_id_guarderia){
+	$this->$guarderia_id_guarderia=$guarderia_id_guarderia;
 
 }
 public function getGuarderia(){
