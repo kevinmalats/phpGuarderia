@@ -82,11 +82,8 @@ if ( $_SESSION["perfil"]!= "admin"){
                  
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
                       <div class="div-square">
-<<<<<<< HEAD
                            <a href="telefono/index.php">
-=======
-                           <a href="telefono/index.php" >
->>>>>>> b4b3de438545a802494eb8f9160c021cdfb1f98d
+
  <i class="fa fa-envelope-o fa-5x"></i>
                       <h4>Telefonos</h4>
                       </a>
