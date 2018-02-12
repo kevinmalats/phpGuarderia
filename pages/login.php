@@ -33,11 +33,11 @@ session_start();
           <!-- navigation -->
           <nav class="pull-right nav-collapse collapse">
 						<ul id="menu-main" class="nav">
-							<li><a title="team" href="quienes_somos.php">Acerca de</a></li>
-							<li><a title="services" href="Servicios.php">Servicios</a></li>
-							<li><a title="works" href="guarderias.php">Guarderías</a></li>
+							<li><a title="Quienes Somos" href="quienes_somos.php">Acerca de</a></li>
+							<li><a title="servicios" href="Servicios.php">Servicios</a></li>
+							<li><a title="Guarderias" href="guarderias.php">Guarderías</a></li>
 							<li><a title="blog" href="blog.php">Blog</a></li>
-							<li><a title="contact" href="contactenos.php">Contáctenos</a></li>
+							<li><a title="contactenos" href="contactenos.php">Contáctenos</a></li>
 							</ul>
                       	<ul id="menu-main" class="nav navbar-nav navbar-right">	
                        <?php
@@ -53,10 +53,10 @@ session_start();
                             <span class="dropdown-caret"></span> <b class="caret"></b>
                          </a>
 						
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu mistyle">
 						
 						<li class="dropdown-header"><a href="#">
-                         Logeado como <strong class=""><?php echo $_SESSION['nombre'];?></strong>
+                         Logeado como <br><strong class=""><?php echo $_SESSION['nombre'];?></strong>
                           </a></li>
                           <li><a title ="Logout" href="logout.php">Logout</a></li>
 						
