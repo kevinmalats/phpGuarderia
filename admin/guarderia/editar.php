@@ -93,7 +93,8 @@ if(isset($_POST["nombre"])|| isset($_POST["ciudad_id_ciudad"])){
     $nombrenuevo=$_POST["nombre"];
     $ciudad_id_ciudadnuevo= $_POST["ciudad_id_ciudad"];
     $objColl->updateGuarderia($id,$nombrenuevo, $ciudad_id_ciudadnuevo);
-    header("location:index.php?mensaje=Edición correcta");
+     echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=Edición correcta'>";
+   
 }
 ?>
 </aside>

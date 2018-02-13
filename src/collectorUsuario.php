@@ -78,7 +78,8 @@ return $fotoperfil;
 }
 
 function updateUsuario($id_usuario,$nombre, $password, $perfil) {
-   $rows = self::$db->getRows("SELECT * FROM usuario where nombre= ? ", array ("{$nombre}"));
+   $rows = self::$db->getRows("SELECT * FROM usuario where nombre= ? and id_usuario != ? ", 
+    array ("{$nombre}","{$id_usuario}"));
   if($rows[0]{'nombre'}==$nombre){
     return false;
   }else{
