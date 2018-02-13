@@ -53,7 +53,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 
 ?>
 
-<form method= "POST" class="form-horizontal" action= "subida.php" enctype="multipart/form-data">
+<form method= "POST" class="form-horizontal" action= "guardar.php" enctype="multipart/form-data">
    
 <div class='form-group'>
 <label for='inputName' class='control-label col-xs-2'>Foto Guarderia:</label>

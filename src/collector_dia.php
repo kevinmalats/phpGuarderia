@@ -47,5 +47,18 @@ function insertDia($nombre, $hora_inicio, $hora_fin, $horario_id_horario) {
   }
 
 
+function ActividadXDia($id){
+  require_once("actividad.php");
+  $sql="SELECT u.actividad_id_actividad, a.descripcion FROM horario u join dia_horario i on u.id_horario= i.horario_id_horario join actividad a 
+on a.id_actividad = u.actividad_id_actividad where i.id_dia= ?";
+  $valor=self::$db->getRows($sql, array("{$id}"));
+
+$horario= new Actividad();
+$horario->SetId($valor[0]{"actividad_id_actividad"});
+$horario->setDescripcion($valor[0]{"descripcion"});
+
+   return$horario;
+}  
+
 }
 ?>

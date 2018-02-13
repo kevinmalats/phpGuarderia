@@ -29,7 +29,16 @@ function showImagenes($id) {
      
     return $ObjImagen;        
   }
-
+function imagenXGuarderia($id){
+  require_once('guarderia.php');
+  $sql= "SELECT g.nombre, g.id_guarderia, g.ciudad_id_ciudad FROM imagen i join guarderia g on i.guarderia_id_guarderia= g.id_guarderia where i.id_imagen=? ";
+    $rows = self::$db->getRows($sql, array ("{$id}"));
+ $objGuard= new Guarderia();
+ $objGuard->setId($rows[0]{'id_guarderia'});
+ $objGuard->setNombre($rows[0]{'nombre'});
+ $objGuard->setCiudadIdCiudad($rows[0]{'ciudad_id_ciudad'});
+ return $objGuard;
+}
  
 function insertImagen($descripcion,$guarderia){
  	  $rows = self::$db->insertRow("INSERT INTO public.imagen(descripcion,guarderia_id_guarderia) VALUES (?,?) returning id_imagen", array ("{$descripcion}","{$guarderia}"));      

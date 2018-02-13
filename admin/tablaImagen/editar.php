@@ -49,11 +49,11 @@ $imagen=$objColl->showImagenes($id);
 ?>
 
 
-<form method= "POST" class="form-horizontal" action= "modifica.php" enctype="multipart/form-data">
+<form method= "POST" class="form-horizontal" action= "#" enctype="multipart/form-data">
     <div class='form-group'>
 	<label for='inputName' class='control-label col-xs-2'>Foto Guarderia:</label>
       <div class="col-xs-10">
-         <input type="file" name="archivo">
+         <input type="file" name="archivo" class="file mifile">
       </div>
     </div>
 
@@ -87,4 +87,35 @@ $imagen=$objColl->showImagenes($id);
 
 </aside>
 </body>
+<?php
+if(isset($_POST["guarderia"])|| isset($_POST["archivo"])){
+
+require_once("../../src/collectorImagen.php");
+$dir_subida = "../../img/";
+$fichero_subido = $dir_subida.basename($_FILES['archivo']['name']."");
+$descripcion=$_SERVER_DOCUMENT['root']."img/".basename($_FILES['archivo']['name']."");
+
+//$id=$_POST["archivo"];
+$guarderia=$_POST["guarderia"];
+echo '<pre>';
+ if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
+     $descripcion=$_SERVER_DOCUMENT['root']."img/".basename($_FILES['archivo']['name']."");
+              $objColle= new ImagenCollector();
+  //$objColle->insertImagen($descripcion,4);
+    $guarderia=$_POST['guarderia'];          
+  $objColle->updateImagen($id,$descripcion, $guarderia);
+  echo "<a href='index.php'>Regresar</a>";           
+   
+                 
+ 
+
+    }else
+    print_r($_FILES);
+    print_r($_FILES['error']);
+
+//if (is_uploaded_file($_FILES['archivo']['tmp_name'])) {
+//copy($_FILES['archivo']['tmp_name'], '/var/www/html/practica/imagenes/'.$_FILES['archivo']['name'].'');
+//}
+}
+?>
 </html>
