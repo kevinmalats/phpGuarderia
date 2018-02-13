@@ -110,7 +110,8 @@ if(isset($_POST["nombres"])|| isset($_POST["apellidos"]) || isset($_POST["cargo"
     $cargonuevo=$_POST["cargo"];
     $guarderia_id_guarderianuevo= $_POST["guarderia_id_guarderia"];
     $objColl->updatePersonalGuarderia($id,$nombresnuevo, $apellidosnuevo, $cargonuevo, $guarderia_id_guarderianuevo);
-    header("location:index.php?mensaje=Edición correcta");
+    $mensaje="Edición correcta";
+          echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";
 }
 ?>
 </aside>

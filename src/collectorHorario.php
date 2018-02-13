@@ -30,7 +30,7 @@ function showHorarios($id) {
 
 
 function updateHorario($id_horario, $actividad_id_actividad) {
-    $insertrow = self::$db->updateRow("UPDATE public.horario SET actividad_id_actividad = ? where id_horario= ? ", array ("{$id_actividad}",$id_horario));
+    $insertrow = self::$db->updateRow("UPDATE public.horario SET actividad_id_actividad = ? where id_horario= ? ", array ("{$actividad_id_actividad}",$id_horario));
 
 }
 
@@ -40,7 +40,7 @@ function deleteHorario($id) {
 
 }
 function insertHorario($actividad_id_actividad) {
-      $rows = self::$db->insertRow("INSERT INTO public.horario(actividad_id_actividad) VALUES (?) returning id_horario", array ("{$id_actividad}"));      
+      $rows = self::$db->insertRow("INSERT INTO public.horario(actividad_id_actividad) VALUES (?) returning id_horario", array ("{$actividad_id_actividad}"));      
     return $rows{"id_horario"};      
      
   }
