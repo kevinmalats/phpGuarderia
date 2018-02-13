@@ -51,7 +51,7 @@ require_once("../../src/collector_dia.php");
 		echo "     <th>Día</th>"; 
 		echo " 	   <th>Hora Inicio</th>"; 
 		echo "     <th>Hora Fin</th>";
-        echo "     <th>Código horario</th>";
+        echo "     <th>Actidad por horario</th>";
 		echo "</tr>"; 
 		echo "</thead>"; 
 
@@ -63,8 +63,10 @@ echo "<td>".$dias->getId()."</td>";
 echo "<td>".$dias->getNombre()."</td>";
 echo "<td>".$dias->getHoraInicio()."</td>"; 
 echo "<td>".$dias->getHoraFin()."</td>";
-echo "<td>".$dias->getHorarioIdHorario()."</td>";    
+//echo "<td>".$dias->getHorarioIdHorario()."</td>";  
 
+echo "<td>".$objCollector->ActividadXDia($dias->getId())->getIdActividad()."</td>";   
+    
     echo "<td><a href='editar.php?id=".$dias->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$dias->getId()."'>Eliminar</a></td>"; 
 	echo "</tr>"; 
