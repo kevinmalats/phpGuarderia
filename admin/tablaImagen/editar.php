@@ -104,8 +104,10 @@ echo '<pre>';
   //$objColle->insertImagen($descripcion,4);
     $guarderia=$_POST['guarderia'];          
   $objColle->updateImagen($id,$descripcion, $guarderia);
+
 $mensaje="Edición correcta";
           echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";      
+
    
                  
  

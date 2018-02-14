@@ -1,4 +1,12 @@
 <?php
+if ($_SESSION){     
+        if ($_SESSION["perfil"]=="admin"){                
+        }else{
+            header("location:../../index.php"); 
+        }                            
+    }else{
+        header("location:../../index.php");
+    }
 require_once("../collectorUsuario.php");
 require_once("../collectorInformacionUsuario.php");
 require_once("../collectorTelefono.php");
