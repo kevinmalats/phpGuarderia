@@ -1,5 +1,5 @@
 <?php
-final class TestAplicacion{
+final class TestAplicacion  PHPUnit_Framework_TestCase{
 	function testAdmin(){
 	session_start();
 	if ( $_SESSION["perfil"]!= "admin"){
