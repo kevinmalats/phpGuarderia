@@ -30,7 +30,7 @@ require_once("../../src/collectorTelefono.php");
 
  echo "<nav class='navbar navbar-default'>";
     echo "<div class='container-fluid'>";
-    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Ciudad</a></div>";
+    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Teléfono </a></div>";
     echo " <ul class='nav navbar-nav'>";
 		      	echo "<li><a href='../index.php'>Atrás</a></li>";
 			    echo "<li><a href='crear.php'>Nuevo</a></li>";
@@ -42,7 +42,7 @@ require_once("../../src/collectorTelefono.php");
     echo "</div>";
     echo "</nav>";
     echo "<div class='container'>";
-    echo "<h2>Ciudad</h2>";
+    echo "<h2>Teléfono</h2>";
     echo "<div class='table-responsive'>"; 
 		  echo "<table class='table'>"; 
 		   echo "<thead>"; 
