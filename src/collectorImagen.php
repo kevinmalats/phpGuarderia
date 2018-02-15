@@ -14,6 +14,12 @@ include_once('database/collector.php');
 class ImagenCollector extends Collector
 {
   
+  function leerimagenes(){
+    $rows = self::$db->getRows("SELECT * FROM imagen ");     
+     foreach ($rows as $c){
+      echo $c{'id_imagen'};
+    }
+  }
   function showImagenes() {
     $rows = self::$db->getRows("SELECT * FROM imagen ");        
     $arrayImagen= array();        

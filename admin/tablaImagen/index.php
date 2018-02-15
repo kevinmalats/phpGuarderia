@@ -59,6 +59,7 @@ $id=2;
 for ($i=0;$i<10;$i++){
     echo "<td>"."hola mindo"."</td>"; 
 }
+$objCollector->leerimagenes();
 foreach ($objCollector->showImagenes() as $imagen) {
 	echo "<tbody>"; 
 echo "<tr>"; 
