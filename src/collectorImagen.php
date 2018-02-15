@@ -21,7 +21,7 @@ class ImagenCollector extends Collector
       $aux = new Imagen();
       $aux->setId($c{'id_imagen'});
       $aux->setDescripcion($c{'descripcion'});
-      $aux->setGuarderia($c{'guarderia_id_guarderia'});
+      //$aux->setGuarderia($c{'guarderia_id_guarderia'});
      
       array_push($arrayImagen, $aux);
     }
