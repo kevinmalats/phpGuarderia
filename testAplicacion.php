@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION){     
+/*if ($_SESSION){     
         if ($_SESSION["perfil"]=="admin"){                
         }else{
             header("location:index.php"); 
@@ -7,7 +7,7 @@ if ($_SESSION){
     }else{
         header("location:index.php");
     }
-
+*/
 final class TestAplicacion extends PHPUnit_Framework_TestCase{
 
 function testAdmin(){

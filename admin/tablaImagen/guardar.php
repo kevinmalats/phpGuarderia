@@ -1,4 +1,8 @@
 <?php
+session_start();
+if ( $_SESSION["perfil"]!= "admin"){
+	header("location: ../index.php");
+}
 // En versiones de PHP anteriores a la 4.1.0, debería utilizarse $HTTP_POST_FILES en lugar
 // de $_FILES.
 require_once("../../src/collectorImagen.php");
