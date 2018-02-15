@@ -9,7 +9,7 @@ require_once("../../src/collectorInformacionUsuario.php");
 <html lang="es">
 	<head>
 		<meta charset ="utf-8">
-		<title> Tabla Usuario </title>
+		<title>Tabla Información de Usuarios </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -30,7 +30,7 @@ require_once("../../src/collectorInformacionUsuario.php");
 
  echo "<nav class='navbar navbar-default'>";
     echo "<div class='container-fluid'>";
-    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
+    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Informació  de Usuario</a></div>";
     echo " <ul class='nav navbar-nav'>";
 		      	echo "<li><a href='../index.php'>Atrás</a></li>";
 			    echo "<li><a href='crear.php'>Nuevo</a></li>";
@@ -42,7 +42,7 @@ require_once("../../src/collectorInformacionUsuario.php");
     echo "</div>";
     echo "</nav>";
     echo "<div class='container'>";
-    echo "<h2>Informacion Usuario</h2>";
+    echo "<h2>Datos de Usuarios Registrados</h2>";
     echo "<div class='table-responsive'>"; 
 		  echo "<table class='table'>"; 
 		   echo "<thead>"; 
