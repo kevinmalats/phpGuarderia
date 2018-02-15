@@ -21,11 +21,12 @@ class ImagenCollector extends Collector
       $aux = new Imagen();
       $aux->setId($c{'id_imagen'});
       $aux->setDescripcion($c{'descripcion'});
+      echo "Guarderia ".$c{'guarderia_id_guarderia'};
       //$aux->setGuarderia($c{'guarderia_id_guarderia'});
      
       array_push($arrayImagen, $aux);
     }
-    return $arrayImagen;
+    //return $arrayImagen;
   }
   function showImagenes() {
     $rows = self::$db->getRows("SELECT * FROM imagen ");        
