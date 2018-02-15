@@ -14,7 +14,7 @@ include_once('database/collector.php');
 class ImagenCollector extends Collector
 {
   
-  function showImagen() {
+  function showImagenes() {
     $rows = self::$db->getRows("SELECT * FROM imagen ");        
     $arrayImagen= array();        
     foreach ($rows as $c){
@@ -27,7 +27,7 @@ class ImagenCollector extends Collector
     return $arrayImagen;        
   }
 
-function showImagenes($id) {
+function showImagen($id) {
     $rows = self::$db->getRows("SELECT * FROM imagen where id_imagen= ? ", array ("{$id}"));        
     $ObjImagen= new Imagen();
     $ObjImagen->setId($rows[0]{'id_imagen'});

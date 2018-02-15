@@ -44,7 +44,7 @@ $imagen= new Imagen ();
 
 $id=$_GET['id'];
     
-$imagen=$objColl->showImagenes($id);
+$imagen=$objColl->showImagen($id);
 
 ?>
 
@@ -67,9 +67,9 @@ $imagen=$objColl->showImagenes($id);
       
       require_once("../../src/collectorImagen.php");
       $objImg= new ImagenCollector();
-      foreach ($objImg->guarderiaDisponibles() as $imagen) {
+      foreach ($objImg->guarderiaDisponibles() as $guarderia) {
         
-       echo  "<option value='".$imagen->getId()."'>".$imagen->getNombre()." </option>";
+       echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
       
       }
       ?>
