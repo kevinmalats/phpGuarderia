@@ -56,7 +56,9 @@ require_once("../../src/collectorHorario.php");
 
 $objCollector= new ImagenCollector();
 $id=2;
-
+for ($i=0;$i<10;$i++){
+    echo "<td>"."hola mindo"."</td>"; 
+}
 foreach ($objCollector->showImagenes() as $imagen) {
 	echo "<tbody>"; 
 echo "<tr>"; 
