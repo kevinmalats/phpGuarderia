@@ -60,6 +60,7 @@ foreach ($objCollector->showImagen() as $imagen) {
 echo "<tr>"; 
 echo "<td>".$imagen->getId()."</td>"; 
 
+
     echo "<td><a href='editar.php?id=".$imagen->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$imagen->getId()."'>Eliminar</a></td>"; 
 	echo "</tr>"; 
