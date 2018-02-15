@@ -54,12 +54,12 @@ require_once("../../src/collectorHorario.php");
 		echo "</tr>"; 
 		echo "</thead>"; 
 
-$objCollector= new HorarioCollector();
-foreach ($objCollector->showHorario() as $imagen) {
+$objCollector= new ImagenCollector();
+foreach ($objCollector->showImagen() as $imagen) {
 	echo "<tbody>"; 
 echo "<tr>"; 
 echo "<td>".$imagen->getId()."</td>"; 
- 
+
     echo "<td><a href='editar.php?id=".$imagen->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$imagen->getId()."'>Eliminar</a></td>"; 
 	echo "</tr>"; 
