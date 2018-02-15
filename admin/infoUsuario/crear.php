@@ -83,7 +83,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <div class='form-group'>
 <label for='inputName' class='control-label col-xs-2'>Foto Perfil:</label>
       <div class="col-xs-10">
-       <input type="file" name="archivo" class="file mifile">
+       <input type="file" name="archivo" class="mifile">
              <!--<input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
  placeholder="Fotoperfil"  required/> -->
 </div>

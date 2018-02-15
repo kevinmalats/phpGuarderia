@@ -21,10 +21,7 @@ session_start();
 
 	<!-- links bootstrap para subida de archivos¡-->
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-<link href="../css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
- 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="../js/fileinput.min.js" type="text/javascript"></script>
+
  
 	
 </head>
@@ -96,6 +93,7 @@ session_start();
 		</div>
 	</div>
 	<!-- multistep form -->
+<div>
 <form id="msform" action="../src/util/registrarUsuario.php" method="post" enctype="multipart/form-data">
   <!-- progressbar -->
     
@@ -116,29 +114,36 @@ session_start();
      <input type="text" name="correo" placeholder="Correo" />
     <input type="text" name="nombres" placeholder="Nombres" />
     <input type="text" name="apellidos" placeholder="Apellidos" />
-    <label>Foto Perfil:</label>
-       <input type="file" name="archivo" class="file">
+   
+      <div class="col-xs-10">
+       <input type="file" name="archivo" class="mifile" >
+             <!--<input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
+ placeholder="Fotoperfil"  required/> -->
+      
+      </div>
          
 
     <input type="text" name="telefono" placeholder="Telefono" />
     <textarea name="direccion" placeholder="Dirección"></textarea>
     <input type="submit" name="submit" class="submit action-button" value="Enviar" />
   </fieldset>
-</form>
-    
-	<?php
+  <?php
 	if($_GET["mensaje"]){
 		if($_GET["mensaje"]== "No deje campos vacios"){
-			$color="rojo";
+			
 		}else{
-			$color= "verde";
+			
 		}
 		?>
-		<div class="col-md-5 text-center"><p <?php echo "class='$color'"?>><?php echo $_GET["mensaje"];?></p></div>
+ <div class="col-md-5 text-center mensaje"><p><?php echo $_GET["mensaje"];?></p></div>
 		<?php
 	}
 
 ?>
+</form>
+
+    </div>
+	
    
 	<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
     </body>
