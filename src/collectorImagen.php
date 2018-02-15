@@ -17,7 +17,9 @@ class ImagenCollector extends Collector
   function leerimagenes(){
     $rows = self::$db->getRows("SELECT * FROM imagen ");     
      foreach ($rows as $c){
-      echo $c{'id_imagen'};
+      $aux = new Imagen();
+       $aux->setId($c{'id_imagen'});
+      echo $aux->getId();
     }
   }
   function showImagenes() {
