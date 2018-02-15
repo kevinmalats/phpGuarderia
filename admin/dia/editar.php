@@ -74,13 +74,25 @@ $dia=$objColl->showDiasH($id);
          </div>
      </div>
      
-    <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Código de horario:</label>
-         <div class="col-xs-10">
-             <input name = "codigo horario" type="text" id= "codigo_horario" class="form-control"
-                value="<?php echo $dia->getHorarioIdHorario();?>"  required/>
-         </div>
-     </div>
+    <div class='form-group'>
+        <label for='inputName' class='control-label col-xs-2'>Seleccione actividad para el horario:</label>
+            <div class="col-xs-10">
+                <select name="horario_id_horario" type="text" id= "codigo_horario" required  class="form-control miselect"
+                        value="<?php echo $dia->getActividadIdActividad();?>">
+  
+        <?php
+      
+        require_once("../../src/collector_dia.php");
+        $obUsua= new DiaCollector();
+        foreach ($obUsua->ShowDias() as $ciudad) {
+        
+        echo  "<option value='".$ciudad->getId()."'>".$ciudad->getDescripcion()." </option>";
+      
+            }
+        ?>
+                </select>
+            </div>
+    </div>    
 
      <div class="form-group">
     

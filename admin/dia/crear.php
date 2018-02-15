@@ -72,18 +72,30 @@ if ( $_SESSION["perfil"]!= "admin"){
      </div>
   
      <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Hora FIn:</label>
+         <label for="inputName" class="control-label col-xs-2">Hora Fin:</label>
          <div class="col-xs-10 misopciones">
              <input name = "hora_fin" type="text" id= "hora_fin" class="form-control" placeholder="hora de término" autofocus required/>
          </div>
      </div>
     
-    <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Código Horario:</label>
-         <div class="col-xs-10 misopciones">
-             <input name = "horario_id_horario" type="text" id= "codigo_horario" class="form-control" placeholder="código de horario" autofocus required/>
-         </div>
-     </div>
+    <div class='form-group'>
+        <label for='inputName' class='control-label col-xs-2'>Seleccione actividad para el horario:</label>
+            <div class="col-xs-10">
+                <select name="horario_id_horario" type="text" id= "codigo_horario" required  class="form-control miselect">
+  
+        <?php
+      
+        require_once("../../src/collector_dia.php");
+        $obUsua= new DiaCollector();
+        foreach ($obUsua->ShowDias() as $ciudad) {
+        
+        echo  "<option value='".$ciudad->getId()."'>".$ciudad->getDescripcion()." </option>";
+      
+            }
+        ?>
+                </select>
+            </div>
+    </div>    
 
 
      <div class="form-group">
