@@ -8,7 +8,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <html lang="es">
 <head>
 <meta charset ="utf-8">
-<title>Crear Usuario</title>
+<title>Crear Ciudad</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -36,9 +36,9 @@ if ( $_SESSION["perfil"]!= "admin"){
 
  echo "<nav class='navbar navbar-default'>";
     echo "<div class='container-fluid'>";
-    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
+    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla de Ciudades</a></div>";
     echo " <ul class='nav navbar-nav'>";
-                echo "<li><a href='index.php'>Menú</a></li>";
+                echo "<li><a href='index.php'>Atrás</a></li>";
             echo "<li><a href='#'>Nuevo</a></li>";
         echo "</ul>";
     echo " <ul class='nav navbar-nav navbar-right'>";
