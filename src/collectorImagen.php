@@ -16,11 +16,14 @@ class ImagenCollector extends Collector
   
   function leerimagenes(){
     $rows = self::$db->getRows("SELECT * FROM imagen ");     
+    $arrayImagen= array(); 
      foreach ($rows as $c){
       $aux = new Imagen();
        $aux->setId($c{'id_imagen'});
-      echo $aux->getId();
+     
+      array_push($arrayImagen, $aux);
     }
+    return $arrayImagen;
   }
   function showImagenes() {
     $rows = self::$db->getRows("SELECT * FROM imagen ");        
