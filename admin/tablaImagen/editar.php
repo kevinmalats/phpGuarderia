@@ -40,7 +40,7 @@ echo "</nav>";
 
 require_once("../../src/collectorImagen.php"); 
 $objColl= new ImagenCollector();
-$imagen= new Imagenes ();
+$imagen= new Imagen ();
 
 $id=$_GET['id'];
     

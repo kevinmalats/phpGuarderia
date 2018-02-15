@@ -7,7 +7,7 @@
     }else{
         header("location:../index.php");
     }*/
- class Imagenes{
+ class Imagen{
     private $id_imagen;
     private $descripcion;
     private $guarderia_id_guarderia;
