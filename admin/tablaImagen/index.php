@@ -55,21 +55,18 @@ require_once("../../src/collectorHorario.php");
 		echo "</thead>"; 
 
 $objCollector= new ImagenCollector();
-$id=2;
-for ($i=0;$i<10;$i++){
-    echo "<td>"."hola mindo"."</td>"; 
-}
-$objCollector->leerimagenes();
+
 foreach ($objCollector->showImagenes() as $imagen) {
 	echo "<tbody>"; 
 echo "<tr>"; 
-echo "<td>"."hola mindo"."</td>"; 
+
 echo "<td>".$imagen->getId()."</td>"; 
-echo "<td>".$imagen->getDescripcion()."</td>"; 
+echo "<td > <img class='imagenes' src='../../".$imagen->getDescripcion()."'</></td>";
+echo "<td>".$objCollector->imagenXGuarderia($imagen->getId())->getNombre()."</td>"; 
 
     echo "<td><a href='editar.php?id=".$imagen->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$imagen->getId()."'>Eliminar</a></td>"; 
-	echo "</tr>"; 
+echo "</tr>"; 
 
 }
 echo "</tbody>";

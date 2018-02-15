@@ -13,21 +13,7 @@ include_once('database/collector.php');
 
 class ImagenCollector extends Collector
 {
-  
-  function leerimagenes(){
-    $rows = self::$db->getRows("SELECT * FROM imagen ");     
-    $arrayImagen= array(); 
-     foreach ($rows as $c){
-      $aux = new Imagen();
-      $aux->setId($c{'id_imagen'});
-      $aux->setDescripcion($c{'descripcion'});
-      
-      $aux->setGuarderia($c{'guarderia_id_guarderia'});
-     echo "Guarderia ".$aux->getGuarderia();
-      array_push($arrayImagen, $aux);
-    }
-    //return $arrayImagen;
-  }
+
   function showImagenes() {
     $rows = self::$db->getRows("SELECT * FROM imagen ");        
     $arrayImagen= array();        

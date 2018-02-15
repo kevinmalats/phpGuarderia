@@ -30,11 +30,11 @@ public function getDescripcion(){
 	return $this->descripcion;
 }
 public function setGuarderia($nombre){
-	$this->$guarderia_id_guarderia=$nombre;
+	$this->guarderia_id_guarderia=$nombre;
 
 }
 public function getGuarderia(){
-	return $this->$guarderia_id_guarderia;
+	return $this->guarderia_id_guarderia;
 }
 }
 ?>
