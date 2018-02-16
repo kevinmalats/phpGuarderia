@@ -36,9 +36,9 @@ if ( $_SESSION["perfil"]!= "admin"){
 
  echo "<nav class='navbar navbar-default'>";
     echo "<div class='container-fluid'>";
-    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Ciudad</a></div>";
+  echo "<div class='navbar-header'><a class='navbar-brand' >Tabla de Ciudades</a></div>";
     echo " <ul class='nav navbar-nav'>";
-                echo "<li><a href='index.php'>Menú</a></li>";
+                echo "<li><a href='index.php'>Atrás</a></li>";
             echo "<li><a href='#'>Nuevo</a></li>";
         echo "</ul>";
     echo " <ul class='nav navbar-nav navbar-right'>";

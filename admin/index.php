@@ -11,7 +11,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Administracion Guarderia</title>
+    <title>Administración del Sitio</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -42,7 +42,7 @@ if ( $_SESSION["perfil"]!= "admin"){
                 </div>
               
                 <span class="logout-spn" >
-                  <a href="../pages/logout.php" style="color:#fff;">LOGOUT</a>  
+                  <a href="../pages/logout.php" style="color:#fff;">Logout</a>  
 
                 </span>
             </div>
@@ -54,7 +54,7 @@ if ( $_SESSION["perfil"]!= "admin"){
             <div id="page-inner">
                 <div class="row">
                     <div class="col-lg-12">
-                     <h2>ADMINISTRADOR</h2>   
+                     <h2>Administrador de Contenido</h2>   
                     </div>
                 </div>              
                  <!-- /. ROW  -->

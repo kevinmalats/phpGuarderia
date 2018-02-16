@@ -1,10 +1,20 @@
 language: php
+dist: xenial
 php:
-  - '7.0'
+- 7.0
+env:
+- BD=pgsql
  before_install:
 - sudo apt-get update -q
-- sudo apt-get install phpunit -y
+
+- sudo apt-get install ruby-full -y
+- gem install sass
+
+install: ./install-dependencies.sh
 
 before_script: true
 script:
  - php inicioprueba.php
+ notifications:
+  email:
+    - kenichiyluffy@gmail.com
