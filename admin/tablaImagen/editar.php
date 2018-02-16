@@ -40,11 +40,11 @@ echo "</nav>";
 
 require_once("../../src/collectorImagen.php"); 
 $objColl= new ImagenCollector();
-$imagen= new Imagenes ();
+$imagen= new Imagen ();
 
 $id=$_GET['id'];
     
-$imagen=$objColl->showImagenes($id);
+$imagen=$objColl->showImagen($id);
 
 ?>
 
@@ -67,9 +67,9 @@ $imagen=$objColl->showImagenes($id);
       
       require_once("../../src/collectorImagen.php");
       $objImg= new ImagenCollector();
-      foreach ($objImg->guarderiaDisponibles() as $imagen) {
+      foreach ($objImg->guarderiaDisponibles() as $guarderia) {
         
-       echo  "<option value='".$imagen->getId()."'>".$imagen->getNombre()." </option>";
+       echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
       
       }
       ?>
@@ -104,9 +104,10 @@ echo '<pre>';
   //$objColle->insertImagen($descripcion,4);
     $guarderia=$_POST['guarderia'];          
   $objColle->updateImagen($id,$descripcion, $guarderia);
-  $mensaje="Edición correcta";
-          echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";
-             
+
+$mensaje="Edición correcta";
+          echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";      
+
    
                  
  

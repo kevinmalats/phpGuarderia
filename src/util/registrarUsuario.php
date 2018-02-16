@@ -36,11 +36,16 @@ if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
  //insert del usuario
  $objeCollectorUsu= new UsuarioCollector();
  $usuario_id_usuario=$objeCollectorUsu->insertUsuario($usuario, $password, $perfil);
+if ($usuario_id_usuario== false){
 
+ $mensaje= "Usuario $usuario ya existente";
+ echo "<meta http-equiv='refresh' content='0;URL= ../../pages/registro.php?mensaje=$mensaje'>";
+}else {
 echo $usuario_id_usuario;
 //insert de la informacion del usuario
  $objCollectorInfo= new InformacionUsuarioCollector();
  $id_usuario=$objCollectorInfo->insertInfoUsuario($nombres, $apellidos, $foto_perfil, $correo, $usuario_id_usuario, $direccion);
+
  //insert del telefono
  $objColleTelefono= new TelefonoCollector();
  $objColleTelefono->insertTelefono($telefono,$id_usuario);
@@ -53,7 +58,7 @@ echo $usuario_id_usuario;
 //header("Location: ../../pages/registro.php?mensaje=$mensaje");
 }
 
-  
+}  
     }else
     print_r($_FILES);
  

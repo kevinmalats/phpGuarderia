@@ -5,6 +5,7 @@ if($_SESSION["perfil"]!= "admin"){
 
 }
 require_once("../../src/collectorImagen.php");
+require_once("../../src/collectorHorario.php");
 ?>
 <html lang="es">
 	<head>
@@ -54,15 +55,18 @@ require_once("../../src/collectorImagen.php");
 		echo "</thead>"; 
 
 $objCollector= new ImagenCollector();
-foreach ($objCollector->showImagen() as $imagen) {
+
+foreach ($objCollector->showImagenes() as $imagen) {
 	echo "<tbody>"; 
 echo "<tr>"; 
+
 echo "<td>".$imagen->getId()."</td>"; 
-echo "<td><img class='imagenes' src='../../".$imagen->getDescripcion()."'</></td>";
+echo "<td > <img class='imagenes' src='../../".$imagen->getDescripcion()."'</></td>";
 echo "<td>".$objCollector->imagenXGuarderia($imagen->getId())->getNombre()."</td>"; 
+
     echo "<td><a href='editar.php?id=".$imagen->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$imagen->getId()."'>Eliminar</a></td>"; 
-	echo "</tr>"; 
+echo "</tr>"; 
 
 }
 echo "</tbody>";

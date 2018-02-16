@@ -26,7 +26,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 
 echo "<nav class='navbar navbar-default'>";
 echo "<div class='container-fluid'>";
-echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Usuario</a></div>";
+echo "<div class='navbar-header'><a class='navbar-brand'>Actualizar Dirección</a></div>";
 echo "<ul class='nav navbar-nav'>";
 echo "<li><a href='index.php'>Atrás</a></li>";
 echo "<li><a href='crear.php'>Nuevo</a></li>";
@@ -60,11 +60,14 @@ $direccion=$objColl->showDireccion($id);
     <select name="guarderia" required  class="form-control miselect">
   
       <?php
-      
+       
+
       require_once("../../src/collectorDireccion.php");
       $obUsua= new DireccionCollector();
+      $guarderia=$obUsua->direccionxGuarderia($id);
+      echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
+      
       foreach ($obUsua->guardeiasDisponibles() as $guarderia) {
-        echo $guarderia->getNombre();
        echo  "<option value='".$guarderia->getId()."'>".$guarderia->getNombre()." </option>";
       
       }
