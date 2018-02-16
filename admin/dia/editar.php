@@ -50,13 +50,17 @@ $dia=$objColl->showDiasH($id);
 
 <form method= "POST" class="form-horizontal" action= "#" >
     
-   <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Día:</label>
-         <div class="col-xs-10">
-             <input name = "nombre" type="text" id= "nombre" class="form-control"
-                value="<?php echo $dia->getNombre();?>"  required/>
-         </div>
-     </div>
+   <div class='form-group'>    
+        <label for='inputName' class='control-label col-xs-2'>Dia de la Semana:</label>
+            <select name="nombre" required id="nombre"  class="form-control miselect">
+                  <option selected="true" disabled="disabled">Seleccione el día de atención </option>
+                 <option value="lunes">Lunes</option> 
+                 <option value="martes">Martes</option>
+                  <option value="miercoles">Miércoles</option>
+                  <option value="jueves">Jueves</option>
+                  <option value="viernes">Viernes</option>
+            </select>
+    </div>
     
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Hora Inicio:</label>
@@ -77,7 +81,7 @@ $dia=$objColl->showDiasH($id);
     <div class='form-group'>
         <label for='inputName' class='control-label col-xs-2'>Seleccione actividad para el horario:</label>
             <div class="col-xs-10">
-                <select name="horario_id_horario" type="text" id= "codigo_horario" required  class="form-control miselect">
+                <select name="horario_id_horario" type="text" id= "horario_id_horario" required  class="form-control miselect">
   
         <?php
       
@@ -103,12 +107,12 @@ $dia=$objColl->showDiasH($id);
 
 
 <?php
-if(isset($_POST["nombre"])|| isset($_POST["hora_inicio"]) || isset($_POST["hora_fin"]) || isset($_POST["codigo_horario"])){
+if(isset($_POST["nombre"])|| isset($_POST["hora_inicio"]) || isset($_POST["hora_fin"]) || isset($_POST["horario_id_horario"])){
    
     $nombrenuevo=$_POST["nombre"];
     $hora_inicionuevo= $_POST["hora_inicio"];
     $hora_finnuevo= $_POST["hora_fin"];
-    $horario_id_horario= $_POST["codigo_horario"];
+    $horario_id_horario= $_POST["horario_id_horario"];
     $objColl->updateDia($id,$nombrenuevo, $hora_inicionuevo, $hora_finnuevo, $horario_id_horario);
     header("location:index.php?mensaje=Edición correcta");
 }
