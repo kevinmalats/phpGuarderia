@@ -85,11 +85,11 @@ if ( $_SESSION["perfil"]!= "admin"){
   
         <?php
       
-        require_once("../../src/collector_dia.php");
-        $obUsua= new DiaCollector();
-        foreach ($obUsua->ShowDias() as $ciudad) {
+        require_once("../../src/collectorActividad.php");
+        $obUsua= new ActividadCollector();
+        foreach ($obUsua->showActividad() as $actividad) {
         
-        echo  "<option value='".$ciudad->getId()."'>".$ciudad->getDescripcion()." </option>";
+        echo  "<option value='".$actividad->getId()."'>".$actividad->getDescripcion()." </option>";
       
             }
         ?>

@@ -61,15 +61,6 @@ if ( $_SESSION["perfil"]!= "admin"){
          </div>
      </div>
     
-    <!-- <div class="form-group">
-         <label for="inputName" class="control-label col-xs-2">Ciudad:</label>
-         <div class="col-xs-10">
-             <input name = "ciudad_id_ciudad" type="text" id= "ciudad_id_ciudad" class="form-control misopciones"
-                placeholder="código de ciudad"  required/>
-         </div>
-     </div>
-    -->
-    
     <div class='form-group'>
         <label for='inputName' class='control-label col-xs-2'>Seleccione Ciudad</label>
             <div class="col-xs-10">
