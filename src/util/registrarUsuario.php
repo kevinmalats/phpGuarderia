@@ -14,10 +14,21 @@ $dir_subida = "../../img/perfil/";
 $fichero_subido = $dir_subida.basename($_FILES['archivo']['name']."");
 $foto_perfil=$_SERVER_DOCUMENT['root']."img/perfil/".basename($_FILES['archivo']['name']."");
 
-echo '<pre>';
+//echo '<pre>';
 if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
                              
- $usuario=$_POST["usuario"];
+ 
+    }else{
+    	if($foto_perfil=="img/perfil/"){
+        $foto_perfil="img/perfil/anonimo2.jpg";
+        echo $foto_perfil;
+     
+           }
+           
+  
+   }
+    //print_r($_FILES);
+  $usuario=$_POST["usuario"];
  $password=$_POST["password"];
  $nombres=$_POST["nombres"];
  $apellidos=$_POST["apellidos"];
@@ -41,7 +52,7 @@ if ($usuario_id_usuario== false){
  $mensaje= "Usuario $usuario ya existente";
  echo "<meta http-equiv='refresh' content='0;URL= ../../pages/registro.php?mensaje=$mensaje'>";
 }else {
-echo $usuario_id_usuario;
+
 //insert de la informacion del usuario
  $objCollectorInfo= new InformacionUsuarioCollector();
  $id_usuario=$objCollectorInfo->insertInfoUsuario($nombres, $apellidos, $foto_perfil, $correo, $usuario_id_usuario, $direccion);
@@ -58,9 +69,6 @@ echo $usuario_id_usuario;
 //header("Location: ../../pages/registro.php?mensaje=$mensaje");
 }
 
-}  
-    }else
-    print_r($_FILES);
- 
+} 
 
 ?>

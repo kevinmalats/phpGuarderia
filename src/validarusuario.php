@@ -14,9 +14,9 @@
     $_SESSION["perfil"]=$usuario->getPerfil();
     $_SESSION["nombre"]=$usuario->getNombre();
     $fotoperfil=$objColector->retornaFoto($usuario->getId());
-    if($fotoperfil==""){
+    /*if($fotoperfil==""){
       $fotoperfil="img/perfil/anonimo.jpg";
-    }
+    }*/
 
     $_SESSION["fotoperfil"]=$fotoperfil;
    
