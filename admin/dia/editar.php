@@ -64,7 +64,7 @@ $dia=$objColl->showDiasH($id);
     
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Hora Inicio:</label>
-         <div class="col-xs-10">
+         <div class="col-xs-10 misopciones">
              <input name = "hora inicio" type="text" id= "hora_inicio" class="form-control"
                 value="<?php echo $dia->getHoraInicio();?>"  required/>
          </div>
@@ -72,7 +72,7 @@ $dia=$objColl->showDiasH($id);
     
     <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Hora Fin:</label>
-         <div class="col-xs-10">
+         <div class="col-xs-10 misopciones">
              <input name = "hora fin" type="text" id= "hora_fin" class="form-control"
                 value="<?php echo $dia->getHoraFin();?>"  required/>
          </div>
