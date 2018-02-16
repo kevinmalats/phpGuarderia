@@ -15,7 +15,7 @@ class ActividadCollector extends Collector
 {
   
   function showActividad() {
-    $rows = self::$db->getRows("SELECT * FROM Actividad ");        
+    $rows = self::$db->getRows("SELECT * FROM actividad ");        
     $arrayImagen= array();        
     foreach ($rows as $c){
       $aux = new actividad();
