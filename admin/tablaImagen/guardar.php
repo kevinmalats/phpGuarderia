@@ -13,14 +13,18 @@ $descripcion=$_SERVER_DOCUMENT['root']."img/".basename($_FILES['archivo']['name'
 echo '<pre>';
 if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
                                          
+  
+
+    }else{
+      $descripcion="img/";
+
+    }
   $objColle= new ImagenCollector();
   $guarderia=$_POST['guarderia'];
   $objColle->insertImagen($descripcion,$guarderia);
   echo "<meta http-equiv='refresh' content='0;URL= crear.php?mensaje= Se creó exitosamente'>";
-
-    }else
-    print_r($_FILES);
-    print_r($_FILES['error']);
+   // print_r($_FILES);
+    //print_r($_FILES['error']);
 
 //if (is_uploaded_file($_FILES['archivo']['tmp_name'])) {
 //copy($_FILES['archivo']['tmp_name'], '/var/www/html/practica/imagenes/'.$_FILES['archivo']['name'].'');

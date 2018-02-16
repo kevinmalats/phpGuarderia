@@ -100,21 +100,24 @@ $guarderia=$_POST["guarderia"];
 echo '<pre>';
  if(move_uploaded_file($_FILES['archivo']['tmp_name'], $fichero_subido))  {
      $descripcion=$_SERVER_DOCUMENT['root']."img/".basename($_FILES['archivo']['name']."");
-              $objColle= new ImagenCollector();
-  //$objColle->insertImagen($descripcion,4);
-    $guarderia=$_POST['guarderia'];          
-  $objColle->updateImagen($id,$descripcion, $guarderia);
-
-$mensaje="Edición correcta";
-          echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";      
-
+              
    
                  
  
 
-    }else
-    print_r($_FILES);
-    print_r($_FILES['error']);
+    }else{
+     $descripcion=$imagen->getDescripcion();
+    }
+  $objColle= new ImagenCollector();
+  //$objColle->insertImagen($descripcion,4);
+  $guarderia=$_POST['guarderia'];          
+  $objColle->updateImagen($id,$descripcion, $guarderia);
+
+    $mensaje="Edición correcta";
+          echo "<meta http-equiv='refresh' content='0;URL=index.php?mensaje=$mensaje'>";      
+
+    //print_r($_FILES);
+   // print_r($_FILES['error']);
 
 //if (is_uploaded_file($_FILES['archivo']['tmp_name'])) {
 //copy($_FILES['archivo']['tmp_name'], '/var/www/html/practica/imagenes/'.$_FILES['archivo']['name'].'');
