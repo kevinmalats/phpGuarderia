@@ -83,15 +83,15 @@ $dia=$objColl->showDiasH($id);
       
         require_once("../../src/collectorActividad.php");
         $obUsua= new ActividadCollector();
-        foreach ($obUsua->ShowActividad() as $actividad) {
+        foreach ($obUsua->showActividad() as $actividad) {
         
-        echo  "<option value='".$actividad->getId()."'>".$ciudad->getDescripcion()." </option>";
+        echo  "<option value='".$actividad->getId()."'>".$actividad->getDescripcion()." </option>";
       
             }
         ?>
                 </select>
             </div>
-    </div>     
+    </div>       
 
      <div class="form-group">
     
